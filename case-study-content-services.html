@@ -51,21 +51,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .cs-p{font-size:.93rem;color:var(--gray);line-height:1.8;margin-bottom:1rem;}
 .cs-p strong{color:var(--black);font-weight:500;}
 
-/* IMAGE SLOTS */
-.cs-img-frame{border-radius:14px;overflow:hidden;border:0.5px solid var(--border);background:var(--surface);min-height:220px;position:relative;display:flex;align-items:center;justify-content:center;margin-bottom:1rem;}
-.cs-img-frame img{width:100%;height:100%;object-fit:cover;display:block;position:absolute;inset:0;}
-.cs-img-frame.empty img, .cs-img-frame img[src=""], .cs-img-frame img:not([src]){display:none;}
-.cs-img-placeholder{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.5rem;padding:2rem;text-align:center;color:var(--border);z-index:1;}
-.cs-img-frame:has(img[src]:not([src=""])) .cs-img-placeholder{display:none;}
-.cs-img-placeholder p{font-size:.72rem;color:#B0ADB8;}
-.cs-img-placeholder code{background:rgba(0,0,0,.05);padding:2px 6px;border-radius:4px;font-size:.68rem;}
-.cs-img-full{min-height:320px;border-radius:16px !important;}
-.cs-img-grid-2{display:grid;grid-template-columns:1fr 1fr;gap:.875rem;margin:1rem 0;}
-.cs-img-grid-2 .cs-img-frame{min-height:200px;margin-bottom:0;}
-.cs-img-grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem;margin:1rem 0;}
-.cs-img-grid-3 .cs-img-frame{min-height:160px;margin-bottom:0;}
-.cs-img-caption{font-size:.72rem;color:var(--gray);text-align:center;margin-top:-.5rem;margin-bottom:1rem;}
-
 /* INSIGHT LIST */
 .cs-insights{display:flex;flex-direction:column;gap:.75rem;margin:1.5rem 0;}
 .cs-insight{display:flex;align-items:flex-start;gap:.875rem;background:var(--surface);border-radius:12px;padding:1rem 1.1rem;}
@@ -198,35 +183,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
     <p class="cs-p">FileNet was successful, but the admin experience was complex and documentation-heavy. Admins had to jump across multiple interfaces to complete work, and terminology felt too technical for new and business-oriented users.</p>
   </div>
 
-  <!-- IMAGE: LEGACY HOMEPAGE -->
-  <div class="cs-section reveal">
-    <p class="cs-label">Before</p>
-    <h2 class="cs-h2">The legacy FileNet experience</h2>
-    <div class="cs-img-grid-2">
-      <div>
-        <div class="cs-img-frame cs-img-full">
-          <img src="cs-legacy-cam.png" alt="Legacy Content and Access Management interface">
-          <div class="cs-img-placeholder">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="3" stroke="currentColor" stroke-width="1.5"/><circle cx="8.5" cy="8.5" r="1.5" stroke="currentColor" stroke-width="1.3"/><path d="M3 16l5-5 4 4 3-3 6 6" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <p>Add <code>cs-legacy-cam.png</code></p>
-            <p style="font-size:.65rem;margin-top:.25rem;">Content and Access Management legacy UI</p>
-          </div>
-        </div>
-        <p class="cs-img-caption">Content and Access Management</p>
-      </div>
-      <div>
-        <div class="cs-img-frame cs-img-full">
-          <img src="cs-legacy-desktop.png" alt="Legacy Desktop Configuration interface">
-          <div class="cs-img-placeholder">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="3" stroke="currentColor" stroke-width="1.5"/><circle cx="8.5" cy="8.5" r="1.5" stroke="currentColor" stroke-width="1.3"/><path d="M3 16l5-5 4 4 3-3 6 6" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <p>Add <code>cs-legacy-desktop.png</code></p>
-            <p style="font-size:.65rem;margin-top:.25rem;">Desktop Configuration legacy UI</p>
-          </div>
-        </div>
-        <p class="cs-img-caption">Desktop Configuration</p>
-      </div>
-    </div>
-  </div>
+  
+
+
 
   <!-- KICKOFF -->
   <div class="cs-section reveal">
@@ -240,14 +199,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
       <div class="cs-activity"><div class="cs-activity-num">4</div><p>User Needs</p></div>
       <div class="cs-activity"><div class="cs-activity-num">5</div><p>Big Ideas and Prioritization</p></div>
       <div class="cs-activity"><div class="cs-activity-num">6</div><p>To-Be Experience and Stages</p></div>
-    </div>
-    <div class="cs-img-frame cs-img-full">
-      <img src="cs-workshop.png" alt="Enterprise Design Thinking workshop">
-      <div class="cs-img-placeholder">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="3" stroke="currentColor" stroke-width="1.5"/><path d="M3 16l5-5 4 4 3-3 6 6" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
-        <p>Add <code>cs-workshop.png</code></p>
-        <p style="font-size:.65rem;margin-top:.25rem;">Workshop photo or activity screenshot</p>
-      </div>
     </div>
   </div>
 
@@ -319,14 +270,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
         <p>Used to validate assumptions with real users in research sessions</p>
       </div>
     </div>
-    <div class="cs-img-frame cs-img-full">
-      <img src="cs-asis.png" alt="As-Is journey workshop activity">
-      <div class="cs-img-placeholder">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="3" stroke="currentColor" stroke-width="1.5"/><path d="M3 16l5-5 4 4 3-3 6 6" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
-        <p>Add <code>cs-asis.png</code></p>
-        <p style="font-size:.65rem;margin-top:.25rem;">As-Is journey workshop activity or end-to-end diagram</p>
-      </div>
-    </div>
   </div>
 
   <!-- ROADMAP -->
@@ -334,14 +277,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
     <p class="cs-label">Roadmap</p>
     <h2 class="cs-h2">Prioritizing the MVP for a one-year delivery.</h2>
     <p class="cs-p">With the end-to-end story defined, I partnered with PM and engineering leads to prioritize what mattered most for Stage 1. We created a roadmap to deliver the MVP within one year. As new topics emerged, we revisited priorities regularly to stay aligned and keep momentum.</p>
-    <div class="cs-img-frame cs-img-full">
-      <img src="cs-roadmap.png" alt="Stage 1 roadmap">
-      <div class="cs-img-placeholder">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="3" stroke="currentColor" stroke-width="1.5"/><path d="M3 16l5-5 4 4 3-3 6 6" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
-        <p>Add <code>cs-roadmap.png</code></p>
-        <p style="font-size:.65rem;margin-top:.25rem;">Stage 1 roadmap screenshot</p>
-      </div>
-    </div>
   </div>
 
   <!-- WORKFLOWS -->
@@ -373,34 +308,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
       </div>
     </div>
 
-    <div class="cs-img-frame cs-img-full" style="margin-top:1.5rem;">
-      <img src="cs-contessa-before-after.png" alt="Contessa experience before and after">
-      <div class="cs-img-placeholder">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="3" stroke="currentColor" stroke-width="1.5"/><path d="M3 16l5-5 4 4 3-3 6 6" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
-        <p>Add <code>cs-contessa-before-after.png</code></p>
-        <p style="font-size:.65rem;margin-top:.25rem;">Contessa's experience before and after</p>
-      </div>
-    </div>
-
     <div class="cs-img-grid-2" style="margin-top:.875rem;">
       <div>
-        <div class="cs-img-frame" style="min-height:200px;">
-          <img src="cs-document-class.png" alt="Document class creation">
-          <div class="cs-img-placeholder">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="3" stroke="currentColor" stroke-width="1.5"/><path d="M3 16l5-5 4 4 3-3 6 6" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
-            <p>Add <code>cs-document-class.png</code></p>
-          </div>
-        </div>
         <p class="cs-img-caption">Document class creation</p>
       </div>
       <div>
-        <div class="cs-img-frame" style="min-height:200px;">
-          <img src="cs-property.png" alt="Creating a property">
-          <div class="cs-img-placeholder">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="3" stroke="currentColor" stroke-width="1.5"/><path d="M3 16l5-5 4 4 3-3 6 6" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
-            <p>Add <code>cs-property.png</code></p>
-          </div>
-        </div>
         <p class="cs-img-caption">Creating a property</p>
       </div>
     </div>
@@ -412,29 +324,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
     <h2 class="cs-h2">Using the Home Page as the clearest before-and-after.</h2>
     <p class="cs-p">To show the modernization clearly, I focused on the Home Page as a concrete before-and-after. The legacy FileNet Home Page sent admins into separate interfaces and lacked a clear starting point. Admins were often confused and depended on documentation to begin.</p>
     <p class="cs-p">We designed a new Home Page that welcomes the admin with a personalized greeting, keeps core work in one place instead of sending users to another UI, and provides an in-product walkthrough for first-time use.</p>
-    <div class="cs-img-grid-2">
-      <div>
-        <div class="cs-img-frame" style="min-height:240px;">
-          <img src="cs-homepage-legacy.png" alt="Legacy homepage">
-          <div class="cs-img-placeholder">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="3" stroke="currentColor" stroke-width="1.5"/><path d="M3 16l5-5 4 4 3-3 6 6" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
-            <p>Add <code>cs-homepage-legacy.png</code></p>
-          </div>
-        </div>
-        <p class="cs-img-caption">Before: FileNet legacy homepage</p>
-      </div>
-      <div>
-        <div class="cs-img-frame" style="min-height:240px;">
-          <img src="cs-homepage-new.png" alt="New homepage design">
-          <div class="cs-img-placeholder">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="3" stroke="currentColor" stroke-width="1.5"/><path d="M3 16l5-5 4 4 3-3 6 6" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
-            <p>Add <code>cs-homepage-new.png</code></p>
-          </div>
-        </div>
-        <p class="cs-img-caption">After: Content Services new homepage</p>
-      </div>
-    </div>
-  </div>
 
   <div class="cs-quote reveal">
     <p>"Clarity beats complexity. Modernizing a legacy tool is often about removing confusion, not adding features."</p>

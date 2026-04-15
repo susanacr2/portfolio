@@ -47,8 +47,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:grid;grid-template-c
 @keyframes gradShift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
 .hero-sub{font-size:clamp(.95rem,1.4vw,1.1rem);font-weight:300;color:var(--gray-text);max-width:500px;margin:0 auto 2.25rem;line-height:1.75;}
 .hero-btns{display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap;}
-.btn-dark{font-size:.86rem;font-weight:500;background:linear-gradient(135deg,#4A3AFF,#9B8AFF,#C084FC);background-size:200% 200%;color:#fff;text-decoration:none;padding:.75rem 1.6rem;border-radius:980px;transition:background-position .4s ease,transform .15s;display:inline-flex;align-items:center;gap:6px;animation:gradShift 7s ease infinite;}
-.btn-dark:hover{background-position:right center;transform:translateY(-2px);}
+.btn-dark{font-size:.86rem;font-weight:500;background:#1D1D1F;color:#fff;text-decoration:none;padding:.75rem 1.6rem;border-radius:980px;transition:background .2s,transform .15s;display:inline-flex;align-items:center;gap:6px;}
+.btn-dark:hover{background:var(--purple);transform:translateY(-2px);}
 .btn-light{font-size:.86rem;font-weight:500;background:var(--surface);color:var(--black);text-decoration:none;padding:.75rem 1.6rem;border-radius:980px;border:0.5px solid var(--border);transition:border-color .2s,transform .15s;}
 .btn-light:hover{border-color:var(--black);transform:translateY(-2px);}
 
@@ -137,10 +137,12 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:grid;grid-template-c
 .photo-grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem;}
 .photo-grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:.75rem;}
 .photo-card{border-radius:14px;overflow:hidden;position:relative;background:var(--surface);}
-.photo-card img{width:100%;height:240px;object-fit:cover;display:block;transition:transform .4s ease;}
+.photo-card img{width:100%;height:240px;object-fit:cover;display:block;transition:transform .4s ease,filter .4s ease;filter:grayscale(100%) contrast(1.05) brightness(.95);}
+.photo-card:hover img{transform:scale(1.04);filter:grayscale(0%) contrast(1) brightness(1);}
+
 .photo-card:hover img{transform:scale(1.04);}
 .photo-card .photo-label{position:absolute;bottom:0;left:0;right:0;padding:.65rem .875rem;background:linear-gradient(to top,rgba(0,0,0,.6),transparent);color:#fff;font-size:.72rem;font-weight:500;line-height:1.3;}
-.photo-grid-2 .photo-card img{height:280px;}
+
 
 /* ABOUT */
 .about-section{background:var(--surface);}
@@ -248,6 +250,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:grid;grid-template-c
 }
 
 .cred-ticker.mid{margin-top:0;border-top:0.5px solid rgba(0,0,0,.07);}
+.btn-auro{font-size:.86rem;font-weight:500;background:var(--black);color:#fff;text-decoration:none;padding:.75rem 1.6rem;border-radius:980px;transition:background .2s,transform .15s;display:inline-flex;align-items:center;gap:6px;}.btn-auro:hover{background:var(--purple);transform:translateY(-2px);}
 </style>
 </head>
 <body>
@@ -414,31 +417,31 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:grid;grid-template-c
     <div class="photo-group reveal">
       <p class="photo-group-label">Workshops &amp; Education</p>
       <div class="photo-grid-3">
-        <div class="photo-card"><img src="community1.png" alt="IBM Design Thinking workshop" style="object-position:center top"><div class="photo-label">IBM Design Thinking · UT &amp; McCombs School of Business</div></div>
-        <div class="photo-card"><img src="community1.png" alt="Code2College workshop" style="object-position:center 30%"><div class="photo-label">Code2College Design Thinking Workshop &amp; Panel</div></div>
-        <div class="photo-card"><img src="community1.png" alt="ALPFA UT Chapter" style="object-position:right top"><div class="photo-label">UT &amp; McCombs Student Supporter · ALPFA UT Chapter</div></div>
+        <div class="photo-card"><img src="community-ibm-design-thinking.jpg" alt="IBM Design Thinking workshop" style="object-position:center top"><div class="photo-label">IBM Design Thinking · UT &amp; McCombs School of Business</div></div>
+        <div class="photo-card"><img src="community-code2college.jpg" alt="Code2College workshop" style="object-position:center 30%"><div class="photo-label">Code2College Design Thinking Workshop &amp; Panel</div></div>
+        <div class="photo-card"><img src="community-alpfa.jpg" alt="ALPFA UT Chapter" style="object-position:right top"><div class="photo-label">UT &amp; McCombs Student Supporter · ALPFA UT Chapter</div></div>
       </div>
     </div>
     <div class="photo-group reveal">
       <p class="photo-group-label">Design community building</p>
       <div class="photo-grid-3">
-        <div class="photo-card"><img src="community1.png" alt="Design Critiques Host" style="object-position:left top"><div class="photo-label">Design Critiques Host</div></div>
-        <div class="photo-card"><img src="community1.png" alt="Global Events Host"><div class="photo-label">Global Events Host</div></div>
-        <div class="photo-card"><img src="community1.png" alt="Networking Events Host" style="object-position:right top"><div class="photo-label">Networking Events Host</div></div>
+        <div class="photo-card"><img src="community-design-critiques.jpg" alt="Design Critiques Host" style="object-position:left top"><div class="photo-label">Design Critiques Host</div></div>
+        <div class="photo-card"><img src="community-global-events.jpg" alt="Global Events Host"><div class="photo-label">Global Events Host</div></div>
+        <div class="photo-card"><img src="community-networking.jpg" alt="Networking Events Host" style="object-position:center 60%" style="object-position:right top"><div class="photo-label">Networking Events Host</div></div>
       </div>
     </div>
     <div class="photo-group reveal">
       <p class="photo-group-label">Strategy &amp; community organizations</p>
       <div class="photo-grid-2">
-        <div class="photo-card"><img src="community2.png" alt="Latina Foundation Board"><div class="photo-label">Board of Directors · The Latina Foundation</div></div>
-        <div class="photo-card"><img src="community2.png" alt="YWCA Strategy Workshop" style="object-position:right center"><div class="photo-label">Strategy Workshop · YWCA Greater Austin</div></div>
+        <div class="photo-card"><img src="community-latina-foundation.jpg" alt="Latina Foundation Board" style="object-position:center 45%"><div class="photo-label">Board of Directors · The Latina Foundation</div></div>
+        <div class="photo-card"><img src="community-ywca.jpg" alt="YWCA Strategy Workshop" style="object-position:right center"><div class="photo-label">Strategy Workshop · YWCA Greater Austin</div></div>
       </div>
     </div>
     <div class="photo-group reveal">
       <p class="photo-group-label">Founder &amp; entrepreneurship support</p>
       <div class="photo-grid-2">
-        <div class="photo-card"><img src="community2.png" alt="FoundHERs FIESTA Austin" style="object-position:left bottom"><div class="photo-label">Facilitator &amp; Lead · FoundHERs and FIESTA Austin Community</div></div>
-        <div class="photo-card"><img src="community2.png" alt="Harvard HBS Foundry" style="object-position:right center"><div class="photo-label">UX Advisor · Harvard Business School Foundry Product</div></div>
+        <div class="photo-card"><img src="community-foundHERs.jpg" alt="FoundHERs FIESTA Austin" style="object-position:left bottom"><div class="photo-label">Facilitator &amp; Lead · FoundHERs and FIESTA Austin Community</div></div>
+        <div class="photo-card"><img src="community-harvard-hbs.jpg" alt="Harvard HBS Foundry" style="object-position:right center"><div class="photo-label">UX Advisor · Harvard Business School Foundry Product</div></div>
       </div>
     </div>
   </div>
@@ -492,7 +495,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:grid;grid-template-c
   <div class="about-inner">
     <div class="about-top reveal">
       <div class="about-photo">
-        <img src="susana.avif" alt="Susana Chinchilla">
+        <img src="susana-chinchilla.jpg" alt="Susana Chinchilla">
         <div class="about-photo-caption"><p>Susana Chinchilla</p></div>
       </div>
       <div>
@@ -528,7 +531,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:grid;grid-template-c
         <span class="bpill"><span class="bpill-dot"></span>PLG trial</span>
         <span class="bpill"><span class="bpill-dot"></span>0 to 1</span>
       </div>
-      <a href="mailto:suschinchilla@gmail.com?subject=AURO early access" class="btn-dark">Request early access</a>
+      <a href="mailto:suschinchilla@gmail.com?subject=AURO early access" class="btn-auro">Request early access</a>
     </div>
     <div class="reveal">
       <div class="auro-mockup">

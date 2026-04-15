@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SC Portfolio — Admin</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{--bg:#F5F5F7;--white:#fff;--black:#1D1D1F;--gray:#6E6E73;--border:#D2D2D7;--purple:#4A3AFF;--purple-light:#EEF0FF;}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--black);min-height:100vh;}
+
+/* NAV */
+.admin-nav{background:var(--white);border-bottom:0.5px solid var(--border);padding:0 2rem;height:56px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:10;}
+.admin-logo{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:1rem;color:var(--black);}
+.admin-logo span{color:var(--purple);}
+.admin-nav-right{display:flex;align-items:center;gap:.75rem;}
+.btn-sm{font-size:.78rem;font-weight:500;padding:.4rem 1rem;border-radius:980px;cursor:pointer;border:none;transition:all .2s;}
+.btn-primary{background:var(--purple);color:#fff;}
+.btn-primary:hover{background:#3a2bcc;}
+.btn-ghost{background:transparent;color:var(--gray);border:0.5px solid var(--border);}
+.btn-ghost:hover{border-color:var(--black);color:var(--black);}
+
+/* LAYOUT */
+.admin-layout{display:grid;grid-template-columns:220px 1fr;min-height:calc(100vh - 56px);}
+.sidebar{background:var(--white);border-right:0.5px solid var(--border);padding:1.5rem 1rem;}
+.sidebar-label{font-size:.65rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--gray);margin-bottom:.5rem;padding:0 .5rem;}
+.sidebar-item{display:flex;align-items:center;gap:.625rem;padding:.5rem .75rem;border-radius:8px;font-size:.82rem;font-weight:400;color:var(--gray);cursor:pointer;margin-bottom:2px;transition:all .2s;}
+.sidebar-item:hover{background:var(--bg);color:var(--black);}
+.sidebar-item.active{background:var(--purple-light);color:var(--purple);font-weight:500;}
+.sidebar-item svg{flex-shrink:0;}
+.sidebar-divider{height:0.5px;background:var(--border);margin:1rem 0;}
+
+/* MAIN */
+.main{padding:2rem;}
+.page-header{margin-bottom:2rem;}
+.page-title{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:1.5rem;letter-spacing:-.02em;margin-bottom:.25rem;}
+.page-sub{font-size:.83rem;color:var(--gray);}
+
+/* SECTION CARDS */
+.section-card{background:var(--white);border-radius:16px;border:0.5px solid var(--border);margin-bottom:1.25rem;overflow:hidden;box-shadow:0 2px 6px rgba(0,0,0,.04);}
+.section-card-header{padding:1rem 1.25rem;border-bottom:0.5px solid var(--border);display:flex;align-items:center;justify-content:space-between;}
+.section-card-title{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:.95rem;}
+.section-card-meta{font-size:.72rem;color:var(--gray);}
+.section-card-body{padding:1.25rem;}
+
+/* PHOTO GRID */
+.photo-admin-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:.75rem;}
+.photo-admin-item{position:relative;border-radius:10px;overflow:hidden;background:var(--bg);border:0.5px solid var(--border);aspect-ratio:4/3;cursor:pointer;transition:box-shadow .2s;}
+.photo-admin-item:hover{box-shadow:0 4px 16px rgba(0,0,0,.1);}
+.photo-admin-item img{width:100%;height:100%;object-fit:cover;display:block;}
+.photo-admin-item .photo-overlay{position:absolute;inset:0;background:rgba(0,0,0,.0);display:flex;align-items:center;justify-content:center;gap:.5rem;opacity:0;transition:all .2s;}
+.photo-admin-item:hover .photo-overlay{opacity:1;background:rgba(0,0,0,.45);}
+.photo-action-btn{width:28px;height:28px;border-radius:50%;background:rgba(255,255,255,.9);border:none;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:transform .15s;}
+.photo-action-btn:hover{transform:scale(1.1);}
+.photo-label-tag{font-size:.62rem;color:var(--gray);margin-top:.375rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;padding:0 2px;}
+
+/* UPLOAD ZONE */
+.upload-zone{border:1.5px dashed var(--border);border-radius:12px;padding:1.5rem;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.5rem;cursor:pointer;transition:all .2s;text-align:center;background:var(--bg);}
+.upload-zone:hover{border-color:var(--purple);background:var(--purple-light);}
+.upload-zone svg{color:var(--gray);}
+.upload-zone p{font-size:.78rem;color:var(--gray);}
+.upload-zone span{font-size:.72rem;color:var(--border);}
+
+/* FORM */
+.form-group{margin-bottom:1rem;}
+.form-label{font-size:.75rem;font-weight:500;color:var(--black);margin-bottom:.35rem;display:block;}
+.form-input{width:100%;padding:.6rem .85rem;border-radius:8px;border:0.5px solid var(--border);font-size:.83rem;font-family:'Inter',sans-serif;background:var(--white);color:var(--black);outline:none;transition:border-color .2s;}
+.form-input:focus{border-color:var(--purple);box-shadow:0 0 0 3px rgba(74,58,255,.08);}
+.form-textarea{min-height:80px;resize:vertical;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+
+/* STATUS BADGE */
+.status-badge{display:inline-flex;align-items:center;gap:4px;font-size:.65rem;font-weight:500;padding:3px 8px;border-radius:980px;}
+.status-live{background:#E3F9F0;color:#1A7A52;}
+.status-draft{background:#FFF0EB;color:#9A3412;}
+.status-dot{width:5px;height:5px;border-radius:50%;}
+.status-live .status-dot{background:#1A7A52;}
+.status-draft .status-dot{background:#9A3412;}
+
+/* INFO BOX */
+.info-box{background:var(--purple-light);border:0.5px solid rgba(74,58,255,.2);border-radius:10px;padding:.875rem 1rem;margin-bottom:1.25rem;font-size:.78rem;color:#3634A3;line-height:1.5;}
+.info-box strong{font-weight:600;}
+</style>
+</head>
+<body>
+
+<div class="admin-nav">
+  <span class="admin-logo">SC<span>.</span> Admin</span>
+  <div class="admin-nav-right">
+    <span class="status-badge status-live"><span class="status-dot"></span>Site live</span>
+    <a href="index.html" target="_blank"><button class="btn-sm btn-ghost">View site ↗</button></a>
+    <button class="btn-sm btn-primary" onclick="alert('In the full version, this saves and redeploys to GitHub Pages.')">Save changes</button>
+  </div>
+</div>
+
+<div class="admin-layout">
+  <div class="sidebar">
+    <p class="sidebar-label">Content</p>
+    <div class="sidebar-item active">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1" y="1" width="5" height="5" rx="1" stroke="currentColor" stroke-width="1.3"/><rect x="8" y="1" width="5" height="5" rx="1" stroke="currentColor" stroke-width="1.3"/><rect x="1" y="8" width="5" height="5" rx="1" stroke="currentColor" stroke-width="1.3"/><rect x="8" y="8" width="5" height="5" rx="1" stroke="currentColor" stroke-width="1.3"/></svg>
+      Community photos
+    </div>
+    <div class="sidebar-item">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1v12M1 7h12" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+      Projects
+    </div>
+    <div class="sidebar-item">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="5" r="3" stroke="currentColor" stroke-width="1.3"/><path d="M2 13c0-2.8 2.2-4.5 5-4.5s5 1.7 5 4.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+      About &amp; bio
+    </div>
+    <div class="sidebar-item">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1" y="2" width="12" height="9" rx="1.5" stroke="currentColor" stroke-width="1.3"/><path d="M4 6h6M4 8.5h3.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+      Credentials
+    </div>
+    <div class="sidebar-divider"></div>
+    <p class="sidebar-label">Settings</p>
+    <div class="sidebar-item">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="2" stroke="currentColor" stroke-width="1.3"/><path d="M7 1v1.5M7 11.5V13M1 7h1.5M11.5 7H13M2.6 2.6l1.1 1.1M10.3 10.3l1.1 1.1M11.4 2.6l-1.1 1.1M3.7 10.3l-1.1 1.1" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+      Site settings
+    </div>
+    <div class="sidebar-item">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1L8.5 5.5H13L9.5 8l1.5 4.5L7 10l-4 2.5L4.5 8 1 5.5h4.5L7 1z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>
+      Deploy
+    </div>
+  </div>
+
+  <div class="main">
+    <div class="page-header">
+      <h1 class="page-title">Community photos</h1>
+      <p class="page-sub">Manage the photos shown in each section of your community page.</p>
+    </div>
+
+    <div class="info-box">
+      <strong>How this works:</strong> Replace any photo by clicking the edit icon. The filename must match exactly — rename your new file to the same name as the one you're replacing, then drop it in your site folder and redeploy. The full version will handle this automatically.
+    </div>
+
+    <!-- WORKSHOPS -->
+    <div class="section-card">
+      <div class="section-card-header">
+        <span class="section-card-title">Workshops &amp; Education</span>
+        <span class="section-card-meta">3 photos · community1.png</span>
+      </div>
+      <div class="section-card-body">
+        <div class="photo-admin-grid">
+          <div>
+            <div class="photo-admin-item">
+              <img src="community1.png" alt="IBM Design Thinking workshop">
+              <div class="photo-overlay">
+                <button class="photo-action-btn" title="Edit" onclick="alert('Click Choose File to replace this photo. Rename your file to community1.png and replace it in your site folder.')">
+                  <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M9 2l2 2-7 7H2V9l7-7z" stroke="#1D1D1F" stroke-width="1.3" stroke-linejoin="round"/></svg>
+                </button>
+              </div>
+            </div>
+            <input type="file" accept="image/*" style="display:none" id="f1" onchange="previewFile(this,'img1')">
+            <p class="photo-label-tag">IBM Design Thinking · UT McCombs</p>
+          </div>
+          <div>
+            <div class="photo-admin-item">
+              <img src="community1.png" alt="Code2College" style="object-position:center 30%">
+              <div class="photo-overlay">
+                <button class="photo-action-btn" title="Edit" onclick="document.getElementById('f2').click()">
+                  <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M9 2l2 2-7 7H2V9l7-7z" stroke="#1D1D1F" stroke-width="1.3" stroke-linejoin="round"/></svg>
+                </button>
+              </div>
+            </div>
+            <input type="file" accept="image/*" style="display:none" id="f2">
+            <p class="photo-label-tag">Code2College Workshop</p>
+          </div>
+          <div>
+            <div class="photo-admin-item">
+              <img src="community1.png" alt="ALPFA" style="object-position:right top">
+              <div class="photo-overlay">
+                <button class="photo-action-btn" title="Edit" onclick="document.getElementById('f3').click()">
+                  <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M9 2l2 2-7 7H2V9l7-7z" stroke="#1D1D1F" stroke-width="1.3" stroke-linejoin="round"/></svg>
+                </button>
+              </div>
+            </div>
+            <input type="file" accept="image/*" style="display:none" id="f3">
+            <p class="photo-label-tag">ALPFA UT Chapter</p>
+          </div>
+          <div>
+            <div class="upload-zone" onclick="document.getElementById('f-new1').click()">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 4v12M4 10h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+              <p>Add photo</p>
+            </div>
+            <input type="file" accept="image/*" style="display:none" id="f-new1">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DESIGN COMMUNITY -->
+    <div class="section-card">
+      <div class="section-card-header">
+        <span class="section-card-title">Design community building</span>
+        <span class="section-card-meta">3 photos · community1.png</span>
+      </div>
+      <div class="section-card-body">
+        <div class="photo-admin-grid">
+          <div>
+            <div class="photo-admin-item">
+              <img src="community1.png" alt="Design Critiques" style="object-position:left top">
+              <div class="photo-overlay"><button class="photo-action-btn" onclick="document.getElementById('f4').click()"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M9 2l2 2-7 7H2V9l7-7z" stroke="#1D1D1F" stroke-width="1.3" stroke-linejoin="round"/></svg></button></div>
+            </div>
+            <input type="file" accept="image/*" style="display:none" id="f4">
+            <p class="photo-label-tag">Design Critiques Host</p>
+          </div>
+          <div>
+            <div class="photo-admin-item">
+              <img src="community1.png" alt="Global Events">
+              <div class="photo-overlay"><button class="photo-action-btn" onclick="document.getElementById('f5').click()"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M9 2l2 2-7 7H2V9l7-7z" stroke="#1D1D1F" stroke-width="1.3" stroke-linejoin="round"/></svg></button></div>
+            </div>
+            <input type="file" accept="image/*" style="display:none" id="f5">
+            <p class="photo-label-tag">Global Events Host</p>
+          </div>
+          <div>
+            <div class="photo-admin-item">
+              <img src="community1.png" alt="Networking" style="object-position:right top">
+              <div class="photo-overlay"><button class="photo-action-btn" onclick="document.getElementById('f6').click()"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M9 2l2 2-7 7H2V9l7-7z" stroke="#1D1D1F" stroke-width="1.3" stroke-linejoin="round"/></svg></button></div>
+            </div>
+            <input type="file" accept="image/*" style="display:none" id="f6">
+            <p class="photo-label-tag">Networking Events Host</p>
+          </div>
+          <div>
+            <div class="upload-zone" onclick="document.getElementById('f-new2').click()">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 4v12M4 10h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+              <p>Add photo</p>
+            </div>
+            <input type="file" accept="image/*" style="display:none" id="f-new2">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STRATEGY & COMMUNITY -->
+    <div class="section-card">
+      <div class="section-card-header">
+        <span class="section-card-title">Strategy &amp; community organizations</span>
+        <span class="section-card-meta">2 photos · community2.png</span>
+      </div>
+      <div class="section-card-body">
+        <div class="photo-admin-grid">
+          <div>
+            <div class="photo-admin-item">
+              <img src="community2.png" alt="Latina Foundation">
+              <div class="photo-overlay"><button class="photo-action-btn" onclick="document.getElementById('f7').click()"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M9 2l2 2-7 7H2V9l7-7z" stroke="#1D1D1F" stroke-width="1.3" stroke-linejoin="round"/></svg></button></div>
+            </div>
+            <input type="file" accept="image/*" style="display:none" id="f7">
+            <p class="photo-label-tag">Board of Directors · Latina Foundation</p>
+          </div>
+          <div>
+            <div class="photo-admin-item">
+              <img src="community2.png" alt="YWCA" style="object-position:right center">
+              <div class="photo-overlay"><button class="photo-action-btn" onclick="document.getElementById('f8').click()"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M9 2l2 2-7 7H2V9l7-7z" stroke="#1D1D1F" stroke-width="1.3" stroke-linejoin="round"/></svg></button></div>
+            </div>
+            <input type="file" accept="image/*" style="display:none" id="f8">
+            <p class="photo-label-tag">YWCA Greater Austin Workshop</p>
+          </div>
+          <div>
+            <div class="upload-zone" onclick="document.getElementById('f-new3').click()">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 4v12M4 10h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+              <p>Add photo</p>
+            </div>
+            <input type="file" accept="image/*" style="display:none" id="f-new3">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FOUNDER -->
+    <div class="section-card">
+      <div class="section-card-header">
+        <span class="section-card-title">Founder &amp; entrepreneurship support</span>
+        <span class="section-card-meta">2 photos · community2.png</span>
+      </div>
+      <div class="section-card-body">
+        <div class="photo-admin-grid">
+          <div>
+            <div class="photo-admin-item">
+              <img src="community2.png" alt="FoundHERs" style="object-position:left bottom">
+              <div class="photo-overlay"><button class="photo-action-btn" onclick="document.getElementById('f9').click()"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M9 2l2 2-7 7H2V9l7-7z" stroke="#1D1D1F" stroke-width="1.3" stroke-linejoin="round"/></svg></button></div>
+            </div>
+            <input type="file" accept="image/*" style="display:none" id="f9">
+            <p class="photo-label-tag">FoundHERs &amp; FIESTA Austin</p>
+          </div>
+          <div>
+            <div class="photo-admin-item">
+              <img src="community2.png" alt="Harvard HBS" style="object-position:right center">
+              <div class="photo-overlay"><button class="photo-action-btn" onclick="document.getElementById('f10').click()"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M9 2l2 2-7 7H2V9l7-7z" stroke="#1D1D1F" stroke-width="1.3" stroke-linejoin="round"/></svg></button></div>
+            </div>
+            <input type="file" accept="image/*" style="display:none" id="f10">
+            <p class="photo-label-tag">UX Advisor · Harvard HBS Foundry</p>
+          </div>
+          <div>
+            <div class="upload-zone" onclick="document.getElementById('f-new4').click()">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 4v12M4 10h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+              <p>Add photo</p>
+            </div>
+            <input type="file" accept="image/*" style="display:none" id="f-new4">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DEPLOY INSTRUCTIONS -->
+    <div class="section-card">
+      <div class="section-card-header">
+        <span class="section-card-title">How to make the site live</span>
+        <span class="section-card-meta">Step by step</span>
+      </div>
+      <div class="section-card-body">
+        <div style="display:flex;flex-direction:column;gap:.875rem;">
+          <div style="display:flex;gap:1rem;align-items:flex-start;">
+            <div style="width:28px;height:28px;border-radius:50%;background:#EEF0FF;color:#3634A3;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:.8rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;">1</div>
+            <div>
+              <p style="font-size:.83rem;font-weight:500;margin-bottom:2px;">Create a GitHub account</p>
+              <p style="font-size:.75rem;color:var(--gray);">Go to github.com and sign up for free. This is where your site files live.</p>
+            </div>
+          </div>
+          <div style="display:flex;gap:1rem;align-items:flex-start;">
+            <div style="width:28px;height:28px;border-radius:50%;background:#EEF0FF;color:#3634A3;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:.8rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;">2</div>
+            <div>
+              <p style="font-size:.83rem;font-weight:500;margin-bottom:2px;">Create a new repository</p>
+              <p style="font-size:.75rem;color:var(--gray);">Click "New repository" → name it <code style="background:var(--bg);padding:1px 5px;border-radius:4px;font-size:.72rem;">portfolio</code> → set it to Public → click Create.</p>
+            </div>
+          </div>
+          <div style="display:flex;gap:1rem;align-items:flex-start;">
+            <div style="width:28px;height:28px;border-radius:50%;background:#EEF0FF;color:#3634A3;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:.8rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;">3</div>
+            <div>
+              <p style="font-size:.83rem;font-weight:500;margin-bottom:2px;">Upload all your files</p>
+              <p style="font-size:.75rem;color:var(--gray);">Click "Add file → Upload files". Drag and drop all files from your site folder: <code style="background:var(--bg);padding:1px 5px;border-radius:4px;font-size:.72rem;">index.html, admin.html, susana.avif, community1.png, community2.png, AURO.png, auro_onboarding.png, auroexpand.png</code></p>
+            </div>
+          </div>
+          <div style="display:flex;gap:1rem;align-items:flex-start;">
+            <div style="width:28px;height:28px;border-radius:50%;background:#EEF0FF;color:#3634A3;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:.8rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;">4</div>
+            <div>
+              <p style="font-size:.83rem;font-weight:500;margin-bottom:2px;">Connect Cloudflare Pages</p>
+              <p style="font-size:.75rem;color:var(--gray);">Go to pages.cloudflare.com → Create a project → Connect to Git → Select your portfolio repo → leave all settings default → click Save and Deploy. You'll get a free URL like <code style="background:var(--bg);padding:1px 5px;border-radius:4px;font-size:.72rem;">portfolio.pages.dev</code> in about 2 minutes.</p>
+            </div>
+          </div>
+          <div style="display:flex;gap:1rem;align-items:flex-start;">
+            <div style="width:28px;height:28px;border-radius:50%;background:#EEF0FF;color:#3634A3;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:.8rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;">5</div>
+            <div>
+              <p style="font-size:.83rem;font-weight:500;margin-bottom:2px;">Optional: add your custom domain</p>
+              <p style="font-size:.75rem;color:var(--gray);">Buy <code style="background:var(--bg);padding:1px 5px;border-radius:4px;font-size:.72rem;">susanachinchilla.com</code> on Cloudflare for ~$12/year. Then in Cloudflare Pages → Custom domains → add your domain. Done. No other costs ever.</p>
+            </div>
+          </div>
+          <div style="display:flex;gap:1rem;align-items:flex-start;">
+            <div style="width:28px;height:28px;border-radius:50%;background:#E3F9F0;color:#1A7A52;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:.8rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;">✓</div>
+            <div>
+              <p style="font-size:.83rem;font-weight:500;margin-bottom:2px;color:#1A7A52;">To update your site in the future</p>
+              <p style="font-size:.75rem;color:var(--gray);">Go back to GitHub → click the file you want to change → click the pencil edit icon → make changes → click "Commit changes". Cloudflare automatically rebuilds and publishes in ~1 minute.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+function previewFile(input, imgId) {
+  if (input.files && input.files[0]) {
+    const reader = new FileReader();
+    reader.onload = e => {
+      const img = input.closest('div').querySelector('img');
+      if (img) img.src = e.target.result;
+    };
+    reader.readAsDataURL(input.files[0]);
+  }
+}
+document.querySelectorAll('input[type="file"]').forEach(input => {
+  input.addEventListener('change', function() { previewFile(this); });
+});
+</script>
+</body>
+</html>

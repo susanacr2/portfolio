@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Susana Chinchilla — Senior Lead Product Designer</title>
+<title>Susana Chinchilla Senior Lead Product Designer</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
@@ -16,49 +16,50 @@
 html{scroll-behavior:smooth;}
 body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--black);font-size:16px;line-height:1.6;overflow-x:hidden;}
 
-nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 2.5rem;height:56px;background:rgba(255,255,255,.82);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:0.5px solid rgba(0,0,0,.08);}
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:0 2.5rem;height:56px;background:rgba(255,255,255,.88);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:0.5px solid rgba(0,0,0,.08);}
 .nav-logo{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:1.05rem;color:var(--black);text-decoration:none;}
 .nav-logo span{color:var(--purple);}
-.nav-links{display:flex;gap:2rem;list-style:none;}
+.nav-links{display:flex;gap:2rem;list-style:none;justify-content:center;}
 .nav-links a{font-size:.82rem;font-weight:400;color:var(--gray-text);text-decoration:none;transition:color .2s;}
 .nav-links a:hover{color:var(--black);}
-.nav-btn{font-size:.82rem;font-weight:500;background:var(--black);color:#fff;text-decoration:none;padding:.45rem 1.2rem;border-radius:980px;transition:background .2s;}
+.nav-btn{font-size:.82rem;font-weight:500;background:var(--black);color:#fff;text-decoration:none;padding:.45rem 1.2rem;border-radius:980px;transition:background .2s;justify-self:end;}
 .nav-btn:hover{background:var(--purple);}
 
+/* CREDENTIAL TICKER */
+.cred-ticker{margin-top:56px;background:#FAFAFA;border-bottom:0.5px solid rgba(0,0,0,.07);padding:.5rem 0;overflow:hidden;position:relative;}
+.cred-ticker::before,.cred-ticker::after{content:'';position:absolute;top:0;bottom:0;width:80px;z-index:2;pointer-events:none;}
+.cred-ticker::before{left:0;background:linear-gradient(to right,#FAFAFA,transparent);}
+.cred-ticker::after{right:0;background:linear-gradient(to left,#FAFAFA,transparent);}
+.cred-ticker-track{display:flex;width:max-content;animation:credscroll 44s linear infinite;}
+.cred-ticker-track:hover{animation-play-state:paused;}
+.cred-ticker-inner{display:inline-flex;align-items:center;gap:.9rem;padding:0 2.5rem;white-space:nowrap;flex-shrink:0;}
+.cred-ticker-inner span{font-size:.67rem;font-weight:500;color:#3634A3;letter-spacing:.01em;}
+.cred-dot{color:rgba(74,58,255,.25);font-size:.45rem;line-height:1;}
+@keyframes credscroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
 /* HERO */
-.hero{padding:8.5rem 2.5rem 5rem;text-align:center;max-width:860px;margin:0 auto;}
-.hero-eyebrow{font-size:.75rem;font-weight:400;color:var(--gray-text);margin-bottom:1.5rem;display:flex;align-items:center;justify-content:center;gap:8px;}
-.edot{width:6px;height:6px;border-radius:50%;background:var(--teal);animation:pulse 2s infinite;flex-shrink:0;}
-.hero-h1{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(2.75rem,6.5vw,5.75rem);letter-spacing:-.035em;line-height:1.03;color:var(--black);margin-bottom:1.5rem;}
+.hero{padding:10rem 2.5rem 6rem;text-align:center;max-width:860px;margin:0 auto;}
+.hero-eyebrow{font-size:.78rem;font-weight:500;color:var(--gray-text);margin-bottom:1.25rem;display:flex;align-items:center;justify-content:center;gap:7px;}
+.edot{width:7px;height:7px;border-radius:50%;background:var(--teal);animation:pulse 2s infinite;flex-shrink:0;}
+.hero-h1{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(2.5rem,6vw,5.5rem);letter-spacing:-.035em;line-height:1.03;color:var(--black);margin-bottom:1.35rem;}
 .hero-h1 .grad{background:linear-gradient(270deg,#4A3AFF,#9B8AFF,#C084FC,#7B6AFF,#4A3AFF);background-size:300% 300%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:gradShift 7s ease infinite;}
 @keyframes gradShift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
-.hero-sub{font-size:clamp(.95rem,1.4vw,1.1rem);font-weight:300;color:var(--gray-text);max-width:520px;margin:0 auto 2.5rem;line-height:1.75;}
-.hero-btns{display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap;margin-bottom:2.5rem;}
-.btn-dark{font-size:.86rem;font-weight:500;background:var(--black);color:#fff;text-decoration:none;padding:.75rem 1.6rem;border-radius:980px;transition:background .2s,transform .15s;display:inline-flex;align-items:center;gap:6px;}
-.btn-dark:hover{background:var(--purple);transform:translateY(-2px);}
+.hero-sub{font-size:clamp(.95rem,1.4vw,1.1rem);font-weight:300;color:var(--gray-text);max-width:500px;margin:0 auto 2.25rem;line-height:1.75;}
+.hero-btns{display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap;}
+.btn-dark{font-size:.86rem;font-weight:500;background:linear-gradient(135deg,#4A3AFF,#9B8AFF,#C084FC);background-size:200% 200%;color:#fff;text-decoration:none;padding:.75rem 1.6rem;border-radius:980px;transition:background-position .4s ease,transform .15s;display:inline-flex;align-items:center;gap:6px;animation:gradShift 7s ease infinite;}
+.btn-dark:hover{background-position:right center;transform:translateY(-2px);}
 .btn-light{font-size:.86rem;font-weight:500;background:var(--surface);color:var(--black);text-decoration:none;padding:.75rem 1.6rem;border-radius:980px;border:0.5px solid var(--border);transition:border-color .2s,transform .15s;}
 .btn-light:hover{border-color:var(--black);transform:translateY(-2px);}
 
-/* HERO PILLS — all unified purple gradient, same palette as animated headline */
-.hero-awards{display:flex;justify-content:center;gap:.45rem;flex-wrap:wrap;}
-.award-pill{
-  font-size:.68rem;font-weight:500;padding:5px 12px 5px 9px;border-radius:980px;
-  background:linear-gradient(135deg,#EEF0FF,#F5F2FF);
-  color:#3634A3;border:0.5px solid rgba(74,58,255,.18);
-  display:inline-flex;align-items:center;gap:6px;
-  transition:transform .18s,box-shadow .18s;
-}
-.award-pill:hover{transform:translateY(-1px);box-shadow:0 4px 14px rgba(74,58,255,.14);}
-.award-pill .pill-icon{width:16px;height:16px;border-radius:50%;background:rgba(74,58,255,.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
-.award-pill.p,.award-pill.t{background:linear-gradient(135deg,#EEF0FF,#F5F2FF);color:#3634A3;border-color:rgba(74,58,255,.18);}
-
-/* SUBTLE MARQUEE */
+/* METRICS MARQUEE */
 .mq-wrap{background:var(--surface);overflow:hidden;padding:.9rem 0;border-top:0.5px solid rgba(0,0,0,.06);border-bottom:0.5px solid rgba(0,0,0,.06);}
 .mq-track{display:flex;animation:marquee 34s linear infinite;white-space:nowrap;}
 .mq-item{display:flex;align-items:center;gap:1.25rem;padding:0 2.25rem;border-right:0.5px solid rgba(0,0,0,.1);flex-shrink:0;}
 .mq-val{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:1.1rem;color:var(--black);letter-spacing:-.02em;}
 .mq-lbl{font-size:.7rem;color:var(--gray-text);max-width:100px;line-height:1.3;}
 @keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
 
 /* SECTIONS */
 .section{padding:6rem 2.5rem;max-width:1100px;margin:0 auto;}
@@ -66,7 +67,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .sh2{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(2rem,4vw,3.25rem);letter-spacing:-.03em;line-height:1.05;margin-bottom:1rem;}
 .ssub{font-size:.92rem;font-weight:300;color:var(--gray-text);max-width:480px;line-height:1.7;margin-bottom:3rem;}
 
-/* MODERN PROJECT TAGS — icon dot + text, colors from gradient palette */
+/* PROJECT TAGS */
 .ptags{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:.9rem;}
 .ptag{font-size:.63rem;font-weight:500;padding:4px 10px 4px 8px;border-radius:980px;border:0.5px solid transparent;display:inline-flex;align-items:center;gap:5px;}
 .ptag-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0;}
@@ -171,74 +172,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .bpills{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:1.75rem;}
 .bpill{font-size:.66rem;font-weight:500;padding:4px 10px 4px 8px;border-radius:980px;background:#EEF0FF;color:#3634A3;border:0.5px solid rgba(54,52,163,.15);display:inline-flex;align-items:center;gap:5px;}
 .bpill-dot{width:5px;height:5px;border-radius:50%;background:#4A3AFF;flex-shrink:0;}
-.auro-screens{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;}
-.auro-screen{border-radius:14px;overflow:hidden;box-shadow:0 4px 20px rgba(74,58,255,.1),0 0 0 0.5px rgba(0,0,0,.08);background:#0D0D16;}
-.auro-screen img{width:100%;display:block;object-fit:cover;}
-.auro-screen-tall{grid-row:span 2;}
-.auro-screen-tall img{height:100%;object-fit:cover;}
-.auro-full{border-radius:16px;overflow:hidden;box-shadow:0 8px 32px rgba(74,58,255,.1),0 0 0 0.5px rgba(0,0,0,.08);}
-.auro-full img{width:100%;display:block;}
 
-/* CONTACT */
-.contact-section{background:linear-gradient(160deg,#1a0A3d 0%,#2d1b69 35%,#4A3AFF 65%,#7B6AFF 85%,#9B8AFF 100%);position:relative;overflow:hidden;}
-.cmq-wrap{background:rgba(255,255,255,.07);overflow:hidden;padding:.75rem 0;border-bottom:0.5px solid rgba(255,255,255,.1);}
-.cmq-track{display:flex;animation:marquee 28s linear infinite;white-space:nowrap;}
-.cmi{display:flex;align-items:center;gap:1rem;padding:0 2rem;border-right:0.5px solid rgba(255,255,255,.12);flex-shrink:0;}
-.cmi-v{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:1.1rem;color:rgba(255,255,255,.9);}
-.cmi-l{font-size:.68rem;color:rgba(255,255,255,.4);max-width:100px;line-height:1.3;}
-.contact-body{text-align:center;padding:6rem 2.5rem 2rem;position:relative;z-index:1;}
-.cey{display:inline-block;background:rgba(255,255,255,.1);backdrop-filter:blur(8px);color:rgba(255,255,255,.75);font-size:.68rem;font-weight:500;letter-spacing:.06em;padding:5px 14px;border-radius:980px;margin-bottom:1.5rem;border:0.5px solid rgba(255,255,255,.18);}
-.ch2{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(2.5rem,6vw,5.5rem);letter-spacing:-.04em;line-height:.95;color:#fff;margin-bottom:1.25rem;}
-.ch2 em{font-style:normal;background:linear-gradient(135deg,#C084FC,#E0C8FF);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
-.csub{font-size:.9rem;color:rgba(255,255,255,.5);max-width:400px;margin:0 auto 2.5rem;line-height:1.65;}
-.cbtns{display:flex;justify-content:center;gap:.75rem;flex-wrap:wrap;}
-.bws{font-size:.86rem;font-weight:500;background:rgba(255,255,255,.92);color:#3634A3;text-decoration:none;padding:.75rem 1.6rem;border-radius:980px;transition:background .2s,transform .15s;border:0.5px solid rgba(255,255,255,.8);}
-.bws:hover{background:#fff;transform:translateY(-2px);}
-.bgw{font-size:.86rem;font-weight:500;background:rgba(255,255,255,.08);color:rgba(255,255,255,.8);text-decoration:none;padding:.75rem 1.6rem;border-radius:980px;border:0.5px solid rgba(255,255,255,.2);transition:all .2s;}
-.bgw:hover{background:rgba(255,255,255,.15);border-color:rgba(255,255,255,.4);color:#fff;transform:translateY(-2px);}
-.contact-spacer{height:3rem;}
-.ai-footer{background:rgba(0,0,0,.2);backdrop-filter:blur(12px);padding:1.25rem 2.5rem;display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;border-top:0.5px solid rgba(255,255,255,.08);}
-.ai-note{display:flex;align-items:center;gap:9px;font-size:.71rem;color:rgba(255,255,255,.45);max-width:560px;line-height:1.5;}
-.ai-badge{display:inline-flex;align-items:center;gap:5px;background:rgba(255,255,255,.09);border:0.5px solid rgba(255,255,255,.15);border-radius:980px;padding:3px 10px;font-size:.63rem;font-weight:500;color:rgba(255,255,255,.65);white-space:nowrap;flex-shrink:0;}
-.flinks{display:flex;gap:1.5rem;}
-.flinks a{font-size:.71rem;color:rgba(255,255,255,.3);text-decoration:none;transition:color .2s;}
-.flinks a:hover{color:rgba(255,255,255,.7);}
-
-.reveal{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease;}
-.reveal.visible{opacity:1;transform:translateY(0);}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
-
-/* SVG ICONS inline */
-.ico{width:14px;height:14px;flex-shrink:0;display:block;}
-
-@media(max-width:860px){
-  nav{padding:0 1.25rem;}.nav-links{display:none;}
-  .hero{padding:7rem 1.5rem 3.5rem;}
-  .section{padding:4rem 1.5rem;}
-  .proj-card,.proj-card.flip{grid-template-columns:1fr;min-height:auto;}
-  .proj-card.flip .proj-img,.proj-card.flip .proj-body{order:unset;}
-  .proj-img{min-height:220px;}
-  .creds-grid{grid-template-columns:1fr 1fr;}
-  .community-section{padding:4rem 1.5rem;}
-  .photo-grid-3{grid-template-columns:1fr 1fr;}
-  .photo-grid-2{grid-template-columns:1fr;}
-  .about-inner{padding:4rem 1.5rem;}
-  .about-top{grid-template-columns:1fr;gap:2.5rem;}
-  .about-photo img{height:340px;}
-  .who-cards{grid-template-columns:1fr;}
-  .building-inner{grid-template-columns:1fr;padding:4rem 1.5rem;gap:3rem;}
-  .auro-screens{grid-template-columns:1fr;}
-  .auro-screen-tall{grid-row:auto;}
-  .contact-body{padding:4rem 1.5rem 2rem;}
-  .ai-footer{flex-direction:column;text-align:center;padding:1.25rem 1.5rem;}
-  .ai-note{justify-content:center;}
-}
-@media(max-width:540px){
-  .creds-grid{grid-template-columns:1fr;}
-  .photo-grid-3{grid-template-columns:1fr;}
-}
-
-/* AURO MOCKUP */
+/* AURO PHONE MOCKUP */
 .auro-mockup{display:flex;justify-content:center;align-items:center;padding:1rem 0;}
 .auro-phone{background:#0D0D1A;border-radius:24px;overflow:hidden;width:100%;max-width:300px;box-shadow:0 16px 48px rgba(74,58,255,.2),0 0 0 1px rgba(255,255,255,.06);margin:0 auto;}
 .auro-phone-bar{display:flex;justify-content:space-between;align-items:center;padding:.75rem 1rem;background:rgba(255,255,255,.04);border-bottom:0.5px solid rgba(255,255,255,.06);}
@@ -257,75 +192,90 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .auro-rec-sub{font-size:.6rem;color:rgba(255,255,255,.35);}
 .auro-cta{background:linear-gradient(135deg,#4A3AFF,#9B8AFF);border-radius:10px;padding:.625rem;text-align:center;font-size:.72rem;font-weight:600;color:#fff;cursor:pointer;}
 .auro-phone-nav{display:flex;justify-content:space-around;align-items:center;padding:.75rem 1rem;border-top:0.5px solid rgba(255,255,255,.06);}
+
+/* CONTACT */
+.contact-section{background:linear-gradient(160deg,#1a0A3d 0%,#2d1b69 35%,#4A3AFF 65%,#7B6AFF 85%,#9B8AFF 100%);position:relative;overflow:hidden;}
+.cmq-wrap{background:rgba(255,255,255,.07);overflow:hidden;padding:.75rem 0;border-bottom:0.5px solid rgba(255,255,255,.1);}
+.cmq-track{display:flex;animation:marquee 28s linear infinite;white-space:nowrap;}
+.cmi{display:flex;align-items:center;gap:1rem;padding:0 2rem;border-right:0.5px solid rgba(255,255,255,.12);flex-shrink:0;}
+.cmi-v{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:1.1rem;color:rgba(255,255,255,.9);}
+.cmi-l{font-size:.68rem;color:rgba(255,255,255,.4);max-width:100px;line-height:1.3;}
+.contact-body{text-align:center;padding:6rem 2.5rem 2rem;position:relative;z-index:1;}
+.cey{display:inline-block;background:rgba(255,255,255,.1);backdrop-filter:blur(8px);color:rgba(255,255,255,.75);font-size:.68rem;font-weight:500;letter-spacing:.06em;padding:5px 14px;border-radius:980px;margin-bottom:1.5rem;border:0.5px solid rgba(255,255,255,.18);}
+.ch2{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(2.5rem,6vw,5.5rem);letter-spacing:-.04em;line-height:.95;color:#fff;margin-bottom:1.25rem;}
+.ch2 em{font-style:normal;background:linear-gradient(135deg,#C084FC,#E0C8FF);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.csub{font-size:.9rem;color:rgba(255,255,255,.5);max-width:380px;margin:0 auto 2.5rem;line-height:1.65;}
+.cbtns{display:flex;justify-content:center;gap:.75rem;flex-wrap:wrap;}
+.bws{font-size:.86rem;font-weight:500;background:rgba(255,255,255,.92);color:#3634A3;text-decoration:none;padding:.75rem 1.6rem;border-radius:980px;transition:background .2s,transform .15s;border:0.5px solid rgba(255,255,255,.8);}
+.bws:hover{background:#fff;transform:translateY(-2px);}
+.bgw{font-size:.86rem;font-weight:500;background:rgba(255,255,255,.08);color:rgba(255,255,255,.8);text-decoration:none;padding:.75rem 1.6rem;border-radius:980px;border:0.5px solid rgba(255,255,255,.2);transition:all .2s;}
+.bgw:hover{background:rgba(255,255,255,.15);border-color:rgba(255,255,255,.4);color:#fff;transform:translateY(-2px);}
+.contact-spacer{height:3rem;}
+.ai-footer{background:rgba(0,0,0,.2);backdrop-filter:blur(12px);padding:1.25rem 2.5rem;display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;border-top:0.5px solid rgba(255,255,255,.08);}
+.ai-note{display:flex;align-items:center;gap:9px;font-size:.71rem;color:rgba(255,255,255,.45);max-width:560px;line-height:1.5;}
+.ai-badge{display:inline-flex;align-items:center;gap:5px;background:rgba(255,255,255,.09);border:0.5px solid rgba(255,255,255,.15);border-radius:980px;padding:3px 10px;font-size:.63rem;font-weight:500;color:rgba(255,255,255,.65);white-space:nowrap;flex-shrink:0;}
+.flinks{display:flex;gap:1.5rem;}
+.flinks a{font-size:.71rem;color:rgba(255,255,255,.3);text-decoration:none;transition:color .2s;}
+.flinks a:hover{color:rgba(255,255,255,.7);}
+
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease;}
+.reveal.visible{opacity:1;transform:translateY(0);}
+
+@media(max-width:860px){
+  nav{padding:0 1.25rem;}.nav-links{display:none;}
+  .hero{padding:3rem 1.5rem 3.5rem;}
+  .section{padding:4rem 1.5rem;}
+  .proj-card,.proj-card.flip{grid-template-columns:1fr;min-height:auto;}
+  .proj-card.flip .proj-img,.proj-card.flip .proj-body{order:unset;}
+  .proj-img{min-height:220px;}
+  .creds-grid{grid-template-columns:1fr 1fr;}
+  .community-section{padding:4rem 1.5rem;}
+  .photo-grid-3{grid-template-columns:1fr 1fr;}
+  .photo-grid-2{grid-template-columns:1fr;}
+  .about-inner{padding:4rem 1.5rem;}
+  .about-top{grid-template-columns:1fr;gap:2.5rem;}
+  .about-photo img{height:340px;}
+  .who-cards{grid-template-columns:1fr;}
+  .building-inner{grid-template-columns:1fr;padding:4rem 1.5rem;gap:3rem;}
+  .contact-body{padding:4rem 1.5rem 2rem;}
+  .ai-footer{flex-direction:column;text-align:center;padding:1.25rem 1.5rem;}
+  .ai-note{justify-content:center;}
+  .cred-ticker-inner span{font-size:.62rem;}
+}
+@media(max-width:540px){
+  .creds-grid{grid-template-columns:1fr;}
+  .photo-grid-3{grid-template-columns:1fr;}
+}
+
+.cred-ticker.mid{margin-top:0;border-top:0.5px solid rgba(0,0,0,.07);}
 </style>
 </head>
 <body>
 
+<!-- NAV -->
 <nav>
   <a href="#" class="nav-logo">SC<span>.</span></a>
   <ul class="nav-links">
     <li><a href="#work">Work</a></li>
-    <li><a href="#community">Community</a></li>
     <li><a href="#about">About</a></li>
+    <li><a href="#community">Community</a></li>
     <li><a href="#building">Building</a></li>
   </ul>
   <a href="mailto:suschinchilla@gmail.com" class="nav-btn">Get in touch</a>
 </nav>
 
+
 <!-- HERO -->
 <div class="hero">
-  <div class="hero-eyebrow"><span class="edot"></span>Senior Lead Product Designer · 6+ years at IBM · Austin, TX</div>
-  <h1 class="hero-h1">Enterprise UX &amp;<br><span class="grad">AI/ML design leadership.</span></h1>
-  <p class="hero-sub">From watsonx Orchestrate to IBM's Carbon Design System, turning complex organizational problems into measurable impact.</p>
+  <h1 class="hero-h1">Enterprise UX &amp; AI/ML <span class="grad">design leadership.</span></h1>
+  <p class="hero-sub">Senior Lead Product Designer with 6+ years at IBM<br>from watsonx Orchestrate to Carbon Design System.</p>
   <div class="hero-btns">
     <a href="#work" class="btn-dark">⚡ View my work</a>
     <a href="mailto:suschinchilla@gmail.com" class="btn-light">Let's talk</a>
   </div>
-  <div class="hero-awards">
-    <span class="award-pill p">
-      <span class="pill-icon">
-        <svg class="ico" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6" stroke="#3634A3" stroke-width="1.5"/><path d="M5.5 8l1.5 1.5L10.5 6" stroke="#3634A3" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </span>IBM Equity Award · CEO Recognition
-    </span>
-    <span class="award-pill p">
-      <span class="pill-icon">
-        <svg class="ico" viewBox="0 0 16 16" fill="none"><path d="M8 2l1.5 3 3.5.5-2.5 2.5.5 3.5L8 10l-3 1.5.5-3.5L3 5.5l3.5-.5L8 2z" stroke="#3634A3" stroke-width="1.5" stroke-linejoin="round"/></svg>
-      </span>IBM Standout Award
-    </span>
-    <span class="award-pill p">
-      <span class="pill-icon">
-        <svg class="ico" viewBox="0 0 16 16" fill="none"><path d="M8 3C5.2 3 3 5.2 3 8s2.2 5 5 5 5-2.2 5-5-2.2-5-5-5z" stroke="#3634A3" stroke-width="1.5"/><path d="M6 8c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2-2-.9-2-2z" stroke="#3634A3" stroke-width="1.3"/></svg>
-      </span>IBM Culture Catalyst
-    </span>
-    <span class="award-pill t">
-      <span class="pill-icon">
-        <svg class="ico" viewBox="0 0 16 16" fill="none"><rect x="2" y="3" width="12" height="9" rx="2" stroke="#3634A3" stroke-width="1.5"/><path d="M5 7h6M5 9.5h4" stroke="#3634A3" stroke-width="1.3" stroke-linecap="round"/></svg>
-      </span>UX Advisor · Harvard Business School
-    </span>
-    <span class="award-pill t">
-      <span class="pill-icon">
-        <svg class="ico" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="6" r="3" stroke="#3634A3" stroke-width="1.5"/><path d="M2 13c0-2.2 2.7-4 6-4s6 1.8 6 4" stroke="#3634A3" stroke-width="1.5" stroke-linecap="round"/></svg>
-      </span>Mentor · UT Austin
-    </span>
-    <span class="award-pill">
-      <span class="pill-icon" style="background:rgba(0,0,0,.06)">
-        <svg class="ico" viewBox="0 0 16 16" fill="none"><path d="M8 2L9.8 6.2L14 7l-3 3 .7 4L8 12l-3.7 2 .7-4L2 7l4.2-.8L8 2z" stroke="#3634A3" stroke-width="1.3" stroke-linejoin="round"/></svg>
-      </span>M.A. UX/UI · 4.0 GPA · Summa Cum Laude
-    </span>
-    <span class="award-pill p">
-      <span class="pill-icon">
-        <svg class="ico" viewBox="0 0 16 16" fill="none"><rect x="2" y="5" width="12" height="8" rx="1.5" stroke="#3634A3" stroke-width="1.5"/><path d="M5 5V4a3 3 0 016 0v1" stroke="#3634A3" stroke-width="1.5" stroke-linecap="round"/></svg>
-      </span>Board Member
-    </span>
-    <span class="award-pill t">
-      <span class="pill-icon">
-        <svg class="ico" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="5.5" stroke="#3634A3" stroke-width="1.5"/><path d="M8 5v3l2 1" stroke="#3634A3" stroke-width="1.3" stroke-linecap="round"/></svg>
-      </span>Regional Community Leader
-    </span>
-  </div>
 </div>
 
-<!-- MARQUEE -->
+<!-- METRICS MARQUEE -->
 <div class="mq-wrap">
   <div class="mq-track">
     <div class="mq-item"><span class="mq-val">6+</span><span class="mq-lbl">Years enterprise UX at IBM</span></div>
@@ -369,11 +319,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
         </div>
       </div>
       <div class="proj-body">
-        <div class="ptags">
-          <span class="ptag v"><span class="ptag-dot"></span>PLG strategy</span>
-          <span class="ptag v"><span class="ptag-dot"></span>Design systems</span>
-          <span class="ptag v"><span class="ptag-dot"></span>Research</span>
-        </div>
+        <div class="ptags"><span class="ptag v"><span class="ptag-dot"></span>PLG strategy</span><span class="ptag v"><span class="ptag-dot"></span>Design systems</span><span class="ptag v"><span class="ptag-dot"></span>Research</span></div>
         <h3 class="ptitle">Product-Led Growth onboarding across IBM Software</h3>
         <p class="pdesc">Led trial onboarding strategy org-wide. Published 100+ best practices, created the Carbon Interstitial pattern, and scaled reusable guidance to 39+ product teams.</p>
         <div class="pmets">
@@ -384,8 +330,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
         <span class="plink">View case study <span class="parrow">↗</span></span>
       </div>
     </a>
-
-    <a href="#" class="proj-card flip reveal">
+    <a href="case-study-carbon.html" class="proj-card flip reveal">
       <div class="proj-img g2">
         <div class="proj-img-inner">
           <div class="mframe">
@@ -400,10 +345,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
         </div>
       </div>
       <div class="proj-body">
-        <div class="ptags">
-          <span class="ptag t"><span class="ptag-dot"></span>Content strategy</span>
-          <span class="ptag t"><span class="ptag-dot"></span>Design systems</span>
-        </div>
+        <div class="ptags"><span class="ptag t"><span class="ptag-dot"></span>Content strategy</span><span class="ptag t"><span class="ptag-dot"></span>Design systems</span></div>
         <h3 class="ptitle">Carbon Design System site redesign</h3>
         <p class="pdesc">Transformed Carbon's static docs into tutorial-style learning with video walkthroughs, Figma links, and direct code access. Shaped the 2026 Carbon site relaunch for 450k+ monthly visitors.</p>
         <div class="pmets">
@@ -413,8 +355,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
         <span class="plink">View case study <span class="parrow">↗</span></span>
       </div>
     </a>
-
-    <a href="#" class="proj-card reveal">
+    <a href="case-study-content-services.html" class="proj-card reveal">
       <div class="proj-img g3">
         <div class="proj-img-inner">
           <div class="mframe">
@@ -428,11 +369,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
         </div>
       </div>
       <div class="proj-body">
-        <div class="ptags">
-          <span class="ptag c"><span class="ptag-dot"></span>Leadership</span>
-          <span class="ptag c"><span class="ptag-dot"></span>Enterprise</span>
-          <span class="ptag c"><span class="ptag-dot"></span>AWS</span>
-        </div>
+        <div class="ptags"><span class="ptag c"><span class="ptag-dot"></span>Leadership</span><span class="ptag c"><span class="ptag-dot"></span>Enterprise</span><span class="ptag c"><span class="ptag-dot"></span>AWS</span></div>
         <h3 class="ptitle">IBM Content Services: legacy to SaaS</h3>
         <p class="pdesc">Led design modernization of a complex legacy enterprise platform. Facilitated Design Thinking workshops, led a team of 4 designers, and delivered a simpler admin experience within one year.</p>
         <div class="pmets">
@@ -453,69 +390,15 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
       <h2 class="sh2">Built across 6+ years<br>of real enterprise work.</h2>
     </div>
     <div class="creds-grid reveal">
-      <div class="cred-card hi">
-        <div class="cred-icon" style="background:#EEF0FF;">
-          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="2" y="4" width="14" height="10" rx="2.5" stroke="#3634A3" stroke-width="1.5"/><path d="M6 9l2 2 4-4" stroke="#3634A3" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
-        <p class="cred-title">UX Advisor · Harvard Business School</p>
-        <p class="cred-sub">UX feedback, experience audits and improvement recommendations for HBS Foundry product.</p>
-      </div>
-      <div class="cred-card hi">
-        <div class="cred-icon" style="background:#EEF0FF;">
-          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 2l1.8 4.2L15 7l-3 3 .7 4.2L9 12l-3.7 2.2.7-4.2L3 7l4.2-.8L9 2z" stroke="#3634A3" stroke-width="1.5" stroke-linejoin="round"/></svg>
-        </div>
-        <p class="cred-title">Enterprise Design Thinking Coach · IBM</p>
-        <p class="cred-sub">Certified to facilitate IBM Design Thinking workshops across global, cross-functional teams.</p>
-      </div>
-      <div class="cred-card hi">
-        <div class="cred-icon" style="background:#EEF0FF;">
-          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="6.5" stroke="#3634A3" stroke-width="1.5"/><path d="M6 9l2 2 4-4" stroke="#3634A3" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
-        <p class="cred-title">2025 IBMer watsonx Challenge</p>
-        <p class="cred-sub">Recognized for AI innovation and prompting excellence within IBM's watsonx program.</p>
-      </div>
-      <div class="cred-card">
-        <div class="cred-icon" style="background:#F5F5F7;">
-          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="3" y="3" width="12" height="12" rx="2" stroke="#444" stroke-width="1.5"/><path d="M6 9h6M9 6v6" stroke="#444" stroke-width="1.5" stroke-linecap="round"/></svg>
-        </div>
-        <p class="cred-title">AI/ML &amp; Generative AI Certifications</p>
-        <p class="cred-sub">Gen AI Fundamentals, AI Assistants L1, AI Maturity Framework, Trustworthy AI, AI Associate Leader.</p>
-      </div>
-      <div class="cred-card">
-        <div class="cred-icon" style="background:#F5F5F7;">
-          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 2L10.8 6.5H15.5L11.5 9.3L13 14L9 11.3L5 14L6.5 9.3L2.5 6.5H7.2L9 2Z" stroke="#444" stroke-width="1.5" stroke-linejoin="round"/></svg>
-        </div>
-        <p class="cred-title">M.A. UX/UI Design &amp; Development</p>
-        <p class="cred-sub">New York Institute of Technology. 4.0 GPA. Summa Cum Laude. Honor's Student 2019 to 2021.</p>
-      </div>
-      <div class="cred-card">
-        <div class="cred-icon" style="background:#F5F5F7;">
-          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9l4 4 8-8" stroke="#444" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
-        <p class="cred-title">Product-Led Growth Certification · Pendo</p>
-        <p class="cred-sub">Certified in PLG strategy alongside IBM Product Academy and IBM Agile Explorer credentials.</p>
-      </div>
-      <div class="cred-card">
-        <div class="cred-icon" style="background:#FFF0EB;">
-          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="6" r="3" stroke="#9A3412" stroke-width="1.5"/><path d="M3 15c0-2.8 2.7-5 6-5s6 2.2 6 5" stroke="#9A3412" stroke-width="1.5" stroke-linecap="round"/></svg>
-        </div>
-        <p class="cred-title">IBM Equity · Standout · Culture Catalyst</p>
-        <p class="cred-sub">Three IBM recognition awards for impact, culture-building, and equity in design.</p>
-      </div>
-      <div class="cred-card">
-        <div class="cred-icon" style="background:#E3F9F0;">
-          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="6" r="2.5" stroke="#3634A3" stroke-width="1.5"/><path d="M4 15c0-2.5 2.2-4.5 5-4.5s5 2 5 4.5" stroke="#3634A3" stroke-width="1.5" stroke-linecap="round"/></svg>
-        </div>
-        <p class="cred-title">Mentor · McCombs School of Business, RISE &amp; ALPFA</p>
-        <p class="cred-sub">Guiding students through mentorship and career development at McCombs School of Business.</p>
-      </div>
-      <div class="cred-card">
-        <div class="cred-icon" style="background:#E3F9F0;">
-          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="2" y="4" width="14" height="10" rx="2" stroke="#3634A3" stroke-width="1.5"/><path d="M6 8h6M6 11h4" stroke="#3634A3" stroke-width="1.3" stroke-linecap="round"/></svg>
-        </div>
-        <p class="cred-title">AI Advisory Committee · Austin Community College</p>
-        <p class="cred-sub">Contributed to AI course development, microcredentials, and certifications for students.</p>
-      </div>
+      <div class="cred-card hi"><div class="cred-icon" style="background:#EEF0FF"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="2" y="4" width="14" height="10" rx="2.5" stroke="#3634A3" stroke-width="1.5"/><path d="M6 9l2 2 4-4" stroke="#3634A3" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><p class="cred-title">UX Advisor · Harvard Business School</p><p class="cred-sub">UX feedback, experience audits and improvement recommendations for HBS Foundry product.</p></div>
+      <div class="cred-card hi"><div class="cred-icon" style="background:#EEF0FF"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 2l1.8 4.2L15 7l-3 3 .7 4.2L9 12l-3.7 2.2.7-4.2L3 7l4.2-.8L9 2z" stroke="#3634A3" stroke-width="1.5" stroke-linejoin="round"/></svg></div><p class="cred-title">Enterprise Design Thinking Coach · IBM</p><p class="cred-sub">Certified to facilitate IBM Design Thinking workshops across global, cross-functional teams.</p></div>
+      <div class="cred-card hi"><div class="cred-icon" style="background:#EEF0FF"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="6.5" stroke="#3634A3" stroke-width="1.5"/><path d="M6 9l2 2 4-4" stroke="#3634A3" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><p class="cred-title">2025 IBMer watsonx Challenge</p><p class="cred-sub">Recognized for AI innovation and prompting excellence within IBM's watsonx program.</p></div>
+      <div class="cred-card"><div class="cred-icon" style="background:#F5F5F7"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="3" y="3" width="12" height="12" rx="2" stroke="#444" stroke-width="1.5"/><path d="M6 9h6M9 6v6" stroke="#444" stroke-width="1.5" stroke-linecap="round"/></svg></div><p class="cred-title">AI/ML &amp; Generative AI Certifications</p><p class="cred-sub">Gen AI Fundamentals, AI Assistants L1, AI Maturity Framework, Trustworthy AI, AI Associate Leader.</p></div>
+      <div class="cred-card"><div class="cred-icon" style="background:#F5F5F7"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 2L10.8 6.5H15.5L11.5 9.3L13 14L9 11.3L5 14L6.5 9.3L2.5 6.5H7.2L9 2Z" stroke="#444" stroke-width="1.5" stroke-linejoin="round"/></svg></div><p class="cred-title">M.A. UX/UI Design &amp; Development</p><p class="cred-sub">New York Institute of Technology. 4.0 GPA. Summa Cum Laude. Honor's Student 2019 to 2021.</p></div>
+      <div class="cred-card"><div class="cred-icon" style="background:#F5F5F7"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9l4 4 8-8" stroke="#444" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><p class="cred-title">Product-Led Growth Certification · Pendo</p><p class="cred-sub">Certified in PLG strategy alongside IBM Product Academy and IBM Agile Explorer credentials.</p></div>
+      <div class="cred-card"><div class="cred-icon" style="background:#FFF0EB"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="6" r="3" stroke="#9A3412" stroke-width="1.5"/><path d="M3 15c0-2.8 2.7-5 6-5s6 2.2 6 5" stroke="#9A3412" stroke-width="1.5" stroke-linecap="round"/></svg></div><p class="cred-title">IBM Equity · Standout · Culture Catalyst</p><p class="cred-sub">Three IBM recognition awards for impact, culture-building, and equity in design.</p></div>
+      <div class="cred-card"><div class="cred-icon" style="background:#E3F9F0"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="6" r="2.5" stroke="#1A7A52" stroke-width="1.5"/><path d="M4 15c0-2.5 2.2-4.5 5-4.5s5 2 5 4.5" stroke="#1A7A52" stroke-width="1.5" stroke-linecap="round"/></svg></div><p class="cred-title">Mentor · McCombs School of Business</p><p class="cred-sub">Guiding students through mentorship and career development at UT Austin RISE &amp; ALPFA programs.</p></div>
+      <div class="cred-card"><div class="cred-icon" style="background:#E3F9F0"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="2" y="4" width="14" height="10" rx="2" stroke="#1A7A52" stroke-width="1.5"/><path d="M6 8h6M6 11h4" stroke="#1A7A52" stroke-width="1.3" stroke-linecap="round"/></svg></div><p class="cred-title">AI Advisory Committee · Austin Community College</p><p class="cred-sub">Contributed to AI course development, microcredentials, and certifications for students.</p></div>
     </div>
   </div>
 </div>
@@ -526,7 +409,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
     <div class="community-header reveal">
       <span class="spill">Community &amp; leadership</span>
       <h2 class="sh2">Building something<br>in every room.</h2>
-      <p class="ssub">Design thinking workshops, community organizing, mentorship, and advocacy — leadership that extends far beyond the screen.</p>
+      <p class="ssub">Design thinking workshops, community organizing, mentorship, and advocacy leadership that extends far beyond the screen.</p>
     </div>
     <div class="photo-group reveal">
       <p class="photo-group-label">Workshops &amp; Education</p>
@@ -561,20 +444,61 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
   </div>
 </div>
 
+
+<!-- CREDENTIAL TICKER 2 before About -->
+<div class="cred-ticker mid">
+  <div class="cred-ticker-track">
+    <div class="cred-ticker-inner">
+      <span>IBM Equity Award · CEO Recognition</span>
+      <span class="cred-dot">◆</span>
+      <span>IBM Standout Award</span>
+      <span class="cred-dot">◆</span>
+      <span>IBM Culture Catalyst</span>
+      <span class="cred-dot">◆</span>
+      <span>UX Advisor · Harvard Business School</span>
+      <span class="cred-dot">◆</span>
+      <span>Mentor · McCombs School of Business</span>
+      <span class="cred-dot">◆</span>
+      <span>M.A. UX/UI · 4.0 GPA · Summa Cum Laude</span>
+      <span class="cred-dot">◆</span>
+      <span>Board Member · Latina Foundation</span>
+      <span class="cred-dot">◆</span>
+      <span>Regional Community Leader · Poderistas</span>
+      <span class="cred-dot">◆</span>
+    </div>
+    <div class="cred-ticker-inner" aria-hidden="true">
+      <span>IBM Equity Award · CEO Recognition</span>
+      <span class="cred-dot">◆</span>
+      <span>IBM Standout Award</span>
+      <span class="cred-dot">◆</span>
+      <span>IBM Culture Catalyst</span>
+      <span class="cred-dot">◆</span>
+      <span>UX Advisor · Harvard Business School</span>
+      <span class="cred-dot">◆</span>
+      <span>Mentor · McCombs School of Business</span>
+      <span class="cred-dot">◆</span>
+      <span>M.A. UX/UI · 4.0 GPA · Summa Cum Laude</span>
+      <span class="cred-dot">◆</span>
+      <span>Board Member · Latina Foundation</span>
+      <span class="cred-dot">◆</span>
+      <span>Regional Community Leader · Poderistas</span>
+      <span class="cred-dot">◆</span>
+    </div>
+  </div>
+</div>
+
 <!-- ABOUT -->
 <div class="about-section" id="about">
   <div class="about-inner">
     <div class="about-top reveal">
       <div class="about-photo">
         <img src="susana.avif" alt="Susana Chinchilla">
-        <div class="about-photo-caption">
-          <p>Susana Chinchilla</p>
-        </div>
+        <div class="about-photo-caption"><p>Susana Chinchilla</p></div>
       </div>
       <div>
         <h2 class="about-greeting">Hi,<br>I'm <span class="hi-name">Su!</span></h2>
         <div class="about-body">
-          <p>I grew up in Guatemala City, moved to New York for my B.F.A. and M.A., and now I'm based in Austin, TX. I became passionate about UX through a charity project during my undergraduate studies, where I conducted user research to support weavers and their children in Guatemala. That work provided 13 kids with scholarships, school supplies, and uniforms — that's when I knew I wanted to keep using my skills to create real impact.</p>
+          <p>I grew up in Guatemala City, moved to New York for my B.F.A. and M.A., and now I'm based in Austin, TX. I became passionate about UX through a charity project during my undergraduate studies, where I conducted user research to support weavers and their children in Guatemala. That work provided 13 kids with scholarships, school supplies, and uniforms that's when I knew I wanted to keep using my skills to create real impact.</p>
           <p>After 6+ years at IBM, I've delivered enterprise and AI/ML experiences across products, roles, and countries. I became an <strong>Enterprise Design Thinking Coach</strong> and have facilitated over 30 workshops worldwide, including the UK, with organizations like YWCA Greater Austin, Code2College, and UT McCombs School of Business.</p>
           <p>I love building communities to share knowledge, make designs stronger, and avoid silos. Outside of work you'll find me lifting heavy weights, learning something new, spending time with my pets, video calling my family in Guatemala, or traveling.</p>
           <p><strong>Use your power. Inspire growth. Drive change.</strong></p>
@@ -585,7 +509,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
       <div class="wcard"><div class="wicon" style="background:#EEF0FF"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M9.5 2L4 9h5.5L6.5 14 13 7H7.5L9.5 2z" fill="#4A3AFF"/></svg></div><div><h4>AI/ML product design</h4><p>Led UX for watsonx Orchestrate, IBM's flagship AI product, from discovery to production with 4 global design leads.</p></div></div>
       <div class="wcard"><div class="wicon" style="background:#E3F9F0">◈</div><div><h4>Design systems at scale</h4><p>Carbon contributor with patterns adopted by 324 IBM teams, 640k+ GitHub repos, and 450k monthly visitors.</p></div></div>
       <div class="wcard"><div class="wicon" style="background:#FFF0EB">◎</div><div><h4>Workshop facilitation</h4><p>IBM Design Thinking Coach who aligns cross-functional teams across geographies and gets everyone out with an action plan.</p></div></div>
-      <div class="wcard"><div class="wicon" style="background:#FFFBE0">✦</div><div><h4>Community leadership</h4><p>Harvard HBS Foundry advisor, Mentor at McCombs School of Business, Latina Foundation board member, and Poderistas regional leader across four states.</p></div></div>
+      <div class="wcard"><div class="wicon" style="background:#FFFBE0">✦</div><div><h4>Community leadership</h4><p>Harvard HBS Foundry advisor, McCombs mentor, Latina Foundation board member, and Poderistas regional leader across four states.</p></div></div>
     </div>
   </div>
 </div>
@@ -610,49 +534,32 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
       <div class="auro-mockup">
         <div class="auro-phone">
           <div class="auro-phone-bar">
-            <div style="display:flex;gap:4px;align-items:center;">
-              <div style="width:8px;height:8px;border-radius:50%;background:rgba(0,201,141,.9);"></div>
-              <span style="font-size:.6rem;color:rgba(255,255,255,.5);letter-spacing:.06em;">AURO</span>
-            </div>
+            <div style="display:flex;gap:4px;align-items:center;"><div style="width:8px;height:8px;border-radius:50%;background:rgba(0,201,141,.9);"></div><span style="font-size:.6rem;color:rgba(255,255,255,.5);letter-spacing:.06em;">AURO</span></div>
             <div style="width:32px;height:4px;background:rgba(255,255,255,.15);border-radius:2px;"></div>
           </div>
           <div class="auro-screen-inner">
             <div class="auro-greeting">
               <div class="auro-avatar">A</div>
-              <div>
-                <p class="auro-hi">Hola, Ana!</p>
-                <p class="auro-sub">Especialmente para ti</p>
-              </div>
+              <div><p class="auro-hi">Hola, Ana!</p><p class="auro-sub">Especialmente para ti</p></div>
             </div>
             <div class="auro-section-label">Your goal this week</div>
             <div class="auro-goal-card">
-              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.5rem;">
-                <span style="font-size:.72rem;font-weight:600;color:#fff;">Job interview vocabulary</span>
-                <span style="font-size:.62rem;color:rgba(0,201,141,.9);">Day 3</span>
-              </div>
-              <div style="height:3px;background:rgba(255,255,255,.1);border-radius:2px;margin-bottom:.5rem;">
-                <div style="width:40%;height:100%;background:linear-gradient(90deg,#00C98D,#4A3AFF);border-radius:2px;"></div>
-              </div>
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.5rem;"><span style="font-size:.72rem;font-weight:600;color:#fff;">Job interview vocabulary</span><span style="font-size:.62rem;color:rgba(0,201,141,.9);">Day 3</span></div>
+              <div style="height:3px;background:rgba(255,255,255,.1);border-radius:2px;margin-bottom:.5rem;"><div style="width:40%;height:100%;background:linear-gradient(90deg,#00C98D,#4A3AFF);border-radius:2px;"></div></div>
               <p style="font-size:.65rem;color:rgba(255,255,255,.4);">4 of 10 lessons complete</p>
             </div>
             <div class="auro-section-label">Recommended for you</div>
             <div class="auro-rec-list">
               <div class="auro-rec-item auro-rec-active">
-                <div class="auro-rec-icon" style="background:linear-gradient(135deg,#4A3AFF,#9B8AFF);">
-                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M6 2l4 4-4 4" stroke="#fff" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                </div>
+                <div class="auro-rec-icon" style="background:linear-gradient(135deg,#4A3AFF,#9B8AFF);"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M6 2l4 4-4 4" stroke="#fff" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
                 <div><p class="auro-rec-title">Asking clarifying questions</p><p class="auro-rec-sub">5 min · Career English</p></div>
               </div>
               <div class="auro-rec-item">
-                <div class="auro-rec-icon" style="background:rgba(255,255,255,.08);">
-                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="4.5" stroke="rgba(255,255,255,.4)" stroke-width="1.2"/><path d="M4.5 6l1.5 1.5L8 4.5" stroke="rgba(255,255,255,.4)" stroke-width="1.2" stroke-linecap="round"/></svg>
-                </div>
+                <div class="auro-rec-icon" style="background:rgba(255,255,255,.08);"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="4.5" stroke="rgba(255,255,255,.4)" stroke-width="1.2"/></svg></div>
                 <div><p class="auro-rec-title">Describing your experience</p><p class="auro-rec-sub">8 min · Career English</p></div>
               </div>
               <div class="auro-rec-item">
-                <div class="auro-rec-icon" style="background:rgba(255,255,255,.08);">
-                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><rect x="1.5" y="2.5" width="9" height="7" rx="1.5" stroke="rgba(255,255,255,.4)" stroke-width="1.2"/><path d="M4 5.5h4M4 7.5h2.5" stroke="rgba(255,255,255,.4)" stroke-width="1.1" stroke-linecap="round"/></svg>
-                </div>
+                <div class="auro-rec-icon" style="background:rgba(255,255,255,.08);"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><rect x="1.5" y="2.5" width="9" height="7" rx="1.5" stroke="rgba(255,255,255,.4)" stroke-width="1.2"/></svg></div>
                 <div><p class="auro-rec-title">Salary negotiation phrases</p><p class="auro-rec-sub">6 min · Career English</p></div>
               </div>
             </div>
@@ -660,7 +567,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
           </div>
           <div class="auro-phone-nav">
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="2" y="4" width="12" height="2" rx="1" fill="rgba(255,255,255,.3)"/><rect x="2" y="7.5" width="8" height="2" rx="1" fill="rgba(255,255,255,.3)"/><rect x="2" y="11" width="10" height="2" rx="1" fill="rgba(255,255,255,.3)"/></svg>
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="5.5" stroke="rgba(255,255,255,.5)" stroke-width="1.5"/><path d="M6 8l1.5 1.5L10 6" stroke="rgba(255,255,255,.5)" stroke-width="1.3" stroke-linecap="round"/></svg>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="5.5" stroke="rgba(255,255,255,.5)" stroke-width="1.5"/><path d="M6 8l1.5 1.5L10.5 6" stroke="rgba(255,255,255,.5)" stroke-width="1.3" stroke-linecap="round"/></svg>
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="5.5" r="2.5" stroke="rgba(255,255,255,.5)" stroke-width="1.3"/><path d="M3 13.5c0-2.5 2.2-4 5-4s5 1.5 5 4" stroke="rgba(255,255,255,.5)" stroke-width="1.3" stroke-linecap="round"/></svg>
           </div>
         </div>

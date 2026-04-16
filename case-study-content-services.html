@@ -129,6 +129,17 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
   .cs-persona{flex-direction:column;}
 }
 </style>
+<script>
+(function(){
+  if(sessionStorage.getItem('sc_access')==='SMILE') return;
+  var entered = prompt('This case study is password protected.\nPassword:');
+  if(entered !== 'SMILE'){
+    document.documentElement.innerHTML = '<div style="font-family:Inter,sans-serif;display:flex;flex-direction:column;align-items:center;justify-content:center;height:100vh;gap:1rem;color:#6E6E73;"><p style=\'font-size:.9rem;\'>Incorrect password.</p><a href=\'index.html\' style=\'font-size:.82rem;color:#4A3AFF;\'>← Back to portfolio</a></div>';
+    return;
+  }
+  sessionStorage.setItem('sc_access','SMILE');
+})();
+</script>
 </head>
 <body>
 
@@ -381,19 +392,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 
 </div>
 
-<script>
-(function(){
-  var pwd = sessionStorage.getItem('sc_access');
-  if(pwd !== 'SMILE'){
-    var entered = prompt('This case study is password protected.\nPassword:');
-    if(entered !== 'SMILE'){
-      document.documentElement.innerHTML = '<div style="font-family:Inter,sans-serif;display:flex;flex-direction:column;align-items:center;justify-content:center;height:100vh;gap:1rem;color:#6E6E73;"><p style=\'font-size:.9rem;\'>Incorrect password.</p><a href=\'index.html\' style=\'font-size:.82rem;color:#4A3AFF;\'>← Back to portfolio</a></div>';
-      return;
-    }
-    sessionStorage.setItem('sc_access','SMILE');
-  }
-})();
-</script>
+
 <script>
 const obs=new IntersectionObserver((entries)=>{
   entries.forEach((e,i)=>{if(e.isIntersecting) setTimeout(()=>e.target.classList.add('visible'),i*60);});

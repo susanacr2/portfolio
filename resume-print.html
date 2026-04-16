@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Susana Chinchilla — Resume (Print)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --purple:#4A3AFF;--purple2:#9B8AFF;--purple3:#C084FC;
+  --black:#1D1D1F;--gray:#6E6E73;--border:#D2D2D7;--surface:#F5F5F7;
+}
+html{scroll-behavior:smooth;}
+body{
+  font-family:'Inter',sans-serif;
+  background:#fff;
+  color:var(--black);
+  font-size:13px;
+  line-height:1.6;
+  max-width:800px;
+  margin:0 auto;
+  padding:3rem 3rem;
+}
+
+/* HEADER */
+.header{margin-bottom:2rem;padding-bottom:1.5rem;border-bottom:0.5px solid var(--border);}
+.header-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.5rem;}
+.name{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:2rem;letter-spacing:-.035em;color:var(--black);}
+.name span{ /* no styles — handled by .name-chinchilla */ }
+
+.title{font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:.95rem;color:var(--gray);letter-spacing:-.01em;margin-bottom:.75rem;}
+.contact-line{display:flex;gap:1.25rem;flex-wrap:wrap;font-size:.75rem;color:var(--gray);}
+.contact-line a{color:var(--purple);text-decoration:none;}
+.contact-line a:hover{text-decoration:underline;}
+.contact-sep{color:var(--border);}
+
+/* SECTION */
+.section{margin-bottom:1.75rem;}
+.section-title{
+  font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:.72rem;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--purple);
+  margin-bottom:.875rem;padding-bottom:.35rem;
+  border-bottom:0.5px solid rgba(74,58,255,.2);
+}
+
+/* SUMMARY */
+.summary{font-size:.85rem;color:var(--gray);line-height:1.75;max-width:640px;}
+
+/* SKILLS */
+.skills-grid{display:flex;flex-wrap:wrap;gap:.4rem;}
+.skill-pill{
+  font-size:.67rem;font-weight:500;padding:3px 10px;border-radius:980px;
+  background:#EEF0FF;color:#3634A3;border:0.5px solid rgba(54,52,163,.15);
+}
+
+/* EXPERIENCE */
+.exp-item{margin-bottom:1.5rem;}
+.exp-header{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:.15rem;}
+.exp-role{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:.92rem;color:var(--black);}
+.exp-date{font-size:.72rem;color:var(--gray);white-space:nowrap;flex-shrink:0;margin-left:1rem;}
+.exp-company{font-size:.78rem;color:var(--purple);font-weight:500;margin-bottom:.5rem;}
+.exp-company span{color:var(--gray);font-weight:400;}
+.exp-desc{font-size:.8rem;color:var(--gray);line-height:1.7;margin-bottom:.5rem;}
+.exp-bullets{list-style:none;padding:0;}
+.exp-bullets li{
+  font-size:.8rem;color:var(--gray);line-height:1.65;
+  padding-left:1rem;position:relative;margin-bottom:.3rem;
+}
+.exp-bullets li::before{
+  content:'';position:absolute;left:0;top:.55em;
+  width:4px;height:4px;border-radius:50%;
+  background:var(--purple);flex-shrink:0;
+}
+.exp-bullets li strong{color:var(--black);font-weight:500;}
+
+/* INITIATIVE */
+.initiative{margin-bottom:.6rem;}
+.initiative-title{font-size:.8rem;font-weight:600;color:var(--black);margin-bottom:.15rem;}
+.initiative-title span{font-weight:400;color:var(--gray);font-style:italic;}
+
+/* EDUCATION */
+.edu-item{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:.875rem;}
+.edu-left{}
+.edu-school{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:.88rem;color:var(--black);}
+.edu-degree{font-size:.78rem;color:var(--gray);margin-top:.1rem;}
+.edu-honors{font-size:.72rem;color:var(--purple);font-weight:500;margin-top:.1rem;}
+.edu-date{font-size:.72rem;color:var(--gray);white-space:nowrap;flex-shrink:0;margin-left:1rem;}
+
+/* COMMUNITY */
+.community-text{font-size:.8rem;color:var(--gray);line-height:1.75;}
+.community-text strong{color:var(--black);font-weight:500;}
+
+/* AWARDS */
+.awards-grid{display:flex;flex-direction:column;gap:.5rem;}
+.award-item{display:flex;align-items:flex-start;gap:.75rem;}
+.award-icon{
+  width:22px;height:22px;border-radius:6px;background:#FFF0EB;
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;
+}
+.award-title{font-size:.8rem;font-weight:500;color:var(--black);}
+.award-sub{font-size:.72rem;color:var(--gray);}
+
+/* PRINT */
+@media print{
+  body{padding:1.5rem 2rem;font-size:11px;}
+  .name{font-size:1.6rem;}
+  .name span{-webkit-text-fill-color:#4A3AFF;background:none;}
+  @page{margin:0.75in;}
+}
+.award-date{color:var(--gray);font-weight:400;font-size:.7rem;}
+
+
+
+.name-chinchilla {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-weight: 800;
+  background: linear-gradient(135deg, #4A3AFF 0%, #7B6AFF 40%, #9B8AFF 70%, #C084FC 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline;
+}
+
+@media print {
+  * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+  body { padding: 0.55in 0.65in; font-size: 10.5px; max-width: none; }
+  .name { font-size: 1.4rem; }
+  .name-chinchilla { -webkit-text-fill-color: transparent !important; }
+  .print-btn { display: none !important; }
+  .print-footer { display: flex !important; }
+  @page { margin: 0; size: letter; }
+}
+.print-footer { display: none; }
+</style>
+</head>
+<body>
+<a class="print-btn" onclick="window.print()" style="
+  position: fixed;
+  top: 1.25rem;
+  right: 1.5rem;
+  z-index: 999;
+  font-family: 'Inter', sans-serif;
+  font-size: .72rem;
+  font-weight: 500;
+  color: #fff;
+  background: linear-gradient(135deg, #4A3AFF, #9B8AFF);
+  border: none;
+  padding: .38rem .9rem;
+  border-radius: 980px;
+  cursor: pointer;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  box-shadow: 0 2px 8px rgba(74,58,255,.25);
+" onmouseover="this.style.opacity='.85'" onmouseout="this.style.opacity='1'">
+  <svg width="11" height="11" viewBox="0 0 13 13" fill="none"><rect x="1.5" y="4" width="10" height="6" rx="1" stroke="white" stroke-width="1.2"/><path d="M3.5 4V2.5h6V4M3.5 10v.5h6V10" stroke="white" stroke-width="1.2" stroke-linecap="round"/></svg>
+  Save as PDF
+</a>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="header-left">
+    <h1 class="name">Susana <span class="name-chinchilla">Chinchilla</span></h1>
+    <p class="title">Senior Lead Product Designer · 6+ Years at IBM</p>
+  </div>
+  <div class="header-right">
+    <div class="contact-item">
+      <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M1 3l4.5 3L10 3M1 2.5h9a.5.5 0 01.5.5v5a.5.5 0 01-.5.5H1a.5.5 0 01-.5-.5V3a.5.5 0 01.5-.5z" stroke="currentColor" stroke-width=".9" stroke-linecap="round"/></svg>
+      <a href="mailto:suschinchilla@gmail.com">suschinchilla@gmail.com</a>
+    </div>
+    <div class="contact-item">
+      <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><rect x=".5" y=".5" width="10" height="10" rx="2" stroke="currentColor" stroke-width=".9"/><path d="M3.5 5.5h4M3.5 3.5h4M3.5 7.5h2" stroke="currentColor" stroke-width=".9" stroke-linecap="round"/></svg>
+      <span>914-575-9098</span>
+    </div>
+    <div class="contact-item">
+      <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><circle cx="5.5" cy="5.5" r="4.5" stroke="currentColor" stroke-width=".9"/><path d="M5.5 1.5c0 0-2 2-2 4s2 4 2 4M5.5 1.5c0 0 2 2 2 4s-2 4-2 4M1 5.5h9" stroke="currentColor" stroke-width=".8"/></svg>
+      <a href="https://schinchilla.com" target="_blank">schinchilla.com</a> <span style="color:#9B8AFF;font-weight:600;font-size:.7rem;">· Password: SMILE</span>
+    </div>
+    <div class="contact-item">
+      <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M1.5 2.5h8l-3.5 4v3l-1-1V6.5L1.5 2.5z" stroke="currentColor" stroke-width=".9" stroke-linejoin="round"/></svg>
+      <a href="https://linkedin.com/in/susana-chinchilla" target="_blank">linkedin.com/in/susana-chinchilla</a>
+    </div>
+    <div class="contact-item">
+      <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><circle cx="5.5" cy="4" r="2" stroke="currentColor" stroke-width=".9"/><path d="M1 9.5c0-2.2 2-4 4.5-4s4.5 1.8 4.5 4" stroke="currentColor" stroke-width=".9" stroke-linecap="round"/></svg>
+      <span>Austin, TX</span>
+    </div>
+  </div>
+</div>
+
+<!-- SUMMARY -->
+<div class="section">
+  <p class="section-title">Summary</p>
+  <p class="summary">Senior Lead Product Designer with 6+ years designing enterprise platforms and internal tools across web and mobile at IBM. Strengths include workflow simplification, design systems, accessibility, and high-craft interaction and visual design. Experienced leading complex initiatives end to end, aligning cross-functional teams through design thinking workshops, and scaling repeatable patterns that improve how people get work done.</p>
+</div>
+
+<!-- SKILLS -->
+<div class="section">
+  <p class="section-title">Skills</p>
+  <div class="skills-grid">
+    <span class="skill-pill">Enterprise product design</span>
+    <span class="skill-pill">AI/ML product design</span>
+    <span class="skill-pill">Design systems</span>
+    <span class="skill-pill">Interaction design</span>
+    <span class="skill-pill">Visual design</span>
+    <span class="skill-pill">Information architecture</span>
+    <span class="skill-pill">User research</span>
+    <span class="skill-pill">Usability testing</span>
+    <span class="skill-pill">Workshop facilitation</span>
+    <span class="skill-pill">Design thinking</span>
+    <span class="skill-pill">PLG strategy</span>
+    <span class="skill-pill">Accessibility</span>
+    <span class="skill-pill">Dashboards &amp; data visualization</span>
+    <span class="skill-pill">Cross-functional leadership</span>
+    <span class="skill-pill">Roadmap &amp; strategy</span>
+    <span class="skill-pill">Agile &amp; scrum</span>
+    <span class="skill-pill">Stakeholder alignment</span>
+    <span class="skill-pill">Mentorship &amp; design leadership</span>
+    <span class="skill-pill">Figma</span>
+    <span class="skill-pill">Adobe Creative Cloud</span>
+    <span class="skill-pill">Mural</span>
+    <span class="skill-pill">Claude (Anthropic)</span>
+    <span class="skill-pill">Cursor</span>
+    <span class="skill-pill">Lovable</span>
+    <span class="skill-pill">Google Stitch</span>
+    <span class="skill-pill">Framer</span>
+    <span class="skill-pill">Notion</span>
+    <span class="skill-pill">Pendo</span>
+    <span class="skill-pill">GitHub</span>
+  </div>
+</div>
+
+<!-- EXPERIENCE -->
+<div class="section">
+  <p class="section-title">Experience</p>
+
+  <!-- IBM Senior Lead -->
+  <div class="exp-item">
+    <div class="exp-header">
+      <span class="exp-role">Senior Lead Product Designer</span>
+      <span class="exp-date">March 2022 – November 2025</span>
+    </div>
+    <p class="exp-company">IBM <span>· Austin, TX</span></p>
+    <p class="exp-desc">Led design initiatives to create product vision, re-imagine current products for new customer experiences, and shorten time to value. Promoted alignment and cooperation across global teams.</p>
+
+    <div class="initiative">
+      <p class="initiative-title">Product-Led Growth (PLG) <span>Sales initiative to allow potential customers to experience products first-hand, converting users to buyers by demonstrating value and better UX. Contributed to 10% revenue increase for IBM Software division.</span></p>
+      <ul class="exp-bullets">
+        <li>Created roadmaps for PLG changes for approximately 40 products. Defined 100+ best practices to optimize user experiences and trial-to-conversion.</li>
+        <li>Facilitated biweekly PLG Design Guild strategy calls and identified product synergy opportunities.</li>
+        <li>Selected to attend IBM Product Academy for Teams workshop, receiving gold-standard training on the entire product lifecycle.</li>
+      </ul>
+    </div>
+
+    <div class="initiative">
+      <p class="initiative-title">Carbon Design System <span>Open source code, design resources, and human interface guidelines for products and digital experiences.</span></p>
+      <ul class="exp-bullets">
+        <li>Aligned global teams by leading demonstrations of brand-new product features for 40+ designers and engineers.</li>
+        <li>Developed onboarding resources, including end-to-end onboarding experience for security product used as a model across IBM.</li>
+        <li>Helped redesign the Carbon Design System website, improving usability. Projected to serve 450,000+ monthly visitors.</li>
+      </ul>
+    </div>
+
+    <div class="initiative">
+      <p class="initiative-title">Content Services <span>Software-as-a-service that helps organize and control content security across cloud platforms and applications.</span></p>
+      <ul class="exp-bullets">
+        <li>Led a 4-person design team and headed redesign of AWS cloud content services, contributing to <strong>$400M ROI</strong>.</li>
+      </ul>
+    </div>
+
+    <ul class="exp-bullets" style="margin-top:.5rem;">
+      <li>Organized Familia@IBM outreach events, including Code2Code EDT workshop for 50+ young people under-represented in STEM.</li>
+      <li>Earned <strong>IBM Culture Catalyst Award (2023)</strong> for leading cross-functional critiques, vision sessions, and return-to-office workshop.</li>
+    </ul>
+  </div>
+
+  <!-- IBM UX Designer -->
+  <div class="exp-item">
+    <div class="exp-header">
+      <span class="exp-role">UX Designer</span>
+      <span class="exp-date">January 2021 – March 2022</span>
+    </div>
+    <p class="exp-company">IBM <span>· Austin, TX and London, UK</span></p>
+    <p class="exp-desc">Led teams of 3 to 9 designers and mentored new hires and interns.</p>
+
+    <div class="initiative">
+      <p class="initiative-title">watsonx Orchestrate <span>Software-as-a-service that allows enterprises to create AI agents that interact with 80+ applications.</span></p>
+      <ul class="exp-bullets">
+        <li>Led the chat interface workstream for watsonx Orchestrate (enterprise SaaS), partnering with four global design leads. Facilitated workshops, aligned stakeholders on tradeoffs, and drove design from flows to high-fidelity UI to deliver the MVP.</li>
+        <li>Selected as the sole U.S. representative in the United Kingdom. Led Enterprise Design Thinking workshops with 40+ participants and produced artifacts adopted by 140+ collaborators across product, design, and engineering teams.</li>
+        <li><strong>Awarded IBM Equity Grant from CEO Arvind Krishna in 2022</strong> for outstanding contributions and leadership in hybrid cloud and AI.</li>
+        <li>Awarded the IBM Standout Newcomer Award as Problem Solver Extraordinaire in 2021.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- IBM Intern -->
+  <div class="exp-item">
+    <div class="exp-header">
+      <span class="exp-role">Sr. UX Research Intern and UX Design Co-op</span>
+      <span class="exp-date">Summer 2020 – January 2021</span>
+    </div>
+    <p class="exp-company">IBM <span>· Remote</span></p>
+    <ul class="exp-bullets">
+      <li>Developed user experiences for new products. Became sole intern selected for Patterns Design Program, joining approximately 40 new hires.</li>
+      <li>Created user personas for three product platforms merged into one experience and conducted competitive analysis for a new product concept.</li>
+      <li>For Patterns' five-week incubator project, co-created tool for iX Consulting designers to find internal consulting opportunities.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- AWARDS -->
+<div class="section">
+  <p class="section-title">Recognition</p>
+  <div class="awards-grid">
+
+    <div class="award-item">
+      <div class="award-icon">
+        <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M3.5 1.5h6v4a3 3 0 01-6 0v-4z" stroke="#9A3412" stroke-width="1.1" stroke-linejoin="round"/><path d="M1.5 3h2M9.5 3h2M6.5 8.5v2.5M4.5 11h4" stroke="#9A3412" stroke-width="1.1" stroke-linecap="round"/></svg>
+      </div>
+      <div>
+        <p class="award-title">IBM Equity Award · CEO Recognition <span class="award-date">· 2022</span></p>
+        <p class="award-sub">Awarded by CEO Arvind Krishna for outstanding contributions and leadership in hybrid cloud and AI.</p>
+      </div>
+    </div>
+
+    <div class="award-item">
+      <div class="award-icon">
+        <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><circle cx="6.5" cy="6.5" r="5" stroke="#9A3412" stroke-width="1.1"/><path d="M4.5 6.5l1.5 1.5L9 4.5" stroke="#9A3412" stroke-width="1.1" stroke-linecap="round"/></svg>
+      </div>
+      <div>
+        <p class="award-title">IBM Culture Catalyst Award <span class="award-date">· May 2023</span></p>
+        <p class="award-sub">Led the way to rebuild culture and collaboration in the Austin Studio for the Business Automation team. Organized regular Design Share reviews, critique sessions, and a return-to-office workshop. Arranged teammates to run 3-in-a-box meetings and design playbacks. Organized community events including with the local YWCA.</p>
+      </div>
+    </div>
+
+    <div class="award-item">
+      <div class="award-icon">
+        <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M6.5 1.5l1.1 2.6L11 4.5l-2 2 .5 3L6.5 8.3 4 9.5l.5-3-2-2 2.9-.4L6.5 1.5z" stroke="#9A3412" stroke-width="1.1" stroke-linejoin="round"/></svg>
+      </div>
+      <div>
+        <p class="award-title">Promotion to Advisory Designer <span class="award-date">· March 2022</span></p>
+        <p class="award-sub">Recognized as a rising star on the Business Automation team. Promoted for leading the Studio/Build design team, building relationships between development and PM stakeholders, and performing well above band level. Championed team culture through onboarding support and team-building initiatives.</p>
+      </div>
+    </div>
+
+    <div class="award-item">
+      <div class="award-icon">
+        <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M6.5 1.5l1.1 2.6L11 4.5l-2 2 .5 3L6.5 8.3 4 9.5l.5-3-2-2 2.9-.4L6.5 1.5z" stroke="#9A3412" stroke-width="1.1" stroke-linejoin="round"/></svg>
+      </div>
+      <div>
+        <p class="award-title">IBM Standout Newcomer Award · Problem Solver Extraordinaire <span class="award-date">· May 2021</span></p>
+        <p class="award-sub">Recognized for excelling in a complex project space, breaking down complex requirements into compelling user experiences, and building collaborative relationships that drive the highest quality UX. "There has yet to be a challenge that Susana hasn't conquered."</p>
+      </div>
+    </div>
+
+    <div class="award-item">
+      <div class="award-icon">
+        <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><rect x="1.5" y="2.5" width="10" height="8" rx="1.5" stroke="#9A3412" stroke-width="1.1"/><path d="M4 5.5h5M4 7.5h3" stroke="#9A3412" stroke-width="1" stroke-linecap="round"/></svg>
+      </div>
+      <div>
+        <p class="award-title">UX Advisor · Harvard Business School Foundry</p>
+        <p class="award-sub">UX feedback, experience audits, and improvement recommendations for HBS Foundry product.</p>
+      </div>
+    </div>
+
+    <div class="award-item">
+      <div class="award-icon">
+        <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M6.5 1.5l1.1 2.6L11 4.5l-2 2 .5 3L6.5 8.3 4 9.5l.5-3-2-2 2.9-.4L6.5 1.5z" stroke="#9A3412" stroke-width="1.1" stroke-linejoin="round"/></svg>
+      </div>
+      <div>
+        <p class="award-title">2025 IBMer watsonx Challenge</p>
+        <p class="award-sub">Recognized for AI innovation and prompting excellence within IBM's watsonx program.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- EDUCATION -->
+<div class="section">
+  <p class="section-title">Education</p>
+
+  <div class="edu-item">
+    <div class="edu-left">
+      <p class="edu-school">New York Institute of Technology</p>
+      <p class="edu-degree">M.A. UX/UI Design and Development</p>
+      <p class="edu-honors">4.0 GPA · Summa Cum Laude · Honor's Student</p>
+    </div>
+    <span class="edu-date">Graduated May 2021</span>
+  </div>
+
+  <div class="edu-item">
+    <div class="edu-left">
+      <p class="edu-school">Purchase College, State University of New York</p>
+      <p class="edu-degree">B.F.A. Graphic Design</p>
+      <p class="edu-honors">Magna Cum Laude · GCSF and ADP Aspire Scholarships</p>
+    </div>
+    <span class="edu-date">Graduated December 2018</span>
+  </div>
+</div>
+
+<!-- CERTIFICATIONS -->
+<div class="section">
+  <p class="section-title">Certifications</p>
+  <div class="skills-grid">
+    <span class="skill-pill">Enterprise Design Thinking Coach · IBM</span>
+    <span class="skill-pill">Product-Led Growth · Pendo</span>
+    <span class="skill-pill">IBM Product Academy</span>
+    <span class="skill-pill">IBM Agile Explorer</span>
+    <span class="skill-pill">Gen AI Fundamentals</span>
+    <span class="skill-pill">AI Assistants L1</span>
+    <span class="skill-pill">Trustworthy AI</span>
+    <span class="skill-pill">AI Associate Leader</span>
+    <span class="skill-pill">AI Maturity Framework</span>
+  </div>
+</div>
+
+<!-- COMMUNITY -->
+<div class="section">
+  <p class="section-title">Community</p>
+  <p class="community-text">
+    <strong>Board Member · The Latina Foundation</strong> &nbsp;·&nbsp;
+    <strong>Regional Community Leader · Poderistas</strong> (4 states) &nbsp;·&nbsp;
+    <strong>Lead · FoundHERs</strong> entrepreneurial community &nbsp;·&nbsp;
+    <strong>Mentor · McCombs School of Business</strong>, UT Austin RISE and ALPFA &nbsp;·&nbsp;
+    <strong>AI Advisory Committee Member · Austin Community College</strong>
+  </p>
+  <p class="community-text" style="margin-top:.5rem;">
+    Led Enterprise Design Thinking workshops globally, in-person and remotely, through IBM and independently at organizations including <strong>YWCA Greater Austin</strong>, <strong>Code2College</strong>, <strong>The Latina Foundation</strong>, <strong>UT Austin</strong>, <strong>McCombs School of Business</strong>, and others across the U.S. and internationally.
+  </p>
+</div>
+
+<div class="print-footer" style="margin-top:2rem;padding-top:.75rem;border-top:0.5px solid #D2D2D7;justify-content:space-between;align-items:center;">
+  <span style="font-size:.7rem;color:#6E6E73;">Portfolio: schinchilla.com</span>
+  <span style="font-size:.7rem;color:#9B8AFF;font-weight:600;letter-spacing:.04em;">Password: SMILE</span>
+</div>
+</body>
+</html>

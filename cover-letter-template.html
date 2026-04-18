@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Susana Chinchilla — Cover Letter Template</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%234A3AFF'/><text x='16' y='22' font-family='Georgia,serif' font-weight='bold' font-size='14' fill='white' text-anchor='middle'>SC.</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --purple:#4A3AFF;
+  --black:#111;
+  --gray:#555;
+  --light:#888;
+  --border:#E5E5E5;
+}
+
+.print-btn{
+  position:fixed;top:1rem;right:1rem;
+  background:var(--purple);color:#fff;
+  border:none;border-radius:980px;
+  padding:.4rem 1rem;font-size:.72rem;font-weight:500;
+  font-family:'Inter',sans-serif;cursor:pointer;
+  box-shadow:0 2px 12px rgba(74,58,255,.25);
+  display:flex;align-items:center;gap:5px;
+  z-index:100;text-decoration:none;
+}
+.print-btn:hover{opacity:.85;}
+
+body{
+  font-family:'Inter',sans-serif;
+  color:var(--black);
+  background:#F0F0F5;
+  padding:2rem;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:1rem;
+}
+
+.page{
+  width:8.27in;
+  height:11.69in;
+  background:#fff;
+  padding:.45in .6in .45in .6in;
+  display:flex;
+  flex-direction:column;
+  position:relative;
+}
+
+/* HEADER — matches resume exactly */
+.hd{
+  display:flex;justify-content:space-between;align-items:flex-start;
+  padding-bottom:.18in;
+  border-bottom:1.5px solid var(--black);
+  margin-bottom:.18in;
+}
+.name{
+  font-family:'Bricolage Grotesque',sans-serif;
+  font-weight:800;font-size:24pt;
+  letter-spacing:-.04em;line-height:1;
+  color:var(--black);margin-bottom:3pt;
+}
+.name-grad{
+  background:linear-gradient(135deg,#4A3AFF 0%,#9B8AFF 55%,#C084FC 100%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.role{font-size:8pt;color:var(--gray);font-weight:400;letter-spacing:.01em;}
+.hd-right{
+  display:flex;flex-direction:column;
+  align-items:flex-end;gap:3pt;margin-top:2pt;
+}
+.ci{display:flex;align-items:center;gap:4pt;font-size:7.5pt;color:var(--gray);}
+.ci a{color:var(--purple);text-decoration:none;}
+.ci-dot{width:3pt;height:3pt;border-radius:50%;background:var(--purple);opacity:.4;flex-shrink:0;}
+
+/* BODY */
+.body{flex:1;display:flex;flex-direction:column;justify-content:space-between;}
+
+/* DATE + RECIPIENT */
+.meta{margin-bottom:.18in;}
+.date{font-size:8.5pt;color:var(--light);margin-bottom:.18in;}
+.recipient{font-size:9pt;color:var(--black);line-height:1.65;}
+.recipient strong{font-weight:600;}
+
+/* LETTER BODY */
+.letter{flex:1;}
+.salutation{
+  font-size:9.5pt;font-weight:600;color:var(--black);
+  margin-bottom:.13in;
+}
+
+p.para{
+  font-size:9pt;color:var(--gray);
+  line-height:1.75;
+  margin-bottom:.13in;
+}
+p.para strong{color:var(--black);font-weight:500;}
+
+/* HIGHLIGHT STRIP */
+.highlight-strip{
+  background:#F0EEFF;
+  border-left:2.5px solid var(--purple);
+  border-radius:0 8pt 8pt 0;
+  padding:.12in .16in;
+  margin:.12in 0;
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  gap:.08in;
+}
+.hl-item{display:flex;flex-direction:column;gap:2pt;}
+.hl-num{
+  font-family:'Bricolage Grotesque',sans-serif;
+  font-weight:800;font-size:13pt;
+  background:linear-gradient(135deg,#4A3AFF,#9B8AFF);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background-clip:text;line-height:1;
+}
+.hl-label{font-size:7pt;color:var(--light);letter-spacing:.03em;line-height:1.4;}
+
+/* CLOSING */
+.closing{margin-top:.12in;}
+.closing-text{font-size:9pt;color:var(--gray);line-height:1.8;margin-bottom:.18in;}
+.sign-off{font-size:9pt;color:var(--black);font-weight:400;line-height:1.8;}
+.sig{
+  font-family:'Bricolage Grotesque',sans-serif;
+  font-weight:800;font-size:13pt;
+  letter-spacing:-.03em;
+  margin-top:.05in;
+}
+.sig span{
+  background:linear-gradient(135deg,#4A3AFF 0%,#9B8AFF 55%,#C084FC 100%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+
+/* PRINT */
+@media print{
+  *{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}
+  body{background:#fff;padding:0;}
+  .print-btn{display:none !important;}
+  .page{box-shadow:none;}
+  .name-grad,.sig span,.hl-num{-webkit-text-fill-color:transparent !important;}
+  @page{margin:0;size:A4;}
+}
+</style>
+</head>
+<body>
+
+<a class="print-btn" onclick="window.print()">
+  <svg width="11" height="11" viewBox="0 0 13 13" fill="none"><rect x="1.5" y="4" width="10" height="6" rx="1" stroke="white" stroke-width="1.2"/><path d="M3.5 4V2.5h6V4M3.5 10v.5h6V10" stroke="white" stroke-width="1.2" stroke-linecap="round"/></svg>
+  Save as PDF
+</a>
+
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="hd">
+    <div>
+      <div class="name">Susana <span class="name-grad">Chinchilla</span></div>
+      <div class="role">Senior Lead Product Designer &nbsp;·&nbsp; Enterprise UX &nbsp;·&nbsp; AI/ML &nbsp;·&nbsp; Design Systems</div>
+    </div>
+    <div class="hd-right">
+      <div class="ci"><div class="ci-dot"></div><a href="mailto:suschinchilla@gmail.com">suschinchilla@gmail.com</a></div>
+      <div class="ci"><div class="ci-dot"></div><span>914-575-9098</span></div>
+      <div class="ci"><div class="ci-dot"></div><a href="https://schinchilla.com">schinchilla.com</a> <span style="color:#9B8AFF;font-weight:600;margin-left:3pt;font-size:7pt;">pw: SMILE</span></div>
+      <div class="ci"><div class="ci-dot"></div><a href="https://linkedin.com/in/susana-chinchilla">linkedin.com/in/susana-chinchilla</a></div>
+      <div class="ci"><div class="ci-dot"></div><span>Austin, TX</span></div>
+    </div>
+  </div>
+
+  <!-- BODY -->
+  <div class="body">
+
+    <!-- DATE + RECIPIENT -->
+    <div class="meta">
+      <div class="date">April 2026</div>
+      <div class="recipient">
+        <strong>Hiring Team, Zora AI</strong><br>
+        Deloitte<br>
+        [ROLE TITLE]
+      </div>
+    </div>
+
+    <!-- LETTER -->
+    <div class="letter">
+
+      <div class="salutation">Dear [COMPANY] [TEAM] Team,</div>
+
+      <p class="para">
+        I hope you are doing well. I am Susana Chinchilla, and I am excited to apply to the Senior UX Designer role for [ROLE/PRODUCT]. As I read more about the role, it felt aligned with my experience and what I enjoy doing as a designer. I have built my career designing complex enterprise products by working closely with engineering teams, and that has given me deep expertise in navigating ambiguous problems and knowing how to align and move forward with cross-functional partners using design thinking.
+      </p>
+
+      <p class="para">
+        Most recently at IBM, I led product design from concept to implementation, working closely with research, engineering, and product teams to deliver experiences that are intuitive, scalable, and grounded in real user needs. I helped define workflow strategy, produced end-to-end design assets including journey maps, user flows, wireframes, and high-fidelity mockups, and partnered with engineers to ensure smooth execution for products like <strong>watsonx Orchestrate</strong> and <strong>Content Services</strong>. I am comfortable zooming out to align on product vision, then zooming in to refine interaction states and accessibility.
+      </p>
+
+      <!-- KEY METRICS STRIP -->
+      <div class="highlight-strip">
+        <div class="hl-item">
+          <div class="hl-num">$400M</div>
+          <div class="hl-label">ROI contributed via Content Services redesign</div>
+        </div>
+        <div class="hl-item">
+          <div class="hl-num">450K+</div>
+          <div class="hl-label">Monthly users reached through Carbon Design System</div>
+        </div>
+        <div class="hl-item">
+          <div class="hl-num">140+</div>
+          <div class="hl-label">Cross-functional collaborators aligned on watsonx Orchestrate</div>
+        </div>
+      </div>
+
+      <p class="para">
+        I regularly evaluate existing experiences by performing my own research to identify friction and propose clear solutions supported by behavioral insights. I believe strong UX lives at the intersection of business priorities and user trust. I am motivated by environments where design is expected to think critically, move quickly, and continuously improve while meeting KPIs.
+      </p>
+
+      <p class="para">
+        Beyond execution, I prioritize creating a healthy culture that improves how teams collaborate. As an <strong>Enterprise Design Thinking Coach</strong>, I have facilitated global workshops that bring clarity to ambiguity and help cross-functional teams align around outcomes. Asking better questions, prototyping early, and iterating often is how I approach every product challenge.
+      </p>
+
+      <p class="para">
+        [COMPANY]'s focus on [MISSION] resonates with me. I would welcome the opportunity to contribute my experience in enterprise UX, interaction design, design thinking, and cross-functional leadership to your [TEAM] team.
+      </p>
+
+      <p class="para">
+        Thank you for your time and consideration. I look forward to discussing more of my work. In the meantime, feel free to review my portfolio at <a href="https://schinchilla.com" style="color:var(--purple);">schinchilla.com</a> using the password SMILE. I recommend reviewing <em>Leading Modernization of IBM Content Services</em>, where I led the transformation of a legacy platform by working with a team of developers collaborating with design for the first time to see what we achieved in just one year.
+      </p>
+
+    </div>
+
+    <!-- CLOSING -->
+    <div class="closing">
+      <div class="sign-off">
+        With gratitude,<br>
+        <div class="sig">Susana <span>Chinchilla</span></div>
+        <span style="font-size:7.5pt;color:var(--light);">suschinchilla@gmail.com &nbsp;·&nbsp; 914-575-9098 &nbsp;·&nbsp; Austin, TX</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>

@@ -168,15 +168,13 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .scroll-screen-body::-webkit-scrollbar-track{background:transparent;}
 .scroll-screen-body::-webkit-scrollbar-thumb{background:rgba(0,0,0,.15);border-radius:3px;}
 </style>
+
 <script>
 (function(){
   if(sessionStorage.getItem('sc_access')==='SMILE') return;
-  var entered = prompt('This case study is password protected.\nPassword:');
-  if(entered !== 'SMILE'){
-    document.documentElement.innerHTML = '<div style="font-family:Inter,sans-serif;display:flex;flex-direction:column;align-items:center;justify-content:center;height:100vh;gap:1rem;color:#6E6E73;"><p style=\'font-size:.9rem;\'>Incorrect password.</p><a href=\'index.html\' style=\'font-size:.82rem;color:#4A3AFF;\'>← Back to portfolio</a></div>';
-    return;
-  }
-  sessionStorage.setItem('sc_access','SMILE');
+  // Store the current page so password.html can redirect back
+  sessionStorage.setItem('sc_redirect', window.location.pathname.split('/').pop());
+  window.location.href = 'password.html';
 })();
 </script>
 </head>

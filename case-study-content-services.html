@@ -132,6 +132,14 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
   sessionStorage.setItem('sc_access','SMILE');
 })();
 </script>
+<script>
+(function(){
+  if(sessionStorage.getItem('sc_access')==='SMILE') return;
+  // Store the current page so password.html can redirect back
+  sessionStorage.setItem('sc_redirect', window.location.pathname.split('/').pop());
+  window.location.href = 'password.html';
+})();
+</script>
 </head>
 <body>
 

@@ -100,10 +100,10 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 }
 </style>
 
+
 <script>
 (function(){
   if(sessionStorage.getItem('sc_access')==='SMILE') return;
-  // Store the current page so password.html can redirect back
   sessionStorage.setItem('sc_redirect', window.location.pathname.split('/').pop());
   window.location.href = 'password.html';
 })();
@@ -157,6 +157,12 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
     <p class="cs-section-label">Research</p>
     <h2 class="cs-section-title">Auditing 22 products to find what actually works.</h2>
     <p class="cs-p">I started with a systematic audit 13 external PLG products and 9 IBM products. I analyzed onboarding steps, content tone, personalization, speed to value, and where users dropped off.</p>
+
+    <div class="reveal" style="margin:2rem 0;">
+      <img src="plg-audit.png" alt="PLG product audit overview" style="width:100%;display:block;border-radius:14px;border:0.5px solid var(--border);">
+    </div>
+
+    <p class="cs-label reveal" style="margin-bottom:.75rem;">Findings</p>
     <div class="cs-insights">
       <div class="cs-insight">
         <div class="cs-insight-icon" style="background:#EEF0FF;">

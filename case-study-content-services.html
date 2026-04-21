@@ -128,6 +128,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
   .cs-img-grid-3{grid-template-columns:1fr 1fr;}
   .cs-persona{flex-direction:column;}
 }
+.cs-compare{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:2rem 0;}
+.cs-compare-card{border-radius:14px;overflow:hidden;border:0.5px solid var(--border);}
+.cs-compare-label{font-size:.65rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:.6rem 1rem;border-bottom:0.5px solid var(--border);}
+.cs-compare-label.before{background:#FFF0EB;color:#9A3412;}
+.cs-compare-label.after{background:#E3F9F0;color:#1A7A52;}
 </style>
 
 <script>
@@ -343,19 +348,21 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 
     <!-- Legacy homepage and its two destinations -->
     <div style="margin:1.5rem 0;" class="reveal">
-      <p style="font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#9A3412;margin-bottom:.75rem;">Before — FileNet legacy</p>
-      <img src="cs-homepage-legacy.png" alt="FileNet legacy homepage" style="width:100%;border-radius:14px;border:0.5px solid var(--border);display:block;margin-bottom:.875rem;">
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:.875rem;">
-        <div>
-          <img src="cs-homepage-legacy-data.png" alt="Content and Access Management UI" style="width:100%;border-radius:12px;border:0.5px solid var(--border);display:block;">
-          <p style="font-size:.7rem;color:var(--gray);text-align:center;margin-top:.4rem;">Content and Access Management — separate UI</p>
-        </div>
-        <div>
-          <img src="cs-homepage-legacy-desktops.png" alt="Desktop Configuration UI" style="width:100%;border-radius:12px;border:0.5px solid var(--border);display:block;">
-          <p style="font-size:.7rem;color:var(--gray);text-align:center;margin-top:.4rem;">Desktop Configuration — separate UI</p>
-        </div>
+      <div class="cs-compare reveal">
+    <div class="cs-compare-card">
+      <div class="cs-compare-label before">Before — Content and Access Management</div>
+      <div style="overflow:hidden;height:260px;">
+        <img src="cs-homepage-legacy-data.png" alt="Before — Content and Access Management" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;">
       </div>
     </div>
+    <div class="cs-compare-card">
+      <div class="cs-compare-label after">Before — Desktop Configuration</div>
+      <div style="overflow:hidden;height:260px;">
+        <img src="cs-homepage-legacy-desktops.png" alt="Before — Desktop Configuration" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;">
+      </div>
+    </div>
+  </div>
+    <p style="font-size:.8rem;color:var(--gray);line-height:1.7;margin:.75rem 0;">FileNet's legacy Home Page sent admins into two completely separate UIs just to start their work. No clear starting point. No personalization. Admins depended on documentation.</p>
 
     <p class="cs-p">The new Home Page keeps everything in one place. It greets Contessa by name, shows her work at a glance, and provides an in-product walkthrough so she never has to navigate to another UI to begin. I started by running a workshop where I invited designers and IBMers to review internal and external home screens, identify best practices, and ideate together.</p>
 
@@ -461,6 +468,7 @@ document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
     PLG Onboarding
     <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M5 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
   </a>
+</div>
 </div>
 
 </body>

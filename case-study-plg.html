@@ -135,6 +135,10 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
   transition:color .3s;
 }
 .cs-step-ov.active .cs-step-ov-title{color:var(--purple);}
+.cs-metrics-bar{background:var(--surface);border-top:0.5px solid var(--border);border-bottom:0.5px solid var(--border);margin-top:3.5rem;padding:1.75rem 2.5rem;}
+.cs-metrics-inner{max-width:780px;margin:0 auto;display:flex;justify-content:center;gap:4rem;flex-wrap:wrap;}
+.cs-metric-bar-val{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:1.75rem;color:var(--purple);letter-spacing:-.03em;line-height:1;}
+.cs-metric-bar-lbl{font-size:.7rem;color:var(--gray);margin-top:2px;text-align:center;}
 </style>
 
 
@@ -167,12 +171,18 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
   </div>
   <h1 class="cs-title">Product-Led Growth onboarding across IBM Software</h1>
   <p class="cs-sub">How I led trial onboarding strategy across IBM's software org, published 100+ best practices, created the Carbon Interstitial pattern, and scaled guidance to 39+ product teams.</p>
-  <div class="cs-metrics">
-    <div class="cs-metric"><span class="cs-metric-val">+60%</span><span class="cs-metric-lbl">Faster aha moment (Instana)</span></div>
-    <div class="cs-metric"><span class="cs-metric-val">+37%</span><span class="cs-metric-lbl">Trial engagement (Concert)</span></div>
-    <div class="cs-metric"><span class="cs-metric-val">+10%</span><span class="cs-metric-lbl">Revenue growth influenced</span></div>
-    <div class="cs-metric"><span class="cs-metric-val">39+</span><span class="cs-metric-lbl">Products influenced</span></div>
   </div>
+</div>
+<div class="cs-metrics-bar">
+  <div class="cs-metrics-inner">
+    <div class="cs-metric"><span class="cs-metric-bar-val">+60%</span><span class="cs-metric-bar-lbl">Faster aha moment (Instana)</span></div>
+    <div class="cs-metric"><span class="cs-metric-bar-val">+37%</span><span class="cs-metric-bar-lbl">Trial engagement (Concert)</span></div>
+    <div class="cs-metric"><span class="cs-metric-bar-val">+10%</span><span class="cs-metric-bar-lbl">Revenue growth influenced</span></div>
+    <div class="cs-metric"><span class="cs-metric-bar-val">39+</span><span class="cs-metric-bar-lbl">Products influenced</span></div>
+  </div>
+</div>
+<div class="cs-body">
+<div>
 </div>
 
 <!-- BODY -->
@@ -336,43 +346,21 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
       </div>
     </div>
 
-    <!-- Before / After browser mockups -->
-    <div class="reveal" style="margin:1.5rem 0;display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
-      <div>
-      <p style="font-size:.65rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#9A3412;margin-bottom:.5rem;">BEFORE</p>
-      <div style="border-radius:14px;overflow:hidden;box-shadow:0 2px 0 rgba(0,0,0,.08),0 8px 32px rgba(0,0,0,.1);border:0.5px solid rgba(0,0,0,.1);">
-        <div style="background:#E8E8E8;padding:.55rem .875rem;display:flex;align-items:center;gap:.65rem;border-bottom:0.5px solid rgba(0,0,0,.1);">
-          <div style="display:flex;gap:5px;flex-shrink:0;">
-            <div style="width:10px;height:10px;border-radius:50%;background:#FF5F57;"></div>
-            <div style="width:10px;height:10px;border-radius:50%;background:#FEBC2E;"></div>
-            <div style="width:10px;height:10px;border-radius:50%;background:#28C840;"></div>
-          </div>
-          <div style="flex:1;background:#fff;border-radius:5px;border:0.5px solid rgba(0,0,0,.12);padding:.22rem .6rem;font-size:.6rem;color:#666;font-family:'Inter',sans-serif;">carbondesignsystem.com/...</div>
-        </div>
-        <div style="height:320px;overflow-y:scroll;overflow-x:hidden;background:#fff;-webkit-overflow-scrolling:touch;">
-          <img src="plg-interstitial-before.png" alt="Before old static documentation" style="width:100%;display:block;vertical-align:top;">
-        </div>
+    <div class="cs-compare reveal">
+    <div class="cs-compare-card">
+      <div class="cs-compare-label before">Before static docs</div>
+      <div style="overflow:hidden;height:280px;">
+        <img src="plg-interstitial-before.png" alt="Before static docs" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;">
       </div>
-      <p style="font-size:.67rem;color:var(--gray);text-align:center;margin-top:.4rem;opacity:.6;">Scroll to explore</p>
     </div>
-      <div>
-      <p style="font-size:.65rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#1A7A52;margin-bottom:.5rem;">AFTER</p>
-      <div style="border-radius:14px;overflow:hidden;box-shadow:0 2px 0 rgba(0,0,0,.08),0 8px 32px rgba(0,0,0,.1);border:0.5px solid rgba(0,0,0,.1);">
-        <div style="background:#E8E8E8;padding:.55rem .875rem;display:flex;align-items:center;gap:.65rem;border-bottom:0.5px solid rgba(0,0,0,.1);">
-          <div style="display:flex;gap:5px;flex-shrink:0;">
-            <div style="width:10px;height:10px;border-radius:50%;background:#FF5F57;"></div>
-            <div style="width:10px;height:10px;border-radius:50%;background:#FEBC2E;"></div>
-            <div style="width:10px;height:10px;border-radius:50%;background:#28C840;"></div>
-          </div>
-          <div style="flex:1;background:#fff;border-radius:5px;border:0.5px solid rgba(0,0,0,.12);padding:.22rem .6rem;font-size:.6rem;color:#666;font-family:'Inter',sans-serif;">carbondesignsystem.com/...</div>
-        </div>
-        <div style="height:320px;overflow-y:scroll;overflow-x:hidden;background:#fff;-webkit-overflow-scrolling:touch;">
-          <img src="plg-interstitial-after.png" alt="After new tutorial format" style="width:100%;display:block;vertical-align:top;">
-        </div>
+    <div class="cs-compare-card">
+      <div class="cs-compare-label after">After tutorial format</div>
+      <div style="overflow:hidden;height:280px;">
+        <img src="plg-interstitial-after.png" alt="After tutorial format" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;">
       </div>
-      <p style="font-size:.67rem;color:var(--gray);text-align:center;margin-top:.4rem;opacity:.6;">Scroll to explore</p>
     </div>
-    </div>
+  </div>
+
   </div>
 
   <div class="cs-quote reveal">

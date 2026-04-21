@@ -254,32 +254,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
   <!-- END-TO-END STORY -->
   <div class="cs-section reveal">
     <p class="cs-label">Design</p>
-    <h2 class="cs-h2">Aligning the team around one end-to-end story.</h2>
-    <p class="cs-p">During the kickoff workshop, I noticed we had no clear end-to-end user path tied to a real use case. I partnered with three product managers to craft a story around Contessa and her key use case. This gave the team a shared mental model to design and build against.</p>
-    <div class="cs-insights">
-      <div class="cs-insight">
-        <div class="cs-insight-icon" style="background:#EEF0FF">
-          <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M2.5 7.5l3 3 7-7" stroke="#3634A3" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
-        <p>Onboarded the design team faster with a clear shared narrative</p>
-      </div>
-      <div class="cs-insight">
-        <div class="cs-insight-icon" style="background:#EEF0FF">
-          <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M2.5 7.5l3 3 7-7" stroke="#3634A3" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
-        <p>Built shared understanding across PM and engineering so everyone was building toward the same goal</p>
-      </div>
-      <div class="cs-insight">
-        <div class="cs-insight-icon" style="background:#EEF0FF">
-          <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M2.5 7.5l3 3 7-7" stroke="#3634A3" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
-        <p>Used to validate assumptions with real users in research sessions</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- ROADMAP -->
-  <div class<div class="cs-workflow-grid">
+    <h2 class="cs-h2">Designing the three core admin workflows.</h2>
+    <p class="cs-p">Based on research insights and the end-to-end story, my team and I designed the key admin workflows needed for Content Services using Contessa's scenario as our design anchor.</p>
+    <div class="cs-workflow-grid">
       <div class="cs-workflow-card">
         <div class="cs-workflow-icon">
           <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="2" y="4" width="14" height="10" rx="2" stroke="#9A3412" stroke-width="1.4"/><path d="M5 8h8M5 11h5" stroke="#9A3412" stroke-width="1.3" stroke-linecap="round"/></svg>
@@ -302,19 +279,119 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
         <p class="cs-workflow-desc">Set up user desktop environments with the right tools, views, and access for each role.</p>
       </div>
     </div>
+  </div>
 
-    <div class="cs-section reveal">
+  <!-- CONTESSA STORY -->
+  <div class="cs-section reveal">
+    <p class="cs-label">Contessa's story</p>
+    <h2 class="cs-h2">Aligning the team around one end-to-end scenario.</h2>
+    <p class="cs-p">During the kickoff workshop I noticed we had no clear end-to-end user path tied to a real use case. I partnered with three product managers to craft a story around Contessa, the Content Services administrator. She works at a car insurance company and is tasked with helping customer service organize car claims.</p>
+    <p class="cs-p">This story gave the entire team — design, PM, engineering, and content — a shared mental model to build against. It onboarded new designers faster, aligned stakeholders on scope, and became the anchor for every design decision throughout the year.</p>
+
+    <div class="cs-insights">
+      <div class="cs-insight">
+        <div class="cs-insight-icon" style="background:#EEF0FF">
+          <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M2.5 7.5l3 3 7-7" stroke="#3634A3" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <p>Onboarded the design team faster with a clear shared narrative</p>
+      </div>
+      <div class="cs-insight">
+        <div class="cs-insight-icon" style="background:#EEF0FF">
+          <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M2.5 7.5l3 3 7-7" stroke="#3634A3" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <p>Built shared understanding across PM and engineering so everyone was building toward the same goal</p>
+      </div>
+      <div class="cs-insight">
+        <div class="cs-insight-icon" style="background:#EEF0FF">
+          <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M2.5 7.5l3 3 7-7" stroke="#3634A3" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <p>Validated directly with users in research sessions to confirm accuracy</p>
+      </div>
+    </div>
+
+    <div class="reveal" style="margin:1.5rem 0;">
+      <img src="cs-contessa-before-after.png" alt="Contessa end-to-end journey before and after" style="width:100%;border-radius:14px;border:0.5px solid var(--border);display:block;">
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:.875rem;margin-top:.875rem;" class="reveal">
+      <div>
+        <img src="cs-document-class.png" alt="Document class creation" style="width:100%;border-radius:12px;border:0.5px solid var(--border);display:block;">
+        <p style="font-size:.7rem;color:var(--gray);text-align:center;margin-top:.4rem;">Flow 1 — Document class creation</p>
+      </div>
+      <div>
+        <img src="cs-property.png" alt="Creating a property" style="width:100%;border-radius:12px;border:0.5px solid var(--border);display:block;">
+        <p style="font-size:.7rem;color:var(--gray);text-align:center;margin-top:.4rem;">Flow 2 — Creating a property</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ROADMAP -->
+  <div class="cs-section reveal">
+    <p class="cs-label">Roadmap</p>
+    <h2 class="cs-h2">Staying on track across a year of delivery.</h2>
+    <p class="cs-p">To ensure we could deliver the full MVP within one year, I partnered with Product Management and the lead developers to define and prioritize a roadmap for Stage 1. New topics emerged regularly, so I kept these roadmapping sessions ongoing on a monthly basis to realign and reprioritize as needed.</p>
+    <div class="reveal" style="margin:1.5rem 0;">
+      <img src="cs-roadmap.png" alt="Stage 1 roadmap" style="width:100%;border-radius:14px;border:0.5px solid var(--border);display:block;">
+    </div>
+  </div>
+
+  <!-- HOMEPAGE REDESIGN -->
+  <div class="cs-section reveal">
     <p class="cs-label">Homepage redesign</p>
     <h2 class="cs-h2">Using the Home Page as the clearest before-and-after.</h2>
-    <p class="cs-p">To show the modernization clearly, I focused on the Home Page as a concrete before-and-after. The legacy FileNet Home Page sent admins into separate interfaces and lacked a clear starting point. Admins were often confused and depended on documentation to begin.</p>
-    <p class="cs-p">We designed a new Home Page that welcomes the admin with a personalized greeting, keeps core work in one place instead of sending users to another UI, and provides an in-product walkthrough for first-time use.</p>
+    <p class="cs-p">FileNet's legacy Home Page sent admins to two completely separate interfaces just to start their work. <strong>Content and Access Management</strong> opened in one UI. <strong>Desktop Configuration</strong> opened in another. There was no clear starting point, no personalization, and no in-product guidance. Admins were confused and dependent on documentation.</p>
+
+    <!-- Legacy homepage and its two destinations -->
+    <div style="margin:1.5rem 0;" class="reveal">
+      <p style="font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#9A3412;margin-bottom:.75rem;">Before — FileNet legacy</p>
+      <img src="cs-homepage-legacy.png" alt="FileNet legacy homepage" style="width:100%;border-radius:14px;border:0.5px solid var(--border);display:block;margin-bottom:.875rem;">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:.875rem;">
+        <div>
+          <img src="cs-homepage-legacy-data.png" alt="Content and Access Management UI" style="width:100%;border-radius:12px;border:0.5px solid var(--border);display:block;">
+          <p style="font-size:.7rem;color:var(--gray);text-align:center;margin-top:.4rem;">Content and Access Management — separate UI</p>
+        </div>
+        <div>
+          <img src="cs-homepage-legacy-desktops.png" alt="Desktop Configuration UI" style="width:100%;border-radius:12px;border:0.5px solid var(--border);display:block;">
+          <p style="font-size:.7rem;color:var(--gray);text-align:center;margin-top:.4rem;">Desktop Configuration — separate UI</p>
+        </div>
+      </div>
+    </div>
+
+    <p class="cs-p">The new Home Page keeps everything in one place. It greets Contessa by name, shows her work at a glance, and provides an in-product walkthrough so she never has to navigate to another UI to begin. I started by running a workshop where I invited designers and IBMers to review internal and external home screens, identify best practices, and ideate together.</p>
+
+    <!-- Ideation -->
+    <div class="reveal" style="margin:1.5rem 0;">
+      <p style="font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#9A3412;margin-bottom:.75rem;">Ideation — Home Page workshop</p>
+      <img src="cs-homepage-new-ideation.png" alt="Home Page ideation workshop" style="width:100%;border-radius:14px;border:0.5px solid var(--border);display:block;">
+      <p style="font-size:.7rem;color:var(--gray);text-align:center;margin-top:.4rem;">Workshop where we reviewed best practices and ideated the new home page direction</p>
+    </div>
+
+    <!-- New homepage scrollable mockup -->
+    <div class="reveal" style="margin:1.5rem 0;">
+      <p style="font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#1A7A52;margin-bottom:.75rem;">After — Content Services new homepage</p>
+      <div style="border-radius:14px;overflow:hidden;box-shadow:0 2px 0 rgba(0,0,0,.08),0 8px 32px rgba(0,0,0,.1);border:0.5px solid rgba(0,0,0,.1);">
+      <div style="background:#E8E8E8;padding:.55rem .875rem;display:flex;align-items:center;gap:.65rem;border-bottom:0.5px solid rgba(0,0,0,.1);">
+        <div style="display:flex;gap:5px;flex-shrink:0;">
+          <div style="width:10px;height:10px;border-radius:50%;background:#FF5F57;"></div>
+          <div style="width:10px;height:10px;border-radius:50%;background:#FEBC2E;"></div>
+          <div style="width:10px;height:10px;border-radius:50%;background:#28C840;"></div>
+        </div>
+        <div style="flex:1;background:#fff;border-radius:5px;border:0.5px solid rgba(0,0,0,.12);padding:.22rem .6rem;font-size:.6rem;color:#666;font-family:'Inter',sans-serif;">content-services.ibm.com/home</div>
+      </div>
+      <div style="height:460px;overflow-y:scroll;overflow-x:hidden;background:#fff;-webkit-overflow-scrolling:touch;">
+        <img src="cs-homepage-new.png" alt="New Content Services homepage" style="width:100%;display:block;vertical-align:top;">
+      </div>
+    </div>
+    <p style="font-size:.67rem;color:var(--gray);text-align:center;margin-top:.4rem;opacity:.6;">Scroll to explore</p>
+    </div>
+  </div>
 
   <div class="cs-quote reveal">
-    <p>"Clarity beats complexity. Modernizing a legacy tool is often about removing confusion, not adding features."</p>
+    <p>"Clarity beats complexity. Modernizing a legacy tool is about removing confusion, not adding features."</p>
     <cite>Personal reflection from the Content Services project</cite>
   </div>
 
-  <!-- OUTCOMES -->
+    <!-- OUTCOMES -->
   <div class="cs-section reveal">
     <p class="cs-label">Outcomes</p>
     <h2 class="cs-h2">Delivered on time. Recognized for impact.</h2>
@@ -384,9 +461,6 @@ document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
     PLG Onboarding
     <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M5 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
   </a>
-</div>
-
-  </div>
 </div>
 
 </body>

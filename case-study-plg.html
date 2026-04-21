@@ -139,6 +139,34 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .cs-metrics-inner{max-width:780px;margin:0 auto;display:flex;justify-content:center;gap:4rem;flex-wrap:wrap;}
 .cs-metric-bar-val{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:1.75rem;color:var(--purple);letter-spacing:-.03em;line-height:1;}
 .cs-metric-bar-lbl{font-size:.7rem;color:var(--gray);margin-top:2px;text-align:center;}
+
+/* CHALLENGE CARD */
+.cs-challenge{
+  background:linear-gradient(135deg,#FFF0EB,#FFF8F5);
+  border:0.5px solid rgba(216,90,48,.2);
+  border-left:3px solid var(--coral);
+  border-radius:16px;padding:1.75rem;
+  margin:2rem 0;
+}
+.cs-challenge-eyebrow{
+  font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--coral);margin-bottom:.6rem;display:flex;align-items:center;gap:.4rem;
+}
+.cs-challenge-q{
+  font-family:'Bricolage Grotesque',sans-serif;font-weight:800;
+  font-size:1.2rem;letter-spacing:-.025em;line-height:1.3;
+  color:var(--black);margin:0;
+}
+
+
+/* LIGHTBOX */
+.cs-lightbox{display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.85);backdrop-filter:blur(8px);align-items:center;justify-content:center;cursor:zoom-out;}
+.cs-lightbox.open{display:flex;}
+.cs-lightbox img{max-width:90vw;max-height:88vh;border-radius:12px;box-shadow:0 24px 80px rgba(0,0,0,.4);}
+.cs-lightbox-close{position:absolute;top:1.25rem;right:1.5rem;color:#fff;font-size:1.5rem;cursor:pointer;background:none;border:none;opacity:.7;}
+.cs-lightbox-close:hover{opacity:1;}
+img.zoomable{cursor:zoom-in;}
+
 </style>
 
 
@@ -194,6 +222,16 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
     <h2 class="cs-section-title">IBM was betting on product-led growth. No one knew how to do trial onboarding consistently.</h2>
     <p class="cs-p">In 2024, IBM Software shifted to a Product-Led Growth model where users would evaluate and purchase products without talking to sales. That made the trial experience the most important touchpoint in the entire funnel.</p>
     <p class="cs-p">The problem: every product team was building their own onboarding from scratch. <strong>Metrics were inconsistent. Best practices lived in people's heads. Time to value varied wildly.</strong> There was no shared standard, no reusable patterns, and no way to learn from what was working across the org.</p>
+
+  <div class="cs-challenge reveal">
+    <p class="cs-challenge-eyebrow">
+      <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><circle cx="6.5" cy="6.5" r="5.5" stroke="#D85A30" stroke-width="1.2"/><path d="M6.5 4v3M6.5 8.5v.5" stroke="#D85A30" stroke-width="1.3" stroke-linecap="round"/></svg>
+      The challenge
+    </p>
+    <p class="cs-challenge-q">How do you build a consistent, scalable onboarding system across 40+ IBM Software products — without owning any of them?</p>
+  </div>
+
+
     <p class="cs-p">I was selected to lead PLG Innovation Design a cross-functional effort to fix this at scale.</p>
   </div>
 
@@ -206,7 +244,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
     <p class="cs-p">I started with a systematic audit 13 external PLG products and 9 IBM products. I analyzed onboarding steps, content tone, personalization, speed to value, and where users dropped off.</p>
 
     <div class="reveal" style="margin:2rem 0;">
-      <img src="plg-audit.png" alt="PLG product audit overview" style="width:100%;display:block;border-radius:14px;border:0.5px solid var(--border);">
+      <img onclick="openLightbox(this.src)" class="zoomable" src="plg-audit.png" alt="PLG product audit overview" style="width:100%;display:block;border-radius:14px;border:0.5px solid var(--border);">
     </div>
 
     <p class="cs-label reveal" style="margin-bottom:.75rem;">Findings</p>
@@ -282,7 +320,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
       </div>
     </div>
     <div class="reveal" style="margin:1.5rem 0;">
-      <img src="plg-bestpractices.png" alt="100+ best practices published to Carbon" style="width:100%;border-radius:14px;border:0.5px solid var(--border);display:block;">
+      <img onclick="openLightbox(this.src)" class="zoomable" src="plg-bestpractices.png" alt="100+ best practices published to Carbon" style="width:100%;border-radius:14px;border:0.5px solid var(--border);display:block;">
     </div>
   </div>
 
@@ -298,7 +336,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
       </div>
     </div>
     <div class="reveal" style="margin:1.5rem 0;">
-      <img src="plg-interstitial.png" alt="Carbon Interstitial pattern" style="width:100%;border-radius:14px;border:0.5px solid var(--border);display:block;">
+      <img onclick="openLightbox(this.src)" class="zoomable" src="plg-interstitial.png" alt="Carbon Interstitial pattern" style="width:100%;border-radius:14px;border:0.5px solid var(--border);display:block;">
     </div>
   </div>
 
@@ -314,7 +352,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
       </div>
     </div>
     <div class="reveal" style="margin:1.5rem 0;">
-      <img src="plg-products-using.png" alt="Products using the Interstitial pattern" style="width:100%;border-radius:14px;border:0.5px solid var(--border);display:block;">
+      <img onclick="openLightbox(this.src)" class="zoomable" src="plg-products-using.png" alt="Products using the Interstitial pattern" style="width:100%;border-radius:14px;border:0.5px solid var(--border);display:block;">
     </div>
   </div>
 
@@ -330,7 +368,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
       </div>
     </div>
     <div class="reveal" style="margin:1.5rem 0;">
-      <img src="plg-products-using-instana.png" alt="Instana onboarding experience" style="width:100%;border-radius:14px;border:0.5px solid var(--border);display:block;">
+      <img onclick="openLightbox(this.src)" class="zoomable" src="plg-products-using-instana.png" alt="Instana onboarding experience" style="width:100%;border-radius:14px;border:0.5px solid var(--border);display:block;">
     </div>
   </div>
 
@@ -346,20 +384,42 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
       </div>
     </div>
 
-    <div class="cs-compare reveal">
-    <div class="cs-compare-card">
-      <div class="cs-compare-label before">Before static docs</div>
-      <div style="overflow:hidden;height:280px;">
-        <img src="plg-interstitial-before.png" alt="Before static docs" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;">
+    <div class="reveal" style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin:2rem 0;">
+      <div>
+      <div class="cs-compare-label before" style="border-radius:6px 6px 0 0;">Before static docs</div>
+      <div style="border:0.5px solid var(--border);border-top:none;border-radius:0 0 14px 14px;overflow:hidden;">
+        <div style="background:#E8E8E8;padding:.55rem .875rem;display:flex;align-items:center;gap:.65rem;border-bottom:0.5px solid rgba(0,0,0,.1);">
+          <div style="display:flex;gap:5px;flex-shrink:0;">
+            <div style="width:10px;height:10px;border-radius:50%;background:#FF5F57;"></div>
+            <div style="width:10px;height:10px;border-radius:50%;background:#FEBC2E;"></div>
+            <div style="width:10px;height:10px;border-radius:50%;background:#28C840;"></div>
+          </div>
+          <div style="flex:1;background:#fff;border-radius:5px;border:0.5px solid rgba(0,0,0,.12);padding:.22rem .6rem;font-size:.6rem;color:#666;font-family:'Inter',sans-serif;">carbondesignsystem.com/...</div>
+        </div>
+        <div style="height:380px;overflow-y:scroll;overflow-x:hidden;background:#fff;-webkit-overflow-scrolling:touch;">
+          <img onclick="openLightbox(this.src)" class="zoomable" src="plg-interstitial-before.png" alt="Before static docs" style="width:100%;display:block;vertical-align:top;">
+        </div>
+        <p style="font-size:.62rem;color:var(--gray);text-align:center;padding:.4rem 0;opacity:.6;">Scroll to explore</p>
       </div>
     </div>
-    <div class="cs-compare-card">
-      <div class="cs-compare-label after">After tutorial format</div>
-      <div style="overflow:hidden;height:280px;">
-        <img src="plg-interstitial-after.png" alt="After tutorial format" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;">
+      <div>
+      <div class="cs-compare-label after" style="border-radius:6px 6px 0 0;">After tutorial format</div>
+      <div style="border:0.5px solid var(--border);border-top:none;border-radius:0 0 14px 14px;overflow:hidden;">
+        <div style="background:#E8E8E8;padding:.55rem .875rem;display:flex;align-items:center;gap:.65rem;border-bottom:0.5px solid rgba(0,0,0,.1);">
+          <div style="display:flex;gap:5px;flex-shrink:0;">
+            <div style="width:10px;height:10px;border-radius:50%;background:#FF5F57;"></div>
+            <div style="width:10px;height:10px;border-radius:50%;background:#FEBC2E;"></div>
+            <div style="width:10px;height:10px;border-radius:50%;background:#28C840;"></div>
+          </div>
+          <div style="flex:1;background:#fff;border-radius:5px;border:0.5px solid rgba(0,0,0,.12);padding:.22rem .6rem;font-size:.6rem;color:#666;font-family:'Inter',sans-serif;">carbondesignsystem.com/...</div>
+        </div>
+        <div style="height:380px;overflow-y:scroll;overflow-x:hidden;background:#fff;-webkit-overflow-scrolling:touch;">
+          <img onclick="openLightbox(this.src)" class="zoomable" src="plg-interstitial-after.png" alt="After tutorial format" style="width:100%;display:block;vertical-align:top;">
+        </div>
+        <p style="font-size:.62rem;color:var(--gray);text-align:center;padding:.4rem 0;opacity:.6;">Scroll to explore</p>
       </div>
     </div>
-  </div>
+    </div>
 
   </div>
 
@@ -450,6 +510,17 @@ document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
   },{threshold:0.3});
   steps.forEach(function(s){ io.observe(s); });
 })();
+</script>
+
+
+<div class="cs-lightbox" id="lightbox" onclick="closeLightbox()">
+  <button class="cs-lightbox-close" onclick="closeLightbox()">&#x2715;</button>
+  <img id="lightboxImg" src="" alt="">
+</div>
+<script>
+function openLightbox(src){document.getElementById('lightboxImg').src=src;document.getElementById('lightbox').classList.add('open');document.body.style.overflow='hidden';}
+function closeLightbox(){document.getElementById('lightbox').classList.remove('open');document.body.style.overflow='';}
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeLightbox();});
 </script>
 
 </body>

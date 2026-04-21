@@ -167,6 +167,34 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .scroll-screen-body::-webkit-scrollbar{width:6px;}
 .scroll-screen-body::-webkit-scrollbar-track{background:transparent;}
 .scroll-screen-body::-webkit-scrollbar-thumb{background:rgba(0,0,0,.15);border-radius:3px;}
+
+/* CHALLENGE CARD */
+.cs-challenge{
+  background:linear-gradient(135deg,#FFF0EB,#FFF8F5);
+  border:0.5px solid rgba(216,90,48,.2);
+  border-left:3px solid var(--coral);
+  border-radius:16px;padding:1.75rem;
+  margin:2rem 0;
+}
+.cs-challenge-eyebrow{
+  font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--coral);margin-bottom:.6rem;display:flex;align-items:center;gap:.4rem;
+}
+.cs-challenge-q{
+  font-family:'Bricolage Grotesque',sans-serif;font-weight:800;
+  font-size:1.2rem;letter-spacing:-.025em;line-height:1.3;
+  color:var(--black);margin:0;
+}
+
+
+/* LIGHTBOX */
+.cs-lightbox{display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.85);backdrop-filter:blur(8px);align-items:center;justify-content:center;cursor:zoom-out;}
+.cs-lightbox.open{display:flex;}
+.cs-lightbox img{max-width:90vw;max-height:88vh;border-radius:12px;box-shadow:0 24px 80px rgba(0,0,0,.4);}
+.cs-lightbox-close{position:absolute;top:1.25rem;right:1.5rem;color:#fff;font-size:1.5rem;cursor:pointer;background:none;border:none;opacity:.7;}
+.cs-lightbox-close:hover{opacity:1;}
+img.zoomable{cursor:zoom-in;}
+
 </style>
 
 
@@ -219,6 +247,16 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
     <h2 class="cs-h2">Great patterns. Painful documentation. Teams were skipping the guidance entirely.</h2>
     <p class="cs-p">Carbon Design System is IBM's unified design language used by 324 teams, powering 640k+ GitHub repositories, and reaching 450k+ monthly visitors. The patterns were solid. But the way guidance was delivered wasn't working.</p>
     <p class="cs-p">Teams were building onboarding experiences inconsistently not because they didn't care but because the documentation was too long, too text-heavy, and too disconnected from how designers and developers actually work. <strong>Long pages discouraged engagement. Teams wanted visuals. Developers wanted code alongside the guidance.</strong></p>
+
+  <div class="cs-challenge reveal">
+    <p class="cs-challenge-eyebrow">
+      <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><circle cx="6.5" cy="6.5" r="5.5" stroke="#D85A30" stroke-width="1.2"/><path d="M6.5 4v3M6.5 8.5v.5" stroke="#D85A30" stroke-width="1.3" stroke-linecap="round"/></svg>
+      The challenge
+    </p>
+    <p class="cs-challenge-q">How do you get 324 product teams to adopt the same pattern when the documentation is too long for anyone to read?</p>
+  </div>
+
+
     <p class="cs-p">I was brought in to change how Carbon taught its own system and in doing so, directly shaped the 2026 Carbon site relaunch.</p>
   </div>
 
@@ -227,13 +265,13 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
     <div class="cs-compare-card">
       <div class="cs-compare-label before">Before static docs</div>
       <div style="overflow:hidden;height:280px;">
-        <img src="carbon-before.png" alt="Carbon before" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;">
+        <img onclick="openLightbox(this.src)" class="zoomable" src="carbon-before.png" alt="Carbon before" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;">
       </div>
     </div>
     <div class="cs-compare-card">
       <div class="cs-compare-label after">After tutorial learning</div>
       <div style="overflow:hidden;height:280px;">
-        <img src="carbon-after.png" alt="Carbon after" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;">
+        <img onclick="openLightbox(this.src)" class="zoomable" src="carbon-after.png" alt="Carbon after" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;">
       </div>
     </div>
   </div>
@@ -336,7 +374,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
         </div>
       </div>
       <div style="height:500px;overflow-y:scroll;overflow-x:hidden;background:#fff;-webkit-overflow-scrolling:touch;">
-        <img src="carbon-tutorial.png" alt="Carbon tutorial page" style="width:100%;display:block;vertical-align:top;">
+        <img onclick="openLightbox(this.src)" class="zoomable" src="carbon-tutorial.png" alt="Carbon tutorial page" style="width:100%;display:block;vertical-align:top;">
       </div>
     </div>
     <p style="font-size:.67rem;color:var(--gray);text-align:center;margin-top:-.25rem;margin-bottom:1.5rem;opacity:.7;">↕ Scroll inside to explore</p>
@@ -447,6 +485,17 @@ document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
     <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M5 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
   </a>
 </div>
+
+
+<div class="cs-lightbox" id="lightbox" onclick="closeLightbox()">
+  <button class="cs-lightbox-close" onclick="closeLightbox()">&#x2715;</button>
+  <img id="lightboxImg" src="" alt="">
+</div>
+<script>
+function openLightbox(src){document.getElementById('lightboxImg').src=src;document.getElementById('lightbox').classList.add('open');document.body.style.overflow='hidden';}
+function closeLightbox(){document.getElementById('lightbox').classList.remove('open');document.body.style.overflow='';}
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeLightbox();});
+</script>
 
 </body>
 </html>

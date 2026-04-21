@@ -344,6 +344,487 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
   <div class="cs-section reveal">
     <p class="cs-label">Homepage redesign</p>
     <h2 class="cs-h2">Using the Home Page as the clearest before-and-after.</h2>
+    <p class="cs-p">FileNet's legacy Home Page sent admins to two completely separate interfaces just to start their work.</p>
+
+    <!-- Full legacy homepage -->
+    <div class="reveal" style="margin:1.5rem 0;">
+      <img src="cs-homepage-legacy.png" alt="FileNet legacy homepage" style="width:100%;border-radius:14px;border:0.5px solid var(--border);display:block;">
+    </div>
+
+    <!-- Two before cards -->
+    <div class="cs-compare reveal">
+      <div class="cs-compare-card">
+        <div class="cs-compare-label before">Before — Content and Access Management</div>
+        <div style="overflow:hidden;height:260px;">
+          <img src="cs-homepage-legacy-data.png" alt="Content and Access Management UI" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;">
+        </div>
+      </div>
+      <div class="cs-compare-card">
+        <div class="cs-compare-label before">Before — Desktop Configuration</div>
+        <div style="overflow:hidden;height:260px;">
+          <img src="cs-homepage-legacy-desktops.png" alt="Desktop Configuration UI" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;">
+        </div>
+      </div>
+    </div>
+
+    <p class="cs-p" style="margin-top:1rem;">Content and Access Management opened in one UI. Desktop Configuration opened in another. There was no clear starting point, no personalization, and no in-product guidance. Admins were confused and dependent on documentation.</p>
+
+    <!-- Workshop -->
+    <div class="cs-section reveal" style="margin-top:2.5rem;">
+      <p class="cs-label">Ideation — Home Page workshop</p>
+      <h2 class="cs-h2" style="font-size:1.15rem;">I decided to host a workshop.</h2>
+      <p class="cs-p">Throughout my time in the Automation organization I had seen designers solving the same problem with different methods and terminology. To make our products more consistent, I organized a workshop and invited everyone in the Austin studio involved in this project.</p>
+
+      <div class="cs-insights" style="margin:1.25rem 0;">
+        <div class="cs-insight">
+          <div class="cs-insight-icon" style="background:#FFF0EB;">
+            <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M7.5 2v11M2 7.5h11" stroke="#9A3412" stroke-width="1.4" stroke-linecap="round"/></svg>
+          </div>
+          <p>Participated in the User Needs EDT activity to discover Contessa's needs for the Home Page</p>
+        </div>
+        <div class="cs-insight">
+          <div class="cs-insight-icon" style="background:#FFF0EB;">
+            <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M7.5 2v11M2 7.5h11" stroke="#9A3412" stroke-width="1.4" stroke-linecap="round"/></svg>
+          </div>
+          <p>Reviewed internal IBM home screens to identify best practices and what to avoid</p>
+        </div>
+        <div class="cs-insight">
+          <div class="cs-insight-icon" style="background:#FFF0EB;">
+            <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M7.5 2v11M2 7.5h11" stroke="#9A3412" stroke-width="1.4" stroke-linecap="round"/></svg>
+          </div>
+          <p>Reviewed products we use daily to understand what makes them effective</p>
+        </div>
+      </div>
+
+      <p class="cs-p">Encouraged by the curiosity of others and the positive feedback from the workshop, I was inspired to establish weekly Design Critiques for any IBMer in the Austin studio — welcoming any role to share ongoing projects, gather feedback, and increase collaboration across teams.</p>
+
+      <p class="cs-label" style="margin-top:1.5rem;margin-bottom:.75rem;">Workshop outcome</p>
+      <div class="reveal" style="margin-bottom:1.5rem;">
+        <img src="cs-homepage-new-ideation.png" alt="Home Page ideation workshop outcome" style="width:100%;border-radius:14px;border:0.5px solid var(--border);display:block;">
+      </div>
+    </div>
+
+    <!-- Outcomes of the new homepage -->
+    <div class="cs-section reveal">
+      <p class="cs-label">New homepage</p>
+      <h2 class="cs-h2" style="font-size:1.15rem;">The final design enables Contessa to:</h2>
+      <div class="cs-insights" style="margin:1.25rem 0;">
+        <div class="cs-insight">
+          <div class="cs-insight-icon" style="background:#E3F9F0;">
+            <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M2.5 7.5l3 3 7-7" stroke="#1A7A52" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <p>Feel welcomed, greeted by name and time of day</p>
+        </div>
+        <div class="cs-insight">
+          <div class="cs-insight-icon" style="background:#E3F9F0;">
+            <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M2.5 7.5l3 3 7-7" stroke="#1A7A52" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <p>Start creating without navigating to another UI</p>
+        </div>
+        <div class="cs-insight">
+          <div class="cs-insight-icon" style="background:#E3F9F0;">
+            <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M2.5 7.5l3 3 7-7" stroke="#1A7A52" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <p>Get a quick overview of all her work in one screen</p>
+        </div>
+        <div class="cs-insight">
+          <div class="cs-insight-icon" style="background:#E3F9F0;">
+            <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M2.5 7.5l3 3 7-7" stroke="#1A7A52" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <p>Follow an in-product walkthrough without depending on documentation</p>
+        </div>
+        <div class="cs-insight">
+          <div class="cs-insight-icon" style="background:#E3F9F0;">
+            <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M2.5 7.5l3 3 7-7" stroke="#1A7A52" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <p>Organize the screen based on the task she focuses on</p>
+        </div>
+        <div class="cs-insight">
+          <div class="cs-insight-icon" style="background:#E3F9F0;">
+            <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M2.5 7.5l3 3 7-7" stroke="#1A7A52" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <p>See a feed of teammates and be aware of what they have worked on</p>
+        </div>
+        <div class="cs-insight">
+          <div class="cs-insight-icon" style="background:#E3F9F0;">
+            <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M2.5 7.5l3 3 7-7" stroke="#1A7A52" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <p>Use quick links based on her personal preferences and learn about new updates</p>
+        </div>
+      </div>
+
+      <p class="cs-label" style="margin-bottom:.75rem;">Deliverable</p>
+      <!-- Scrollable browser mockup -->
+      <div class="reveal" style="margin:0 0 1.5rem;">
+        <div style="border-radius:14px;overflow:hidden;box-shadow:0 2px 0 rgba(0,0,0,.08),0 8px 32px rgba(0,0,0,.1);border:0.5px solid rgba(0,0,0,.1);">
+          <div style="background:#E8E8E8;padding:.55rem .875rem;display:flex;align-items:center;gap:.65rem;border-bottom:0.5px solid rgba(0,0,0,.1);">
+            <div style="display:flex;gap:5px;flex-shrink:0;">
+              <div style="width:10px;height:10px;border-radius:50%;background:#FF5F57;"></div>
+              <div style="width:10px;height:10px;border-radius:50%;background:#FEBC2E;"></div>
+              <div style="width:10px;height:10px;border-radius:50%;background:#28C840;"></div>
+            </div>
+            <div style="flex:1;background:#fff;border-radius:5px;border:0.5px solid rgba(0,0,0,.12);padding:.22rem .6rem;font-size:.6rem;color:#666;font-family:'Inter',sans-serif;">content-services.ibm.com/home</div>
+          </div>
+          <div style="height:460px;overflow-y:scroll;overflow-x:hidden;background:#fff;-webkit-overflow-scrolling:touch;">
+            <img src="cs-homepage-new.png" alt="New Content Services homepage" style="width:100%;display:block;vertical-align:top;">
+          </div>
+        </div>
+        <p style="font-size:.67rem;color:var(--gray);text-align:center;margin-top:.4rem;opacity:.6;">Scroll to explore</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="cs-quote reveal">
+    <p>"Clarity beats complexity. Modernizing a legacy tool is about removing confusion, not adding features."</p>
+    <cite>Personal reflection from the Content Services project</cite>
+  </div>
+
+  html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IBM Content Services — Susana Chinchilla</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,700;12..96,800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{--bg:#fff;--surface:#F5F5F7;--black:#1D1D1F;--gray:#6E6E73;--border:#D2D2D7;--purple:#4A3AFF;--purple2:#9B8AFF;--purple3:#C084FC;--coral:#D85A30;}
+html{scroll-behavior:smooth;}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--black);font-size:16px;line-height:1.6;overflow-x:hidden;}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 2.5rem;height:56px;background:rgba(255,255,255,.88);backdrop-filter:blur(20px);border-bottom:0.5px solid var(--border);}
+.nav-logo{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:1rem;color:var(--black);text-decoration:none;}
+.nav-logo span{color:var(--coral);}
+.nav-back{display:flex;align-items:center;gap:6px;font-size:.8rem;color:var(--gray);text-decoration:none;transition:color .2s;}
+.nav-back:hover{color:var(--black);}
+.nav-tag{font-size:.72rem;color:var(--gray);}
+
+/* HERO */
+.cs-hero{padding:8rem 2.5rem 0;max-width:780px;margin:0 auto;text-align:center;}
+.cs-tags{display:flex;justify-content:center;gap:.45rem;flex-wrap:wrap;margin-bottom:1.5rem;}
+.cs-tag{font-size:.63rem;font-weight:500;padding:4px 10px 4px 8px;border-radius:980px;background:#FFF0EB;color:#9A3412;border:0.5px solid rgba(154,52,18,.15);display:inline-flex;align-items:center;gap:5px;}
+.cs-tag-dot{width:5px;height:5px;border-radius:50%;background:var(--coral);flex-shrink:0;}
+.cs-title{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(2rem,5vw,3.5rem);letter-spacing:-.035em;line-height:1.05;margin-bottom:1.25rem;}
+.cs-title .grad{background:linear-gradient(270deg,#D85A30,#F07B5A,#D85A30);background-size:300% 300%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:gradShift 6s ease infinite;}
+@keyframes gradShift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+.cs-sub{font-size:1rem;font-weight:300;color:var(--gray);line-height:1.75;max-width:600px;margin:0 auto;}
+
+/* META ROW */
+.cs-meta{max-width:780px;margin:2.5rem auto 0;display:flex;justify-content:center;gap:3rem;flex-wrap:wrap;padding:2rem 2.5rem;border-top:0.5px solid var(--border);border-bottom:0.5px solid var(--border);}
+.cs-meta-item{display:flex;flex-direction:column;align-items:center;gap:3px;}
+.cs-meta-label{font-size:.65rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--gray);}
+.cs-meta-val{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:1rem;color:var(--black);}
+
+/* METRICS BAR */
+.cs-metrics-bar{background:var(--surface);border-bottom:0.5px solid var(--border);padding:1.75rem 2.5rem;}
+.cs-metrics-inner{max-width:780px;margin:0 auto;display:flex;justify-content:center;gap:4rem;flex-wrap:wrap;}
+.cs-metric{display:flex;flex-direction:column;align-items:center;gap:3px;}
+.cs-metric-val{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:1.9rem;letter-spacing:-.03em;color:var(--coral);}
+.cs-metric-lbl{font-size:.7rem;color:var(--gray);text-align:center;max-width:120px;line-height:1.3;}
+
+/* BODY */
+.cs-body{max-width:720px;margin:0 auto;padding:4rem 2.5rem;}
+.cs-section{margin-bottom:3.5rem;}
+.cs-label{font-size:.67rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--coral);margin-bottom:.75rem;}
+.cs-h2{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(1.5rem,3vw,2rem);letter-spacing:-.03em;line-height:1.1;margin-bottom:1rem;}
+.cs-p{font-size:.93rem;color:var(--gray);line-height:1.8;margin-bottom:1rem;}
+.cs-p strong{color:var(--black);font-weight:500;}
+
+/* INSIGHT LIST */
+.cs-insights{display:flex;flex-direction:column;gap:.75rem;margin:1.5rem 0;}
+.cs-insight{display:flex;align-items:flex-start;gap:.875rem;background:var(--surface);border-radius:12px;padding:1rem 1.1rem;}
+.cs-insight-icon{width:30px;height:30px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.cs-insight p{font-size:.85rem;color:var(--gray);line-height:1.6;}
+.cs-insight strong{color:var(--black);font-weight:500;}
+
+/* WORKSHOP ACTIVITIES */
+.cs-activity-grid{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin:1.5rem 0;}
+.cs-activity{background:var(--surface);border-radius:12px;padding:.9rem 1.1rem;display:flex;align-items:center;gap:.75rem;}
+.cs-activity-num{width:28px;height:28px;border-radius:50%;background:#FFF0EB;color:#9A3412;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:.75rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.cs-activity p{font-size:.82rem;color:var(--black);font-weight:500;}
+
+/* PROCESS STEPS */
+.cs-steps{display:flex;flex-direction:column;gap:0;margin:1.5rem 0;}
+.cs-step{display:flex;gap:1.25rem;padding-bottom:1.5rem;position:relative;}
+.cs-step:not(:last-child)::after{content:'';position:absolute;left:15px;top:32px;bottom:0;width:0.5px;background:var(--border);}
+.cs-step-num{width:32px;height:32px;border-radius:50%;background:#FFF0EB;color:#9A3412;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:.78rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;z-index:1;}
+.cs-step-title{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:.95rem;margin-bottom:.25rem;}
+.cs-step-desc{font-size:.83rem;color:var(--gray);line-height:1.65;}
+
+/* PERSONA CARD */
+.cs-persona{background:linear-gradient(135deg,#FFF0EB,#FFF8F5);border:0.5px solid rgba(216,90,48,.15);border-radius:16px;padding:1.5rem;margin:1.5rem 0;display:flex;gap:1.25rem;align-items:flex-start;}
+.cs-persona-avatar{width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#D85A30,#F07B5A);display:flex;align-items:center;justify-content:center;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:1.1rem;color:#fff;flex-shrink:0;}
+.cs-persona-name{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:1rem;color:var(--black);margin-bottom:2px;}
+.cs-persona-role{font-size:.75rem;color:var(--coral);font-weight:500;}
+.cs-persona-desc{font-size:.82rem;color:var(--gray);line-height:1.6;margin-top:.5rem;}
+
+/* WORKFLOW CARDS */
+.cs-workflow-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.875rem;margin:1.5rem 0;}
+.cs-workflow-card{background:var(--surface);border-radius:14px;padding:1.25rem;}
+.cs-workflow-icon{width:36px;height:36px;border-radius:10px;background:#FFF0EB;display:flex;align-items:center;justify-content:center;margin-bottom:.75rem;}
+.cs-workflow-title{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:.88rem;color:var(--black);margin-bottom:.35rem;}
+.cs-workflow-desc{font-size:.75rem;color:var(--gray);line-height:1.5;}
+
+/* OUTCOMES */
+.cs-outcome-grid{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin:1.5rem 0;}
+.cs-outcome-card{background:var(--surface);border-radius:14px;padding:1.25rem;}
+.cs-outcome-val{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:1.6rem;letter-spacing:-.03em;color:var(--coral);margin-bottom:.25rem;}
+.cs-outcome-title{font-size:.82rem;font-weight:500;color:var(--black);margin-bottom:.2rem;}
+.cs-outcome-desc{font-size:.73rem;color:var(--gray);line-height:1.5;}
+
+/* QUOTE */
+.cs-quote{background:#FFF0EB;border-left:3px solid var(--coral);border-radius:0 12px 12px 0;padding:1.25rem 1.5rem;margin:2rem 0;}
+.cs-quote p{font-size:.95rem;color:#9A3412;line-height:1.7;font-style:italic;}
+.cs-quote cite{display:block;font-size:.72rem;color:var(--coral);font-style:normal;margin-top:.5rem;font-weight:500;}
+
+/* REFLECTION */
+.cs-reflection{background:var(--surface);border-radius:16px;padding:1.75rem;margin:2rem 0;}
+.cs-reflection-title{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:1rem;margin-bottom:1rem;}
+.cs-reflection-item{display:flex;gap:.75rem;margin-bottom:.875rem;font-size:.85rem;color:var(--gray);line-height:1.6;}
+.cs-reflection-item strong{color:var(--black);font-weight:500;}
+.cs-reflection-dot{width:6px;height:6px;border-radius:50%;background:var(--coral);flex-shrink:0;margin-top:.45rem;}
+
+/* NEXT */
+.cs-next{background:linear-gradient(135deg,#FFF0EB,#FFE8DF);border-radius:20px;padding:2.5rem;text-align:center;margin-top:4rem;}
+.cs-next-label{font-size:.68rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--coral);margin-bottom:.75rem;}
+.cs-next-title{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:1.5rem;letter-spacing:-.025em;margin-bottom:.5rem;}
+.cs-next-sub{font-size:.85rem;color:var(--gray);margin-bottom:1.5rem;}
+.btn-coral{font-size:.86rem;font-weight:500;background:linear-gradient(135deg,#D85A30,#F07B5A);color:#fff;text-decoration:none;padding:.75rem 1.6rem;border-radius:980px;transition:transform .15s;display:inline-block;}
+.btn-coral:hover{transform:translateY(-2px);}
+
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease;}
+.reveal.visible{opacity:1;transform:translateY(0);}
+
+@media(max-width:700px){
+  nav{padding:0 1.25rem;}
+  .cs-hero,.cs-body{padding-left:1.5rem;padding-right:1.5rem;}
+  .cs-meta{gap:1.5rem;}
+  .cs-metrics-inner{gap:1.75rem;}
+  .cs-activity-grid{grid-template-columns:1fr;}
+  .cs-workflow-grid{grid-template-columns:1fr;}
+  .cs-outcome-grid{grid-template-columns:1fr;}
+  .cs-img-grid-2{grid-template-columns:1fr;}
+  .cs-img-grid-3{grid-template-columns:1fr 1fr;}
+  .cs-persona{flex-direction:column;}
+}
+.cs-compare{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:2rem 0;}
+.cs-compare-card{border-radius:14px;overflow:hidden;border:0.5px solid var(--border);}
+.cs-compare-label{font-size:.65rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:.6rem 1rem;border-bottom:0.5px solid var(--border);}
+.cs-compare-label.before{background:#FFF0EB;color:#9A3412;}
+.cs-compare-label.after{background:#E3F9F0;color:#1A7A52;}
+</style>
+
+<script>
+(function(){
+  if(sessionStorage.getItem('sc_access')==='SMILE') return;
+  sessionStorage.setItem('sc_redirect', window.location.pathname.split('/').pop());
+  window.location.href = 'password.html';
+})();
+</script>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-back">
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M9 2L4 7l5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    Back to portfolio
+  </a>
+  <a href="index.html" class="nav-logo">SC<span>.</span></a>
+  <span class="nav-tag">IBM · 2022–2023</span>
+</nav>
+
+<!-- HERO -->
+<div class="cs-hero">
+  <div class="cs-tags">
+    <span class="cs-tag"><span class="cs-tag-dot"></span>Leadership</span>
+    <span class="cs-tag"><span class="cs-tag-dot"></span>Enterprise product</span>
+    <span class="cs-tag"><span class="cs-tag-dot"></span>AWS</span>
+    <span class="cs-tag"><span class="cs-tag-dot"></span>Design Lead</span>
+  </div>
+  <h1 class="cs-title">IBM Content Services<br><span class="grad">legacy to SaaS</span></h1>
+  <p class="cs-sub">How I led design for a complex legacy enterprise platform, aligned a cross-functional team through Design Thinking, and delivered a modernized admin experience within one year.</p>
+</div>
+
+<!-- META -->
+<div class="cs-meta">
+  <div class="cs-meta-item"><span class="cs-meta-label">Role</span><span class="cs-meta-val">Product Design Lead</span></div>
+  <div class="cs-meta-item"><span class="cs-meta-label">Duration</span><span class="cs-meta-val">2022–2023</span></div>
+  <div class="cs-meta-item"><span class="cs-meta-label">Tools</span><span class="cs-meta-val">Figma, Mural</span></div>
+  <div class="cs-meta-item"><span class="cs-meta-label">Team</span><span class="cs-meta-val">3 designers led</span></div>
+</div>
+
+<!-- METRICS -->
+<div class="cs-metrics-bar">
+  <div class="cs-metrics-inner">
+    <div class="cs-metric"><span class="cs-metric-val">$400M+</span><span class="cs-metric-lbl">ROI influenced</span></div>
+    <div class="cs-metric"><span class="cs-metric-val">1 yr</span><span class="cs-metric-lbl">Delivered on time</span></div>
+    <div class="cs-metric"><span class="cs-metric-val">4</span><span class="cs-metric-lbl">Designers led</span></div>
+    <div class="cs-metric"><span class="cs-metric-val">Legacy</span><span class="cs-metric-lbl">FileNet to SaaS</span></div>
+  </div>
+</div>
+
+<!-- BODY -->
+<div class="cs-body">
+
+  <!-- CONTEXT -->
+  <div class="cs-section reveal">
+    <p class="cs-label">Context</p>
+    <h2 class="cs-h2">A powerful legacy tool that needed to become approachable for a new generation of users.</h2>
+    <p class="cs-p">Content Services is a SaaS product that helps businesses securely manage content like documents, images, and audio files. It is the new experience of a legacy tool formerly called FileNet. As FileNet transitioned to SaaS, the product needed to become easier to learn, easier to navigate, and more approachable for a broader audience, while still supporting powerful admin workflows.</p>
+    <p class="cs-p">The challenge was clear: <strong>how do you simplify a complex legacy admin experience into a modern SaaS product within one year?</strong></p>
+    <p class="cs-p">FileNet was successful, but the admin experience was complex and documentation-heavy. Admins had to jump across multiple interfaces to complete work, and terminology felt too technical for new and business-oriented users.</p>
+  </div>
+
+  
+
+  <!-- KICKOFF -->
+  <div class="cs-section reveal">
+    <p class="cs-label">Kickoff</p>
+    <h2 class="cs-h2">Starting with a 2-day Enterprise Design Thinking workshop.</h2>
+    <p class="cs-p">Before any design work began, I led a 2-day Enterprise Design Thinking workshop with Product Management, Development, Research, Content Design, and my design team. The goal was to build shared understanding, surface assumptions, and align on what mattered most.</p>
+    <div class="cs-activity-grid">
+      <div class="cs-activity"><div class="cs-activity-num">1</div><p>Hopes and Fears</p></div>
+      <div class="cs-activity"><div class="cs-activity-num">2</div><p>As-Is Experience</p></div>
+      <div class="cs-activity"><div class="cs-activity-num">3</div><p>Questions and Assumptions</p></div>
+      <div class="cs-activity"><div class="cs-activity-num">4</div><p>User Needs</p></div>
+      <div class="cs-activity"><div class="cs-activity-num">5</div><p>Big Ideas and Prioritization</p></div>
+      <div class="cs-activity"><div class="cs-activity-num">6</div><p>To-Be Experience and Stages</p></div>
+    </div>
+  </div>
+
+  <!-- RESEARCH -->
+  <div class="cs-section reveal">
+    <p class="cs-label">Research</p>
+    <h2 class="cs-h2">Understanding the admin before redesigning for them.</h2>
+    <p class="cs-p">Our researcher conducted secondary research with 6 internal IBMers who worked directly with Content Services clients, followed by 1-hour interviews with 10 content administrators focused on their responsibilities, team structure, pain points, and needs.</p>
+    <div class="cs-insights">
+      <div class="cs-insight">
+        <div class="cs-insight-icon" style="background:#FFF0EB">
+          <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><circle cx="7.5" cy="7.5" r="5.5" stroke="#9A3412" stroke-width="1.3"/><path d="M7.5 4.5v3.5" stroke="#9A3412" stroke-width="1.3" stroke-linecap="round"/><circle cx="7.5" cy="10" r=".75" fill="#9A3412"/></svg>
+        </div>
+        <p><strong>Admins need help getting started.</strong> They did not want to depend on documentation to begin their work.</p>
+      </div>
+      <div class="cs-insight">
+        <div class="cs-insight-icon" style="background:#FFF0EB">
+          <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><circle cx="7.5" cy="7.5" r="5.5" stroke="#9A3412" stroke-width="1.3"/><path d="M7.5 4.5v3.5" stroke="#9A3412" stroke-width="1.3" stroke-linecap="round"/><circle cx="7.5" cy="10" r=".75" fill="#9A3412"/></svg>
+        </div>
+        <p><strong>Multiple interfaces overwhelmed them.</strong> Sending admins to different UIs to complete their work caused confusion and errors.</p>
+      </div>
+      <div class="cs-insight">
+        <div class="cs-insight-icon" style="background:#FFF0EB">
+          <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><circle cx="7.5" cy="7.5" r="5.5" stroke="#9A3412" stroke-width="1.3"/><path d="M7.5 4.5v3.5" stroke="#9A3412" stroke-width="1.3" stroke-linecap="round"/><circle cx="7.5" cy="10" r=".75" fill="#9A3412"/></svg>
+        </div>
+        <p><strong>Terminology was a barrier.</strong> Prospective users struggled to understand FileNet's technical language as the product shifted to business-oriented SaaS users.</p>
+      </div>
+      <div class="cs-insight">
+        <div class="cs-insight-icon" style="background:#E3F9F0">
+          <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M2.5 7.5l3 3 7-7" stroke="#1A7A52" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <p><strong>Admins work in teams</strong> with different levels of expertise. The experience needed to support both new and experienced admins.</p>
+      </div>
+    </div>
+
+    <!-- PERSONA -->
+    <div class="cs-persona">
+      <div class="cs-persona-avatar">C</div>
+      <div>
+        <p class="cs-persona-name">Contessa</p>
+        <p class="cs-persona-role">The Content Services Administrator</p>
+        <p class="cs-persona-desc">An admin at a car insurance company who needs to set up the system so customer service can process auto claims. She manages metadata, secures content by role, and configures the desktop workspace for her team.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- END-TO-END STORY -->
+  <div class="cs-section reveal">
+    <p class="cs-label">Design</p>
+    <h2 class="cs-h2">Designing the three core admin workflows.</h2>
+    <p class="cs-p">Based on research insights and the end-to-end story, my team and I designed the key admin workflows needed for Content Services using Contessa's scenario as our design anchor.</p>
+    <div class="cs-workflow-grid">
+      <div class="cs-workflow-card">
+        <div class="cs-workflow-icon">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="2" y="4" width="14" height="10" rx="2" stroke="#9A3412" stroke-width="1.4"/><path d="M5 8h8M5 11h5" stroke="#9A3412" stroke-width="1.3" stroke-linecap="round"/></svg>
+        </div>
+        <p class="cs-workflow-title">Manage content</p>
+        <p class="cs-workflow-desc">Create metadata used to organize content, like labels that help sort and find documents.</p>
+      </div>
+      <div class="cs-workflow-card">
+        <div class="cs-workflow-icon">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="3" y="8" width="12" height="7" rx="1.5" stroke="#9A3412" stroke-width="1.4"/><path d="M6 8V6a3 3 0 016 0v2" stroke="#9A3412" stroke-width="1.4" stroke-linecap="round"/></svg>
+        </div>
+        <p class="cs-workflow-title">Secure content</p>
+        <p class="cs-workflow-desc">Define roles and access tied to metadata so only the right people can see sensitive content.</p>
+      </div>
+      <div class="cs-workflow-card">
+        <div class="cs-workflow-icon">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="2" y="3" width="14" height="9" rx="1.5" stroke="#9A3412" stroke-width="1.4"/><path d="M6 15h6M9 12v3" stroke="#9A3412" stroke-width="1.3" stroke-linecap="round"/></svg>
+        </div>
+        <p class="cs-workflow-title">Configure desktops</p>
+        <p class="cs-workflow-desc">Set up user desktop environments with the right tools, views, and access for each role.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTESSA STORY -->
+  <div class="cs-section reveal">
+    <p class="cs-label">Contessa's story</p>
+    <h2 class="cs-h2">Aligning the team around one end-to-end scenario.</h2>
+    <p class="cs-p">During the kickoff workshop I noticed we had no clear end-to-end user path tied to a real use case. I partnered with three product managers to craft a story around Contessa, the Content Services administrator. She works at a car insurance company and is tasked with helping customer service organize car claims.</p>
+    <p class="cs-p">This story gave the entire team — design, PM, engineering, and content — a shared mental model to build against. It onboarded new designers faster, aligned stakeholders on scope, and became the anchor for every design decision throughout the year.</p>
+
+    <div class="cs-insights">
+      <div class="cs-insight">
+        <div class="cs-insight-icon" style="background:#EEF0FF">
+          <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M2.5 7.5l3 3 7-7" stroke="#3634A3" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <p>Onboarded the design team faster with a clear shared narrative</p>
+      </div>
+      <div class="cs-insight">
+        <div class="cs-insight-icon" style="background:#EEF0FF">
+          <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M2.5 7.5l3 3 7-7" stroke="#3634A3" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <p>Built shared understanding across PM and engineering so everyone was building toward the same goal</p>
+      </div>
+      <div class="cs-insight">
+        <div class="cs-insight-icon" style="background:#EEF0FF">
+          <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M2.5 7.5l3 3 7-7" stroke="#3634A3" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <p>Validated directly with users in research sessions to confirm accuracy</p>
+      </div>
+    </div>
+
+    <div class="reveal" style="margin:1.5rem 0;">
+      <img src="cs-contessa-before-after.png" alt="Contessa end-to-end journey before and after" style="width:100%;border-radius:14px;border:0.5px solid var(--border);display:block;">
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:.875rem;margin-top:.875rem;" class="reveal">
+      <div>
+        <img src="cs-document-class.png" alt="Document class creation" style="width:100%;border-radius:12px;border:0.5px solid var(--border);display:block;">
+        <p style="font-size:.7rem;color:var(--gray);text-align:center;margin-top:.4rem;">Flow 1 — Document class creation</p>
+      </div>
+      <div>
+        <img src="cs-property.png" alt="Creating a property" style="width:100%;border-radius:12px;border:0.5px solid var(--border);display:block;">
+        <p style="font-size:.7rem;color:var(--gray);text-align:center;margin-top:.4rem;">Flow 2 — Creating a property</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ROADMAP -->
+  <div class="cs-section reveal">
+    <p class="cs-label">Roadmap</p>
+    <h2 class="cs-h2">Staying on track across a year of delivery.</h2>
+    <p class="cs-p">To ensure we could deliver the full MVP within one year, I partnered with Product Management and the lead developers to define and prioritize a roadmap for Stage 1. New topics emerged regularly, so I kept these roadmapping sessions ongoing on a monthly basis to realign and reprioritize as needed.</p>
+    <div class="reveal" style="margin:1.5rem 0;">
+      <img src="cs-roadmap.png" alt="Stage 1 roadmap" style="width:100%;border-radius:14px;border:0.5px solid var(--border);display:block;">
+    </div>
+  </div>
+
+  <!-- HOMEPAGE REDESIGN -->
+  <div class="cs-section reveal">
+    <p class="cs-label">Homepage redesign</p>
+    <h2 class="cs-h2">Using the Home Page as the clearest before-and-after.</h2>
     <p class="cs-p">FileNet's legacy Home Page sent admins to two completely separate interfaces just to start their work. <strong>Content and Access Management</strong> opened in one UI. <strong>Desktop Configuration</strong> opened in another. There was no clear starting point, no personalization, and no in-product guidance. Admins were confused and dependent on documentation.</p>
 
     <!-- Legacy homepage and its two destinations -->
@@ -468,6 +949,7 @@ document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
     PLG Onboarding
     <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M5 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
   </a>
+</div>
 </div>
 </div>
 

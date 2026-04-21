@@ -33,9 +33,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:grid;grid-template-c
 .cred-ticker::after{right:0;background:linear-gradient(to left,#FAFAFA,transparent);}
 .cred-ticker-track{display:flex;width:max-content;animation:credscroll 44s linear infinite;}
 .cred-ticker-track:hover{animation-play-state:paused;}
-.cred-ticker-inner{display:inline-flex;align-items:center;gap:.9rem;padding:0 2.5rem;white-space:nowrap;flex-shrink:0;}
-.cred-ticker-inner span{font-size:.67rem;font-weight:500;color:#3634A3;letter-spacing:.01em;}
-.cred-dot{color:rgba(74,58,255,.25);font-size:.45rem;line-height:1;}
+.cred-ticker-inner{display:inline-flex;align-items:center;gap:0;padding:0 2.5rem;white-space:nowrap;flex-shrink:0;}
+.cred-ticker-inner span{font-size:.67rem;font-weight:500;color:#3634A3;letter-spacing:.01em;padding:0 .8rem;}
+.cred-dot{color:rgba(74,58,255,.25);font-size:.45rem;line-height:1;padding:0;}
 @keyframes credscroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
 /* HERO */

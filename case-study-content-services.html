@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>IBM Content Services — Susana Chinchilla</title>
+<title>IBM Content Services Susana Chinchilla</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,700;12..96,800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
@@ -133,6 +133,29 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .cs-compare-label{font-size:.65rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:.6rem 1rem;border-bottom:0.5px solid var(--border);}
 .cs-compare-label.before{background:#FFF0EB;color:#9A3412;}
 .cs-compare-label.after{background:#E3F9F0;color:#1A7A52;}
+
+/* AS-IS SLIDER */
+.cs-asis-slider{border-radius:14px;overflow:hidden;border:0.5px solid var(--border);background:var(--surface);}
+.cs-asis-track{display:flex;transition:transform .35s cubic-bezier(.4,0,.2,1);}
+.cs-asis-slide{flex:0 0 100%;min-width:0;}
+.cs-asis-slide img{width:100%;display:block;cursor:zoom-in;border-radius:0;}
+.cs-asis-controls{display:flex;align-items:center;justify-content:center;gap:1rem;padding:.75rem;}
+.cs-asis-btn{background:none;border:0.5px solid var(--border);border-radius:50%;width:30px;height:30px;cursor:pointer;font-size:.9rem;color:var(--gray);display:flex;align-items:center;justify-content:center;transition:background .2s;}
+.cs-asis-btn:hover{background:var(--surface);}
+.cs-asis-dots{display:flex;gap:6px;}
+.cs-asis-dot{width:6px;height:6px;border-radius:50%;background:var(--border);cursor:pointer;transition:background .2s;}
+.cs-asis-dot.active{background:var(--coral);}
+
+/* LIGHTBOX */
+.cs-lightbox{display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.85);backdrop-filter:blur(8px);align-items:center;justify-content:center;cursor:zoom-out;}
+.cs-lightbox.open{display:flex;}
+.cs-lightbox img{max-width:90vw;max-height:88vh;border-radius:12px;box-shadow:0 24px 80px rgba(0,0,0,.4);}
+.cs-lightbox-close{position:absolute;top:1.25rem;right:1.5rem;color:#fff;font-size:1.5rem;cursor:pointer;background:none;border:none;opacity:.7;}
+.cs-lightbox-close:hover{opacity:1;}
+
+/* ZOOMABLE images */
+img[onclick]{cursor:zoom-in;}
+
 </style>
 
 <script>
@@ -151,7 +174,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
     Back to portfolio
   </a>
   <a href="index.html" class="nav-logo">SC<span>.</span></a>
-  <span class="nav-tag">IBM · 2022–2023</span>
+  <span class="nav-tag">IBM · 2022 2023</span>
 </nav>
 
 <!-- HERO -->
@@ -169,7 +192,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 <!-- META -->
 <div class="cs-meta">
   <div class="cs-meta-item"><span class="cs-meta-label">Role</span><span class="cs-meta-val">Product Design Lead</span></div>
-  <div class="cs-meta-item"><span class="cs-meta-label">Duration</span><span class="cs-meta-val">2022–2023</span></div>
+  <div class="cs-meta-item"><span class="cs-meta-label">Duration</span><span class="cs-meta-val">2022 2023</span></div>
   <div class="cs-meta-item"><span class="cs-meta-label">Tools</span><span class="cs-meta-val">Figma, Mural</span></div>
   <div class="cs-meta-item"><span class="cs-meta-label">Team</span><span class="cs-meta-val">3 designers led</span></div>
 </div>
@@ -203,6 +226,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
     <p class="cs-label">Kickoff</p>
     <h2 class="cs-h2">Starting with a 2-day Enterprise Design Thinking workshop.</h2>
     <p class="cs-p">Before any design work began, I led a 2-day Enterprise Design Thinking workshop with Product Management, Development, Research, Content Design, and my design team. The goal was to build shared understanding, surface assumptions, and align on what mattered most.</p>
+    <div class="reveal" style="margin:1.5rem 0;">
+      <img src="cs-workshop.png" alt="Enterprise Design Thinking kickoff workshop" onclick="openLightbox(this.src)" style="cursor:zoom-in;width:100%;border-radius:14px;border:0.5px solid var(--border);display:block;">
+    </div>
     <div class="cs-activity-grid">
       <div class="cs-activity"><div class="cs-activity-num">1</div><p>Hopes and Fears</p></div>
       <div class="cs-activity"><div class="cs-activity-num">2</div><p>As-Is Experience</p></div>
@@ -290,11 +316,34 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
   <div class="cs-section reveal">
     <p class="cs-label">Contessa's story</p>
     <h2 class="cs-h2">Aligning the team around one end-to-end scenario.</h2>
-    <div class="reveal" style="margin:1.25rem 0;">
-      <img src="cs-workshop.png" alt="Enterprise Design Thinking kickoff workshop" style="width:100%;border-radius:14px;border:0.5px solid var(--border);display:block;">
-    </div>
     <p class="cs-p">During the kickoff workshop I noticed we had no clear end-to-end user path tied to a real use case. I partnered with three product managers to craft a story around Contessa, the Content Services administrator. She works at a car insurance company and is tasked with helping customer service organize car claims.</p>
-    <p class="cs-p">This story gave the entire team — design, PM, engineering, and content — a shared mental model to build against. It onboarded new designers faster, aligned stakeholders on scope, and became the anchor for every design decision throughout the year.</p>
+
+    <!-- AS-IS SLIDESHOW -->
+    <div class="reveal" style="margin:1.5rem 0;">
+      <p class="cs-label" style="margin-bottom:.5rem;">As-Is workshop activity</p>
+      <p style="font-size:.82rem;color:var(--gray);line-height:1.7;margin-bottom:1rem;">These four frames show the progression from the As-Is activity during the kickoff workshop: from mapping the complex legacy experience to distilling it into a simplified end-to-end story that shaped everything that followed.</p>
+      <div class="cs-asis-slider" id="asisSlider">
+        <div class="cs-asis-track" id="asisTrack">
+          <div class="cs-asis-slide"><img src="cs-asis-01.png" alt="As-Is frame 1" onclick="openLightbox(this.src)"></div>
+          <div class="cs-asis-slide"><img src="cs-asis-02.png" alt="As-Is frame 2" onclick="openLightbox(this.src)"></div>
+          <div class="cs-asis-slide"><img src="cs-asis-03.png" alt="As-Is frame 3" onclick="openLightbox(this.src)"></div>
+          <div class="cs-asis-slide"><img src="cs-asis-04.png" alt="As-Is frame 4" onclick="openLightbox(this.src)"></div>
+        </div>
+        <div class="cs-asis-controls">
+          <button class="cs-asis-btn" onclick="slideAsis(-1)">&#8592;</button>
+          <div class="cs-asis-dots" id="asisDots">
+            <span class="cs-asis-dot active" onclick="goToAsis(0)"></span>
+            <span class="cs-asis-dot" onclick="goToAsis(1)"></span>
+            <span class="cs-asis-dot" onclick="goToAsis(2)"></span>
+            <span class="cs-asis-dot" onclick="goToAsis(3)"></span>
+          </div>
+          <button class="cs-asis-btn" onclick="slideAsis(1)">&#8594;</button>
+        </div>
+        <p style="font-size:.67rem;color:var(--gray);text-align:center;padding:.25rem 0 .5rem;opacity:.6;">Click any image to zoom</p>
+      </div>
+    </div>
+
+    <p class="cs-p">This story gave the entire team design, PM, engineering, and content a shared mental model to build against. It onboarded new designers faster, aligned stakeholders on scope, and became the anchor for every design decision throughout the year.</p>
 
     <div class="cs-insights">
       <div class="cs-insight">
@@ -317,19 +366,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
       </div>
     </div>
 
-    <div class="reveal" style="margin:1.5rem 0;">
-      <img src="cs-contessa-before-after.png" alt="Contessa end-to-end journey before and after" style="width:100%;border-radius:14px;border:0.5px solid var(--border);display:block;">
-    </div>
-
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:.875rem;margin-top:.875rem;" class="reveal">
-      <div>
-        <img src="cs-document-class.png" alt="Document class creation" style="width:100%;border-radius:12px;border:0.5px solid var(--border);display:block;">
-        <p style="font-size:.7rem;color:var(--gray);text-align:center;margin-top:.4rem;">Flow 1 — Document class creation</p>
-      </div>
-      <div>
-        <img src="cs-property.png" alt="Creating a property" style="width:100%;border-radius:12px;border:0.5px solid var(--border);display:block;">
-        <p style="font-size:.7rem;color:var(--gray);text-align:center;margin-top:.4rem;">Flow 2 — Creating a property</p>
-      </div>
     </div>
   </div>
 
@@ -337,9 +374,13 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
   <div class="cs-section reveal">
     <p class="cs-label">Roadmap</p>
     <h2 class="cs-h2">Staying on track across a year of delivery.</h2>
-    <p class="cs-p">To ensure we could deliver the full MVP within one year, I partnered with Product Management and the lead developers to define and prioritize a roadmap for Stage 1. New topics emerged regularly, so I kept these roadmapping sessions ongoing on a monthly basis to realign and reprioritize as needed.</p>
+    <p class="cs-p">To ensure we could deliver the full MVP within one year, I partnered with Product Management and the lead developers to define and prioritize a roadmap for Stage 1.</p>
     <div class="reveal" style="margin:1.5rem 0;">
-      <img src="cs-roadmap.png" alt="Stage 1 roadmap" style="width:100%;border-radius:14px;border:0.5px solid var(--border);display:block;">
+      <img src="cs-roadmap.png" alt="Stage 1 roadmap" onclick="openLightbox(this.src)" style="cursor:zoom-in;width:100%;border-radius:14px;border:0.5px solid var(--border);display:block;">
+    </div>
+    <p class="cs-p">I tracked the work on Jira and met with Product Management and the Development Lead every month to discuss where we were and make adjustments as needed. These regular check-ins kept the team aligned and allowed us to reprioritize quickly when new topics emerged.</p>
+    <div class="reveal" style="margin:1.5rem 0;">
+      <img src="cs-jira.png" alt="Jira tracking board" onclick="openLightbox(this.src)" style="cursor:zoom-in;width:100%;border-radius:14px;border:0.5px solid var(--border);display:block;">
     </div>
   </div>
 
@@ -350,20 +391,20 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
     <p class="cs-p">FileNet's legacy Home Page sent admins to two completely separate interfaces just to start their work.</p>
 
     <div class="reveal" style="margin:1.5rem 0;">
-      <img src="cs-homepage-legacy.png" alt="FileNet legacy homepage" style="width:100%;border-radius:14px;border:0.5px solid var(--border);display:block;">
+      <img src="cs-homepage-legacy.png" alt="FileNet legacy homepage" onclick="openLightbox(this.src)" style="cursor:zoom-in;width:100%;border-radius:14px;border:0.5px solid var(--border);display:block;">
     </div>
 
     <div class="cs-compare reveal">
       <div class="cs-compare-card">
-        <div class="cs-compare-label before">Before — Content and Access Management</div>
+        <div class="cs-compare-label before">Before Content and Access Management</div>
         <div style="overflow:hidden;height:260px;">
-          <img src="cs-homepage-legacy-data.png" alt="Content and Access Management UI" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;">
+          <img src="cs-homepage-legacy-data.png" alt="Content and Access Management UI" onclick="openLightbox(this.src)" style="cursor:zoom-in;width:100%;height:100%;object-fit:cover;object-position:center top;display:block;">
         </div>
       </div>
       <div class="cs-compare-card">
-        <div class="cs-compare-label before">Before — Desktop Configuration</div>
+        <div class="cs-compare-label before">Before Desktop Configuration</div>
         <div style="overflow:hidden;height:260px;">
-          <img src="cs-homepage-legacy-desktops.png" alt="Desktop Configuration UI" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;">
+          <img src="cs-homepage-legacy-desktops.png" alt="Desktop Configuration UI" onclick="openLightbox(this.src)" style="cursor:zoom-in;width:100%;height:100%;object-fit:cover;object-position:center top;display:block;">
         </div>
       </div>
     </div>
@@ -371,12 +412,12 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
     <p class="cs-p" style="margin-top:1rem;">Content and Access Management opened in one UI. Desktop Configuration opened in another. There was no clear starting point, no personalization, and no in-product guidance. Admins were confused and dependent on documentation.</p>
 
     <div class="cs-section reveal" style="margin-top:2.5rem;">
-      <p class="cs-label">Ideation — Home Page workshop</p>
+      <p class="cs-label">Ideation Home Page workshop</p>
       <h2 class="cs-h2" style="font-size:1.15rem;">I decided to host a workshop.</h2>
       <p class="cs-p">Throughout my time in the Automation organization I had seen designers solving the same problem with different methods and terminology. To make our products more consistent, I organized a workshop and invited everyone in the Austin studio involved in this project.</p>
 
       <div class="reveal" style="margin:1.25rem 0;">
-        <img src="cs-homepage-workshop.png" alt="Home Page workshop" style="width:100%;border-radius:14px;border:0.5px solid var(--border);display:block;">
+        <img src="cs-homepage-workshop.png" alt="Home Page workshop" onclick="openLightbox(this.src)" style="cursor:zoom-in;width:100%;border-radius:14px;border:0.5px solid var(--border);display:block;">
       </div>
 
       <div class="cs-insights" style="margin:1.25rem 0;">
@@ -400,11 +441,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
         </div>
       </div>
 
-      <p class="cs-p">Encouraged by the curiosity of others and the positive feedback from the workshop, I was inspired to establish weekly Design Critiques for any IBMer in the Austin studio — welcoming any role to share ongoing projects, gather feedback, and increase collaboration across teams.</p>
+      <p class="cs-p">Encouraged by the curiosity of others and the positive feedback from the workshop, I was inspired to establish weekly Design Critiques for any IBMer in the Austin studio welcoming any role to share ongoing projects, gather feedback, and increase collaboration across teams.</p>
 
       <p class="cs-label" style="margin-top:1.5rem;margin-bottom:.75rem;">Workshop outcome</p>
       <div class="reveal" style="margin-bottom:1.5rem;">
-        <img src="cs-homepage-new-ideation.png" alt="Home Page ideation outcome" style="width:100%;border-radius:14px;border:0.5px solid var(--border);display:block;">
+        <img src="cs-homepage-new-ideation.png" alt="Home Page ideation outcome" onclick="openLightbox(this.src)" style="cursor:zoom-in;width:100%;border-radius:14px;border:0.5px solid var(--border);display:block;">
       </div>
     </div>
 
@@ -421,7 +462,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
         <div class="cs-insight"><div class="cs-insight-icon" style="background:#E3F9F0;"><svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M2.5 7.5l3 3 7-7" stroke="#1A7A52" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div><p>Use quick links based on personal preferences and learn about new product updates</p></div>
       </div>
 
-      <p class="cs-label" style="margin-bottom:.75rem;">Deliverable</p>
+      <div class="cs-compare-label after" style="display:inline-block;border-radius:6px 6px 0 0;margin-bottom:0;">After: New Home Page of Content Services</div>
+      <div style="border:0.5px solid var(--border);border-top:none;border-radius:0 6px 6px 6px;overflow:hidden;margin-bottom:1.5rem;">
       <div class="reveal" style="margin:0 0 1.5rem;">
         <div style="border-radius:14px;overflow:hidden;box-shadow:0 2px 0 rgba(0,0,0,.08),0 8px 32px rgba(0,0,0,.1);border:0.5px solid rgba(0,0,0,.1);">
           <div style="background:#E8E8E8;padding:.55rem .875rem;display:flex;align-items:center;gap:.65rem;border-bottom:0.5px solid rgba(0,0,0,.1);">
@@ -433,10 +475,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
             <div style="flex:1;background:#fff;border-radius:5px;border:0.5px solid rgba(0,0,0,.12);padding:.22rem .6rem;font-size:.6rem;color:#666;font-family:'Inter',sans-serif;">content-services.ibm.com/home</div>
           </div>
           <div style="height:460px;overflow-y:scroll;overflow-x:hidden;background:#fff;-webkit-overflow-scrolling:touch;">
-            <img src="cs-homepage-new.png" alt="New Content Services homepage" style="width:100%;display:block;vertical-align:top;">
+            <img src="cs-homepage-new.png" alt="New Content Services homepage" onclick="openLightbox(this.src)" style="cursor:zoom-in;width:100%;display:block;vertical-align:top;">
           </div>
         </div>
         <p style="font-size:.67rem;color:var(--gray);text-align:center;margin-top:.4rem;opacity:.6;">Scroll to explore</p>
+      </div>
       </div>
     </div>
   </div>
@@ -517,6 +560,39 @@ document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
     <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M5 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
   </a>
 </div>
+
+
+<!-- LIGHTBOX -->
+<div class="cs-lightbox" id="lightbox" onclick="closeLightbox()">
+  <button class="cs-lightbox-close" onclick="closeLightbox()">&#x2715;</button>
+  <img id="lightboxImg" src="" alt="Zoomed image">
+</div>
+
+<script>
+// Lightbox
+function openLightbox(src){
+  document.getElementById('lightboxImg').src = src;
+  document.getElementById('lightbox').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeLightbox(){
+  document.getElementById('lightbox').classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeLightbox(); });
+
+// AS-IS Slider
+var asisIndex = 0;
+function goToAsis(n){
+  asisIndex = n;
+  document.getElementById('asisTrack').style.transform = 'translateX(-'+n+'00%)';
+  document.querySelectorAll('.cs-asis-dot').forEach(function(d,i){ d.classList.toggle('active', i===n); });
+}
+function slideAsis(dir){
+  var total = document.querySelectorAll('.cs-asis-slide').length;
+  goToAsis((asisIndex + dir + total) % total);
+}
+</script>
 
 </body>
 </html>

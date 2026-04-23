@@ -10,22 +10,19 @@
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 :root{
-  --bg:#FFFFFF;--surface:#F5F5F7;--black:#1D1D1F;--gray-text:#6E6E73;--border:#D2D2D7;
-  --purple:#4A3AFF;--purple2:#9B8AFF;--purple3:#C084FC;--teal:#00C98D;
+--bg:#FFFFFF;--surface:#F5F5F7;--black:#1D1D1F;--gray-text:#6E6E73;--border:#D2D2D7;
+--purple:#4A3AFF;--purple2:#9B8AFF;--purple3:#C084FC;--teal:#00C98D;
 }
 html{scroll-behavior:smooth;}
 body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--black);font-size:16px;line-height:1.6;overflow-x:hidden;}
-
 /* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:0 2.5rem;height:56px;background:rgba(255,255,255,.88);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:0.5px solid rgba(0,0,0,.08);}
 .nav-logo{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:1.05rem;color:var(--black);text-decoration:none;}
 .nav-logo span{color:var(--purple);}
-.nav-links{display:flex;gap:2rem;list-style:none;justify-content:center;}
-.nav-links a{font-size:.82rem;font-weight:400;color:var(--gray-text);text-decoration:none;transition:color .2s;}
+.nav-links{display:flex;gap:.3rem;list-style:none;justify-content:center;}
+.nav-links a{font-size:.82rem;font-weight:400;color:var(--gray-text);text-decoration:none;transition:color .2s,background .2s;padding:.35rem .9rem;border-radius:980px;}
 .nav-links a:hover{color:var(--black);}
-.nav-btn{font-size:.82rem;font-weight:500;background:var(--black);color:#fff;text-decoration:none;padding:.45rem 1.2rem;border-radius:980px;transition:background .2s;justify-self:end;}
-.nav-btn:hover{background:var(--purple);}
-
+.nav-links a.active{background:var(--black);color:#fff;font-weight:500;}
 /* CREDENTIAL TICKER */
 .cred-ticker{margin-top:56px;background:#FAFAFA;border-bottom:0.5px solid rgba(0,0,0,.07);padding:.5rem 0;overflow:hidden;position:relative;}
 .cred-ticker::before,.cred-ticker::after{content:'';position:absolute;top:0;bottom:0;width:80px;z-index:2;pointer-events:none;}
@@ -33,25 +30,33 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:grid;grid-template-c
 .cred-ticker::after{right:0;background:linear-gradient(to left,#FAFAFA,transparent);}
 .cred-ticker-track{display:flex;width:max-content;animation:credscroll 44s linear infinite;}
 .cred-ticker-track:hover{animation-play-state:paused;}
-.cred-ticker-inner{display:inline-flex;align-items:center;gap:0;padding:0 2.5rem;white-space:nowrap;flex-shrink:0;}
-.cred-ticker-inner span{font-size:.67rem;font-weight:500;color:#3634A3;letter-spacing:.01em;padding:0 .8rem;}
-.cred-dot{color:rgba(74,58,255,.25);font-size:.45rem;line-height:1;padding:0;}
+.cred-ticker-inner{display:inline-flex;align-items:center;gap:.9rem;padding:0 2.5rem;white-space:nowrap;flex-shrink:0;}
+.cred-ticker-inner span{font-size:.67rem;font-weight:500;color:#3634A3;letter-spacing:.01em;}
+.cred-dot{color:rgba(74,58,255,.25);font-size:.45rem;line-height:1;}
 @keyframes credscroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-
 /* HERO */
-.hero{padding:10rem 2.5rem 6rem;text-align:center;max-width:860px;margin:0 auto;}
-.hero-eyebrow{font-size:.78rem;font-weight:500;color:var(--gray-text);margin-bottom:1.25rem;display:flex;align-items:center;justify-content:center;gap:7px;}
-.edot{width:7px;height:7px;border-radius:50%;background:var(--teal);animation:pulse 2s infinite;flex-shrink:0;}
-.hero-h1{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(2.5rem,6vw,5.5rem);letter-spacing:-.035em;line-height:1.03;color:var(--black);margin-bottom:1.35rem;}
-.hero-h1 .grad{background:linear-gradient(270deg,#4A3AFF,#9B8AFF,#C084FC,#7B6AFF,#4A3AFF);background-size:300% 300%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:gradShift 7s ease infinite;}
+.hero{padding:5rem 2.5rem 4rem;max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;}
+.hero-left{}
+.hero-greeting{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(2rem,4vw,3.5rem);letter-spacing:-.035em;line-height:1.05;color:var(--black);margin-bottom:.4rem;}
+.hero-title{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(1.6rem,3vw,2.75rem);letter-spacing:-.035em;line-height:1.05;margin-bottom:1.25rem;}
+.hero-title .grad{background:linear-gradient(270deg,#4A3AFF,#9B8AFF,#C084FC,#7B6AFF,#4A3AFF);background-size:300% 300%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:gradShift 7s ease infinite;}
 @keyframes gradShift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
-.hero-sub{font-size:clamp(.95rem,1.4vw,1.1rem);font-weight:300;color:var(--gray-text);max-width:500px;margin:0 auto 2.25rem;line-height:1.75;}
-.hero-btns{display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap;}
+.hero-sub{font-size:clamp(.9rem,1.2vw,1rem);font-weight:300;color:var(--gray-text);max-width:480px;margin-bottom:1.25rem;line-height:1.75;}
+.hero-companies{display:flex;flex-direction:column;gap:.5rem;margin-bottom:2rem;}
+.hero-company-row{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;}
+.hero-company-label{font-size:.82rem;font-weight:300;color:var(--gray-text);}
+.company-pill{display:inline-flex;align-items:center;justify-content:center;background:#fff;border-radius:980px;padding:.3rem .8rem;box-shadow:0 2px 10px rgba(0,0,0,.08),0 0 0 0.5px rgba(0,0,0,.07);transition:box-shadow .2s;}
+.company-pill img{height:18px;width:auto;display:block;}
+.company-pill.ibm img{height:15px;}
+.company-pill.auro img{height:19px;}
+.hero-btns{display:flex;gap:.75rem;flex-wrap:wrap;}
 .btn-dark{font-size:.86rem;font-weight:500;background:#1D1D1F;color:#fff;text-decoration:none;padding:.75rem 1.6rem;border-radius:980px;transition:background .2s,transform .15s;display:inline-flex;align-items:center;gap:6px;}
 .btn-dark:hover{background:var(--purple);transform:translateY(-2px);}
 .btn-light{font-size:.86rem;font-weight:500;background:var(--surface);color:var(--black);text-decoration:none;padding:.75rem 1.6rem;border-radius:980px;border:0.5px solid var(--border);transition:border-color .2s,transform .15s;}
 .btn-light:hover{border-color:var(--black);transform:translateY(-2px);}
-
+.hero-right{}
+.hero-photo-wrap{border-radius:24px;overflow:hidden;width:100%;aspect-ratio:4/5;position:relative;}
+.hero-photo-wrap img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;}
 /* METRICS MARQUEE */
 .mq-wrap{background:var(--surface);overflow:hidden;padding:.9rem 0;border-top:0.5px solid rgba(0,0,0,.06);border-bottom:0.5px solid rgba(0,0,0,.06);}
 .mq-track{display:flex;animation:marquee 34s linear infinite;white-space:nowrap;}
@@ -60,13 +65,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:grid;grid-template-c
 .mq-lbl{font-size:.7rem;color:var(--gray-text);max-width:100px;line-height:1.3;}
 @keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
-
 /* SECTIONS */
 .section{padding:6rem 2.5rem;max-width:1100px;margin:0 auto;}
 .spill{display:inline-block;background:#EEF0FF;color:#3634A3;font-size:.68rem;font-weight:600;letter-spacing:.04em;padding:4px 12px;border-radius:980px;margin-bottom:1.25rem;border:0.5px solid rgba(54,52,163,.15);}
 .sh2{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(2rem,4vw,3.25rem);letter-spacing:-.03em;line-height:1.05;margin-bottom:1rem;}
 .ssub{font-size:.92rem;font-weight:300;color:var(--gray-text);max-width:480px;line-height:1.7;margin-bottom:3rem;}
-
 /* PROJECT TAGS */
 .ptags{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:.9rem;}
 .ptag{font-size:.63rem;font-weight:500;padding:4px 10px 4px 8px;border-radius:980px;border:0.5px solid transparent;display:inline-flex;align-items:center;gap:5px;}
@@ -77,7 +80,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:grid;grid-template-c
 .ptag.t .ptag-dot{background:#00C98D;}
 .ptag.c{background:#FFF0EB;color:#9A3412;border-color:rgba(154,52,18,.15);}
 .ptag.c .ptag-dot{background:#D85A30;}
-
 /* PROJECTS */
 .proj-list{display:flex;flex-direction:column;gap:1.25rem;}
 .proj-card{background:#fff;border:0.5px solid rgba(0,0,0,.1);border-radius:20px;overflow:hidden;display:grid;grid-template-columns:1.1fr 1fr;text-decoration:none;color:inherit;transition:box-shadow .3s,transform .25s;min-height:300px;box-shadow:0 2px 8px rgba(0,0,0,.04);}
@@ -114,7 +116,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:grid;grid-template-c
 .plink{display:inline-flex;align-items:center;gap:6px;font-size:.8rem;font-weight:500;color:var(--black);}
 .parrow{width:26px;height:26px;border-radius:980px;background:var(--surface);border:0.5px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:.78rem;transition:all .2s;}
 .proj-card:hover .parrow{background:var(--black);color:#fff;border-color:var(--black);transform:rotate(45deg);}
-
 /* CREDENTIALS */
 .creds-section{background:#F0EEFF;}
 .creds-inner{max-width:1100px;margin:0 auto;padding:5rem 2.5rem;}
@@ -126,7 +127,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:grid;grid-template-c
 .cred-sub{font-size:.73rem;color:#6E6E73;line-height:1.5;}
 .cred-card.hi{background:#fff;box-shadow:0 2px 6px rgba(0,0,0,.05),0 0 0 0.5px rgba(74,58,255,.15);}
 .cred-card.hi .cred-title{color:#3634A3;}
-
 /* COMMUNITY */
 .community-section{background:var(--bg);padding:6rem 2.5rem;}
 .community-inner{max-width:1100px;margin:0 auto;}
@@ -139,11 +139,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:grid;grid-template-c
 .photo-card{border-radius:14px;overflow:hidden;position:relative;background:var(--surface);}
 .photo-card img{width:100%;height:240px;object-fit:cover;display:block;transition:transform .4s ease,filter .4s ease;filter:grayscale(100%) contrast(1.05) brightness(.95);}
 .photo-card:hover img{transform:scale(1.04);filter:grayscale(0%) contrast(1) brightness(1);}
-
 .photo-card:hover img{transform:scale(1.04);}
 .photo-card .photo-label{position:absolute;bottom:0;left:0;right:0;padding:.65rem .875rem;background:linear-gradient(to top,rgba(0,0,0,.6),transparent);color:#fff;font-size:.72rem;font-weight:500;line-height:1.3;}
-
-
 /* ABOUT */
 .about-section{background:var(--surface);}
 .about-inner{max-width:1100px;margin:0 auto;padding:6rem 2.5rem;}
@@ -162,7 +159,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:grid;grid-template-c
 .wicon{width:34px;height:34px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:.95rem;flex-shrink:0;}
 .wcard h4{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:.85rem;margin-bottom:2px;}
 .wcard p{font-size:.75rem;color:var(--gray-text);line-height:1.5;}
-
 /* BUILDING */
 .building-wrap{background:linear-gradient(145deg,#F5F3FF,#EEF0FF);border-top:0.5px solid rgba(74,58,255,.1);border-bottom:0.5px solid rgba(74,58,255,.1);}
 .building-inner{max-width:1100px;margin:0 auto;padding:6rem 2.5rem;display:grid;grid-template-columns:1fr 1fr;gap:4.5rem;align-items:center;}
@@ -174,9 +170,25 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:grid;grid-template-c
 .bpills{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:1.75rem;}
 .bpill{font-size:.66rem;font-weight:500;padding:4px 10px 4px 8px;border-radius:980px;background:#EEF0FF;color:#3634A3;border:0.5px solid rgba(54,52,163,.15);display:inline-flex;align-items:center;gap:5px;}
 .bpill-dot{width:5px;height:5px;border-radius:50%;background:#4A3AFF;flex-shrink:0;}
-
-
-
+/* AURO PHONE MOCKUP */
+.auro-mockup{display:flex;justify-content:center;align-items:center;padding:1rem 0;}
+.auro-phone{background:#0D0D1A;border-radius:24px;overflow:hidden;width:100%;max-width:300px;box-shadow:0 16px 48px rgba(74,58,255,.2),0 0 0 1px rgba(255,255,255,.06);margin:0 auto;}
+.auro-phone-bar{display:flex;justify-content:space-between;align-items:center;padding:.75rem 1rem;background:rgba(255,255,255,.04);border-bottom:0.5px solid rgba(255,255,255,.06);}
+.auro-screen-inner{padding:1rem;}
+.auro-greeting{display:flex;align-items:center;gap:.75rem;margin-bottom:1rem;}
+.auro-avatar{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,#4A3AFF,#9B8AFF);display:flex;align-items:center;justify-content:center;font-size:.85rem;font-weight:700;color:#fff;flex-shrink:0;}
+.auro-hi{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:.9rem;color:#fff;margin-bottom:1px;}
+.auro-sub{font-size:.65rem;color:rgba(255,255,255,.4);}
+.auro-section-label{font-size:.6rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:.5rem;}
+.auro-goal-card{background:rgba(255,255,255,.05);border:0.5px solid rgba(255,255,255,.08);border-radius:12px;padding:.875rem;margin-bottom:1rem;}
+.auro-rec-list{display:flex;flex-direction:column;gap:.5rem;margin-bottom:1rem;}
+.auro-rec-item{display:flex;align-items:center;gap:.625rem;padding:.625rem .75rem;border-radius:10px;background:rgba(255,255,255,.03);border:0.5px solid rgba(255,255,255,.05);}
+.auro-rec-item.auro-rec-active{background:rgba(74,58,255,.15);border-color:rgba(74,58,255,.3);}
+.auro-rec-icon{width:28px;height:28px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.auro-rec-title{font-size:.68rem;font-weight:500;color:rgba(255,255,255,.85);margin-bottom:1px;}
+.auro-rec-sub{font-size:.6rem;color:rgba(255,255,255,.35);}
+.auro-cta{background:linear-gradient(135deg,#4A3AFF,#9B8AFF);border-radius:10px;padding:.625rem;text-align:center;font-size:.72rem;font-weight:600;color:#fff;cursor:pointer;}
+.auro-phone-nav{display:flex;justify-content:space-around;align-items:center;padding:.75rem 1rem;border-top:0.5px solid rgba(255,255,255,.06);}
 /* CONTACT */
 .contact-section{background:linear-gradient(160deg,#1a0A3d 0%,#2d1b69 35%,#4A3AFF 65%,#7B6AFF 85%,#9B8AFF 100%);position:relative;overflow:hidden;}
 .cmq-wrap{background:rgba(255,255,255,.07);overflow:hidden;padding:.75rem 0;border-bottom:0.5px solid rgba(255,255,255,.1);}
@@ -201,58 +213,54 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:grid;grid-template-c
 .flinks{display:flex;gap:1.5rem;}
 .flinks a{font-size:.71rem;color:rgba(255,255,255,.3);text-decoration:none;transition:color .2s;}
 .flinks a:hover{color:rgba(255,255,255,.7);}
-
 .reveal{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease;}
 .reveal.visible{opacity:1;transform:translateY(0);}
-
 @media(max-width:860px){
-  nav{padding:0 1.25rem;}.nav-links{display:none;}
-  .hero{padding:3rem 1.5rem 3.5rem;}
-  .section{padding:4rem 1.5rem;}
-  .proj-card,.proj-card.flip{grid-template-columns:1fr;min-height:auto;}
-  .proj-card.flip .proj-img,.proj-card.flip .proj-body{order:unset;}
-  .proj-img{min-height:220px;}
-  .creds-grid{grid-template-columns:1fr 1fr;}
-  .community-section{padding:4rem 1.5rem;}
-  .photo-grid-3{grid-template-columns:1fr 1fr;}
-  .photo-grid-2{grid-template-columns:1fr;}
-  .about-inner{padding:4rem 1.5rem;}
-  .about-top{grid-template-columns:1fr;gap:2.5rem;}
-  .about-photo img{height:340px;}
-  .who-cards{grid-template-columns:1fr;}
-  .building-inner{grid-template-columns:1fr;padding:4rem 1.5rem;gap:3rem;}
-  .contact-body{padding:4rem 1.5rem 2rem;}
-  .ai-footer{flex-direction:column;text-align:center;padding:1.25rem 1.5rem;}
-  .ai-note{justify-content:center;}
-  .cred-ticker-inner span{font-size:.62rem;}
+nav{padding:0 1.25rem;}.nav-links{display:none;}
+.hero{padding:3rem 1.5rem 3.5rem;grid-template-columns:1fr;}
+.hero-right{display:none;}
+.section{padding:4rem 1.5rem;}
+.proj-card,.proj-card.flip{grid-template-columns:1fr;min-height:auto;}
+.proj-card.flip .proj-img,.proj-card.flip .proj-body{order:unset;}
+.proj-img{min-height:220px;}
+.creds-grid{grid-template-columns:1fr 1fr;}
+.community-section{padding:4rem 1.5rem;}
+.photo-grid-3{grid-template-columns:1fr 1fr;}
+.photo-grid-2{grid-template-columns:1fr;}
+.about-inner{padding:4rem 1.5rem;}
+.about-top{grid-template-columns:1fr;gap:2.5rem;}
+.about-photo img{height:340px;}
+.who-cards{grid-template-columns:1fr;}
+.building-inner{grid-template-columns:1fr;padding:4rem 1.5rem;gap:3rem;}
+.contact-body{padding:4rem 1.5rem 2rem;}
+.ai-footer{flex-direction:column;text-align:center;padding:1.25rem 1.5rem;}
+.ai-note{justify-content:center;}
+.cred-ticker-inner span{font-size:.62rem;}
 }
 @media(max-width:540px){
-  .creds-grid{grid-template-columns:1fr;}
-  .photo-grid-3{grid-template-columns:1fr;}
+.creds-grid{grid-template-columns:1fr;}
+.photo-grid-3{grid-template-columns:1fr;}
 }
-
 .cred-ticker.mid{margin-top:0;border-top:0.5px solid rgba(0,0,0,.07);}
-
-
+.btn-auro{font-size:.86rem;font-weight:500;background:var(--black);color:#fff;text-decoration:none;padding:.75rem 1.6rem;border-radius:980px;transition:background .2s,transform .15s;display:inline-flex;align-items:center;gap:6px;}.btn-auro:hover{background:var(--purple);transform:translateY(-2px);}
 .nav-btn-gradient {
-  background: linear-gradient(135deg, #4A3AFF, #9B8AFF, #C084FC);
-  color: #fff !important;
-  border: none;
-  padding: .45rem 1.2rem;
-  border-radius: 980px;
-  font-size: .82rem;
-  font-weight: 500;
-  font-family: 'Inter', sans-serif;
-  text-decoration: none;
-  cursor: pointer;
-  transition: opacity .2s;
-  display: inline-block;
-  justify-self: end;
-  white-space: nowrap;
+background: linear-gradient(135deg, #4A3AFF, #9B8AFF, #C084FC);
+color: #fff !important;
+border: none;
+padding: .45rem 1.2rem;
+border-radius: 980px;
+font-size: .82rem;
+font-weight: 500;
+font-family: 'Inter', sans-serif;
+text-decoration: none;
+cursor: pointer;
+transition: opacity .2s;
+display: inline-block;
+justify-self: end;
+white-space: nowrap;
 }
 .nav-btn-gradient:hover { opacity: .85; }
 </style>
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%234A3AFF'/><text x='16' y='22' font-family='Georgia,serif' font-weight='bold' font-size='14' fill='white' text-anchor='middle'>SC.</text></svg>">
 </head>
 <body>
 
@@ -260,311 +268,406 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:grid;grid-template-c
 <nav>
   <a href="#" class="nav-logo">SC<span>.</span></a>
   <ul class="nav-links">
+    <li><a href="index.html" class="active">Home</a></li>
     <li><a href="#work">Work</a></li>
     <li><a href="#about">About</a></li>
     <li><a href="#community">Community</a></li>
-    <li></li>
+    <li><a href="#building">Building</a></li>
   </ul>
-  <a href="resume.html" class="nav-btn-gradient">Resume</a>
+  <div style="justify-self:end;"></div>
 </nav>
 
-
-<!-- HERO -->
+<!-- HERO — updated layout -->
 <div class="hero">
-  <h1 class="hero-h1">Enterprise UX &amp; AI/ML <span class="grad">design leadership.</span></h1>
-  <p class="hero-sub">Senior Lead Product Designer with 5 years at IBM<br>from watsonx Orchestrate to Carbon Design System.</p>
-  <div class="hero-btns">
-    <a href="#work" class="btn-dark" style="display:inline-flex;align-items:center;gap:6px;"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" style="flex-shrink:0;"><path d="M2.5 6.5h8M7 3l3.5 3.5L7 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg> View my work</a>
-    <a href="https://www.linkedin.com/in/susanachinchilla/" target="_blank" class="btn-light">Let's connect</a>
+  <div class="hero-left reveal">
+    <h1 class="hero-greeting">Hi! I'm Susana.</h1>
+    <h2 class="hero-title"><span class="grad">Product Designer &amp; Builder.</span></h2>
+    <p class="hero-sub">Lead Product Designer with a Master's in UX/UI Design and Development and a certified IBM Enterprise Design Thinking Coach.</p>
+    <div class="hero-companies">
+      <div class="hero-company-row">
+        <span class="hero-company-label">Making education more accessible with AI at</span>
+        <span class="company-pill auro"><img src="AURO-light.png" alt="AURO"></span>
+      </div>
+      <div class="hero-company-row">
+        <span class="hero-company-label">Previously building AI products and design systems at</span>
+        <a href="https://www.ibm.com/us-en" target="_blank" class="company-pill ibm"><img src="1776977043570_image.png" alt="IBM"></a>
+      </div>
+    </div>
+    <div class="hero-btns">
+      <a href="#work" class="btn-dark">⚡ View my work</a>
+      <a href="mailto:suschinchilla@gmail.com" class="btn-light">Let's connect</a>
+    </div>
+  </div>
+  <div class="hero-right reveal">
+    <div class="hero-photo-wrap">
+      <img src="about-workshops.png" alt="Susana Chinchilla facilitating a workshop">
+    </div>
   </div>
 </div>
 
 <!-- METRICS MARQUEE -->
 <div class="mq-wrap">
-  <div class="mq-track">
-    <div class="mq-item"><span class="mq-val">6+</span><span class="mq-mq-lbl">Years experience at IBM</span></div>
-    <div class="mq-item"><span class="mq-val">$400M+</span><span class="mq-lbl">ROI influenced</span></div>
-    <div class="mq-item"><span class="mq-val">80%</span><span class="mq-lbl">Activation increase</span></div>
-    <div class="mq-item"><span class="mq-val">+60%</span><span class="mq-lbl">Faster aha moment</span></div>
-    <div class="mq-item"><span class="mq-val">39+</span><span class="mq-lbl">Products influenced</span></div>
-    <div class="mq-item"><span class="mq-val">450k</span><span class="mq-lbl">Carbon monthly visitors</span></div>
-    <div class="mq-item"><span class="mq-val">Harvard</span><span class="mq-lbl">UX Advisor · HBS</span></div>
-    <div class="mq-item"><span class="mq-val">30+</span><span class="mq-lbl">Workshops facilitated</span></div>
-    <div class="mq-item"><span class="mq-val">6+</span><span class="mq-mq-lbl">Years experience at IBM</span></div>
-    <div class="mq-item"><span class="mq-val">$400M+</span><span class="mq-lbl">ROI influenced</span></div>
-    <div class="mq-item"><span class="mq-val">80%</span><span class="mq-lbl">Activation increase</span></div>
-    <div class="mq-item"><span class="mq-val">+60%</span><span class="mq-lbl">Faster aha moment</span></div>
-    <div class="mq-item"><span class="mq-val">39+</span><span class="mq-lbl">Products influenced</span></div>
-    <div class="mq-item"><span class="mq-val">450k</span><span class="mq-lbl">Carbon monthly visitors</span></div>
-    <div class="mq-item"><span class="mq-val">Harvard</span><span class="mq-lbl">UX Advisor · HBS</span></div>
-    <div class="mq-item"><span class="mq-val">30+</span><span class="mq-lbl">Workshops facilitated</span></div>
-  </div>
+<div class="mq-track">
+<div class="mq-item"><span class="mq-val">6+</span><span class="mq-lbl">Years enterprise UX at IBM</span></div>
+<div class="mq-item"><span class="mq-val">$400M+</span><span class="mq-lbl">ROI influenced</span></div>
+<div class="mq-item"><span class="mq-val">80%</span><span class="mq-lbl">Activation increase</span></div>
+<div class="mq-item"><span class="mq-val">+60%</span><span class="mq-lbl">Faster aha moment</span></div>
+<div class="mq-item"><span class="mq-val">39+</span><span class="mq-lbl">Products influenced</span></div>
+<div class="mq-item"><span class="mq-val">450k</span><span class="mq-lbl">Carbon monthly visitors</span></div>
+<div class="mq-item"><span class="mq-val">Harvard</span><span class="mq-lbl">UX Advisor · HBS</span></div>
+<div class="mq-item"><span class="mq-val">30+</span><span class="mq-lbl">Workshops facilitated</span></div>
+<div class="mq-item"><span class="mq-val">6+</span><span class="mq-lbl">Years enterprise UX at IBM</span></div>
+<div class="mq-item"><span class="mq-val">$400M+</span><span class="mq-lbl">ROI influenced</span></div>
+<div class="mq-item"><span class="mq-val">80%</span><span class="mq-lbl">Activation increase</span></div>
+<div class="mq-item"><span class="mq-val">+60%</span><span class="mq-lbl">Faster aha moment</span></div>
+<div class="mq-item"><span class="mq-val">39+</span><span class="mq-lbl">Products influenced</span></div>
+<div class="mq-item"><span class="mq-val">450k</span><span class="mq-lbl">Carbon monthly visitors</span></div>
+<div class="mq-item"><span class="mq-val">Harvard</span><span class="mq-lbl">UX Advisor · HBS</span></div>
+<div class="mq-item"><span class="mq-val">30+</span><span class="mq-lbl">Workshops facilitated</span></div>
+</div>
 </div>
 
 <!-- WORK -->
 <div class="section" id="work">
-  <div class="reveal">
-    <span class="spill">Selected projects</span>
-    <h2 class="sh2">From AI products<br>to design systems.</h2>
-    <p class="ssub">Case studies from IBM at enterprise scale, with measurable outcomes and real teams.</p>
-  </div>
-  <div class="proj-list">
-    <a href="case-study-plg.html" class="proj-card reveal">
-      <div class="proj-img g1">
-        <div class="proj-img-inner">
-          <div class="mframe">
-            <div class="mdots"><div class="md" style="background:#F07B5A"></div><div class="md" style="background:#EAB308"></div><div class="md" style="background:#2DD4A0"></div></div>
-            <div class="mrows">
-              <div class="mr s"></div><div class="mr hi"></div>
-              <div class="mcard"><div class="mcard-t"></div><div class="mcard-s"></div></div>
-              <div class="mstats"><div class="ms"><div class="ms-v"></div><div class="ms-l"></div></div><div class="ms"><div class="ms-v"></div><div class="ms-l"></div></div><div class="ms"><div class="ms-v"></div><div class="ms-l"></div></div></div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="proj-body">
-        <div class="ptags"><span class="ptag v"><span class="ptag-dot"></span>PLG strategy</span><span class="ptag v"><span class="ptag-dot"></span>Design systems</span><span class="ptag v"><span class="ptag-dot"></span>Research</span></div>
-        <h3 class="ptitle">Product-Led Growth onboarding across IBM Software</h3>
-        <p class="pdesc">Led trial onboarding strategy org-wide. Published 100+ best practices, created the Carbon Interstitial pattern, and scaled reusable guidance to 39+ product teams.</p>
-        <div class="pmets">
-          <div class="pm"><span class="pm-v">+60%</span><span class="pm-l">Faster aha moment</span></div>
-          <div class="pm"><span class="pm-v">80%</span><span class="pm-l">Activation increase</span></div>
-          <div class="pm"><span class="pm-v">+10%</span><span class="pm-l">Revenue influenced</span></div>
-        </div>
-        <span class="plink">View case study <span class="parrow">↗</span></span>
-      </div>
-    </a>
-    <a href="case-study-carbon.html" class="proj-card flip reveal">
-      <div class="proj-img g2">
-        <div class="proj-img-inner">
-          <div class="mframe">
-            <div class="mdots"><div class="md" style="background:#F07B5A"></div><div class="md" style="background:#EAB308"></div><div class="md" style="background:#2DD4A0"></div></div>
-            <div class="mrows">
-              <div class="mr" style="width:70%;background:rgba(255,255,255,.18)"></div>
-              <div class="mr s" style="background:rgba(45,212,160,.5)"></div>
-              <div class="mcard" style="background:rgba(255,255,255,.05)"><div class="mcard-t" style="background:rgba(255,255,255,.15)"></div><div class="mcard-s"></div></div>
-              <div class="mr" style="width:40%;background:rgba(255,255,255,.07)"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="proj-body">
-        <div class="ptags"><span class="ptag t"><span class="ptag-dot"></span>Content strategy</span><span class="ptag t"><span class="ptag-dot"></span>Design systems</span></div>
-        <h3 class="ptitle">Carbon Design System site redesign</h3>
-        <p class="pdesc">Transformed Carbon's static docs into tutorial-style learning with video walkthroughs, Figma links, and direct code access. Shaped the 2026 Carbon site relaunch for 450k+ monthly visitors.</p>
-        <div class="pmets">
-          <div class="pm"><span class="pm-v">13.9k</span><span class="pm-l">Component inserts/week</span></div>
-          <div class="pm"><span class="pm-v">640k+</span><span class="pm-l">GitHub repos on Carbon</span></div>
-        </div>
-        <span class="plink">View case study <span class="parrow">↗</span></span>
-      </div>
-    </a>
-    <a href="case-study-content-services.html" class="proj-card reveal">
-      <div class="proj-img g3">
-        <div class="proj-img-inner">
-          <div class="mframe">
-            <div class="mdots"><div class="md" style="background:#F07B5A"></div><div class="md" style="background:#EAB308"></div><div class="md" style="background:#2DD4A0"></div></div>
-            <div class="mrows">
-              <div class="mr" style="width:80%;background:rgba(255,255,255,.15)"></div>
-              <div class="mcard" style="background:rgba(255,255,255,.05)"><div class="mcard-t" style="background:rgba(192,132,252,.4);width:45%"></div><div class="mcard-s"></div></div>
-              <div class="mstats"><div class="ms" style="background:rgba(192,132,252,.15)"><div class="ms-v" style="background:rgba(192,132,252,.5)"></div><div class="ms-l"></div></div><div class="ms" style="background:rgba(192,132,252,.15)"><div class="ms-v" style="background:rgba(192,132,252,.5)"></div><div class="ms-l"></div></div></div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="proj-body">
-        <div class="ptags"><span class="ptag c"><span class="ptag-dot"></span>Leadership</span><span class="ptag c"><span class="ptag-dot"></span>Enterprise</span><span class="ptag c"><span class="ptag-dot"></span>AWS</span></div>
-        <h3 class="ptitle">IBM Content Services: legacy to SaaS</h3>
-        <p class="pdesc">Led design modernization of a complex legacy enterprise platform. Facilitated Design Thinking workshops, led a team of 4 designers, and delivered a simpler admin experience within one year.</p>
-        <div class="pmets">
-          <div class="pm"><span class="pm-v">$400M+</span><span class="pm-l">ROI influenced</span></div>
-          <div class="pm"><span class="pm-v">1 yr</span><span class="pm-l">Delivered on time</span></div>
-        </div>
-        <span class="plink">View case study <span class="parrow">↗</span></span>
-      </div>
-    </a>
-  </div>
+<div class="reveal">
+<span class="spill">Selected projects</span>
+<h2 class="sh2">From AI products<br>to design systems.</h2>
+<p class="ssub">Case studies from IBM at enterprise scale, with measurable outcomes and real teams.</p>
+</div>
+<div class="proj-list">
+<a href="case-study-plg.html" class="proj-card reveal">
+<div class="proj-img g1">
+<div class="proj-img-inner">
+<div class="mframe">
+<div class="mdots"><div class="md" style="background:#F07B5A"></div><div class="md" style="background:#EAB308"></div><div class="md" style="background:#2DD4A0"></div></div>
+<div class="mrows">
+<div class="mr s"></div><div class="mr hi"></div>
+<div class="mcard"><div class="mcard-t"></div><div class="mcard-s"></div></div>
+<div class="mstats"><div class="ms"><div class="ms-v"></div><div class="ms-l"></div></div><div class="ms"><div class="ms-v"></div><div class="ms-l"></div></div><div class="ms"><div class="ms-v"></div><div class="ms-l"></div></div></div>
+</div>
+</div>
+</div>
+</div>
+<div class="proj-body">
+<div class="ptags"><span class="ptag v"><span class="ptag-dot"></span>PLG strategy</span><span class="ptag v"><span class="ptag-dot"></span>Design systems</span><span class="ptag v"><span class="ptag-dot"></span>Research</span></div>
+<h3 class="ptitle">Product-Led Growth onboarding across IBM Software</h3>
+<p class="pdesc">Led trial onboarding strategy org-wide. Published 100+ best practices, created the Carbon Interstitial pattern, and scaled reusable guidance to 39+ product teams.</p>
+<div class="pmets">
+<div class="pm"><span class="pm-v">+60%</span><span class="pm-l">Faster aha moment</span></div>
+<div class="pm"><span class="pm-v">80%</span><span class="pm-l">Activation increase</span></div>
+<div class="pm"><span class="pm-v">+10%</span><span class="pm-l">Revenue influenced</span></div>
+</div>
+<span class="plink">View case study <span class="parrow">↗</span></span>
+</div>
+</a>
+<a href="case-study-carbon.html" class="proj-card flip reveal">
+<div class="proj-img g2">
+<div class="proj-img-inner">
+<div class="mframe">
+<div class="mdots"><div class="md" style="background:#F07B5A"></div><div class="md" style="background:#EAB308"></div><div class="md" style="background:#2DD4A0"></div></div>
+<div class="mrows">
+<div class="mr" style="width:70%;background:rgba(255,255,255,.18)"></div>
+<div class="mr s" style="background:rgba(45,212,160,.5)"></div>
+<div class="mcard" style="background:rgba(255,255,255,.05)"><div class="mcard-t" style="background:rgba(255,255,255,.15)"></div><div class="mcard-s"></div></div>
+<div class="mr" style="width:40%;background:rgba(255,255,255,.07)"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="proj-body">
+<div class="ptags"><span class="ptag t"><span class="ptag-dot"></span>Content strategy</span><span class="ptag t"><span class="ptag-dot"></span>Design systems</span></div>
+<h3 class="ptitle">Carbon Design System site redesign</h3>
+<p class="pdesc">Transformed Carbon's static docs into tutorial-style learning with video walkthroughs, Figma links, and direct code access. Shaped the 2026 Carbon site relaunch for 450k+ monthly visitors.</p>
+<div class="pmets">
+<div class="pm"><span class="pm-v">13.9k</span><span class="pm-l">Component inserts/week</span></div>
+<div class="pm"><span class="pm-v">640k+</span><span class="pm-l">GitHub repos on Carbon</span></div>
+</div>
+<span class="plink">View case study <span class="parrow">↗</span></span>
+</div>
+</a>
+<a href="case-study-content-services.html" class="proj-card reveal">
+<div class="proj-img g3">
+<div class="proj-img-inner">
+<div class="mframe">
+<div class="mdots"><div class="md" style="background:#F07B5A"></div><div class="md" style="background:#EAB308"></div><div class="md" style="background:#2DD4A0"></div></div>
+<div class="mrows">
+<div class="mr" style="width:80%;background:rgba(255,255,255,.15)"></div>
+<div class="mcard" style="background:rgba(255,255,255,.05)"><div class="mcard-t" style="background:rgba(192,132,252,.4);width:45%"></div><div class="mcard-s"></div></div>
+<div class="mstats"><div class="ms" style="background:rgba(192,132,252,.15)"><div class="ms-v" style="background:rgba(192,132,252,.5)"></div><div class="ms-l"></div></div><div class="ms" style="background:rgba(192,132,252,.15)"><div class="ms-v" style="background:rgba(192,132,252,.5)"></div><div class="ms-l"></div></div></div>
+</div>
+</div>
+</div>
+</div>
+<div class="proj-body">
+<div class="ptags"><span class="ptag c"><span class="ptag-dot"></span>Leadership</span><span class="ptag c"><span class="ptag-dot"></span>Enterprise</span><span class="ptag c"><span class="ptag-dot"></span>AWS</span></div>
+<h3 class="ptitle">IBM Content Services: legacy to SaaS</h3>
+<p class="pdesc">Led design modernization of a complex legacy enterprise platform. Facilitated Design Thinking workshops, led a team of 4 designers, and delivered a simpler admin experience within one year.</p>
+<div class="pmets">
+<div class="pm"><span class="pm-v">$400M+</span><span class="pm-l">ROI influenced</span></div>
+<div class="pm"><span class="pm-v">1 yr</span><span class="pm-l">Delivered on time</span></div>
+</div>
+<span class="plink">View case study <span class="parrow">↗</span></span>
+</div>
+</a>
+</div>
 </div>
 
 <!-- CREDENTIALS -->
 <div class="creds-section">
-  <div class="creds-inner">
-    <div class="reveal">
-      <span class="spill">Credentials &amp; recognition</span>
-      <h2 class="sh2">Built across 6+ years<br>of enterprise experience.<span style="display:block;font-size:.75rem;font-weight:400;color:var(--gray);margin-top:.3rem;letter-spacing:.01em;">IBM &nbsp;·&nbsp; Harvard HBS &nbsp;·&nbsp; McCombs School of Business</span></h2>
-    </div>
-    <div class="creds-grid reveal">
-      <div class="cred-card hi"><div class="cred-icon" style="background:#EEF0FF"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="2" y="4" width="14" height="10" rx="2.5" stroke="#3634A3" stroke-width="1.5"/><path d="M6 9l2 2 4-4" stroke="#3634A3" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><p class="cred-title">UX Advisor · Harvard Business School</p><p class="cred-sub">UX feedback, experience audits and improvement recommendations for HBS Foundry product.</p></div>
-      <div class="cred-card hi"><div class="cred-icon" style="background:#EEF0FF"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 2l1.8 4.2L15 7l-3 3 .7 4.2L9 12l-3.7 2.2.7-4.2L3 7l4.2-.8L9 2z" stroke="#3634A3" stroke-width="1.5" stroke-linejoin="round"/></svg></div><p class="cred-title">Enterprise Design Thinking Coach · IBM</p><p class="cred-sub">Certified to facilitate IBM Design Thinking workshops across global, cross-functional teams.</p></div>
-      <div class="cred-card hi"><div class="cred-icon" style="background:#EEF0FF"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="6.5" stroke="#3634A3" stroke-width="1.5"/><path d="M6 9l2 2 4-4" stroke="#3634A3" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><p class="cred-title">2025 IBMer watsonx Challenge</p><p class="cred-sub">Recognized for AI innovation and prompting excellence within IBM's watsonx program.</p></div>
-      <div class="cred-card"><div class="cred-icon" style="background:#F5F5F7"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="3" y="3" width="12" height="12" rx="2" stroke="#444" stroke-width="1.5"/><path d="M6 9h6M9 6v6" stroke="#444" stroke-width="1.5" stroke-linecap="round"/></svg></div><p class="cred-title">AI/ML &amp; Generative AI Certifications</p><p class="cred-sub">Gen AI Fundamentals, AI Assistants L1, AI Maturity Framework, Trustworthy AI, AI Associate Leader.</p></div>
-      <div class="cred-card"><div class="cred-icon" style="background:#F5F5F7"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 2L10.8 6.5H15.5L11.5 9.3L13 14L9 11.3L5 14L6.5 9.3L2.5 6.5H7.2L9 2Z" stroke="#444" stroke-width="1.5" stroke-linejoin="round"/></svg></div><p class="cred-title">M.A. UX/UI Design &amp; Development</p><p class="cred-sub">New York Institute of Technology. 4.0 GPA. Summa Cum Laude. Honor's Student 2019 to 2021.</p></div>
-      <div class="cred-card"><div class="cred-icon" style="background:#F5F5F7"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9l4 4 8-8" stroke="#444" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><p class="cred-title">Product-Led Growth Certification · Pendo</p><p class="cred-sub">Certified in PLG strategy alongside IBM Product Academy and IBM Agile Explorer credentials.</p></div>
-      <div class="cred-card"><div class="cred-icon" style="background:#FFF0EB"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 2l1.5 3.5L14 6l-2.5 2.5.6 3.5L9 10.5l-3.1 1.5.6-3.5L4 6l3.5-.5L9 2z" stroke="#9A3412" stroke-width="1.4" stroke-linejoin="round"/></svg></div><p class="cred-title">IBM Equity · Standout · Culture Catalyst</p><p class="cred-sub">Three IBM recognition awards for impact, culture-building, and equity in design.</p><div style="display:flex;gap:5px;margin-top:.6rem;align-items:center;"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M3.5 1.5h6v4a3 3 0 01-6 0v-4z" stroke="#9A3412" stroke-width="1.2" stroke-linejoin="round"/><path d="M1.5 3h2M9.5 3h2M6.5 8.5v2.5M4.5 11h4" stroke="#9A3412" stroke-width="1.2" stroke-linecap="round"/></svg><span style="font-size:.65rem;color:#9A3412;font-weight:500;">CEO Recognition · Arvind Krishna · 2022</span></div></div>
-      <div class="cred-card"><div class="cred-icon" style="background:#E3F9F0"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="6" r="2.5" stroke="#1A7A52" stroke-width="1.5"/><path d="M4 15c0-2.5 2.2-4.5 5-4.5s5 2 5 4.5" stroke="#1A7A52" stroke-width="1.5" stroke-linecap="round"/></svg></div><p class="cred-title">Mentor · McCombs School of Business</p><p class="cred-sub">Guiding students through mentorship and career development at UT Austin RISE &amp; ALPFA programs.</p></div>
-      <div class="cred-card"><div class="cred-icon" style="background:#E3F9F0"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="2" y="4" width="14" height="10" rx="2" stroke="#1A7A52" stroke-width="1.5"/><path d="M6 8h6M6 11h4" stroke="#1A7A52" stroke-width="1.3" stroke-linecap="round"/></svg></div><p class="cred-title">AI Advisory Committee · Austin Community College</p><p class="cred-sub">Contributed to AI course development, microcredentials, and certifications for students.</p></div>
-    </div>
-  </div>
+<div class="creds-inner">
+<div class="reveal">
+<span class="spill">Credentials &amp; recognition</span>
+<h2 class="sh2">Built across 6+ years<br>of real enterprise work.</h2>
 </div>
-
-<!-- CREDENTIAL TICKER 2 before About -->
-<div class="cred-ticker mid">
-  <div class="cred-ticker-track">
-    <div class="cred-ticker-inner">
-      <span>IBM Equity Award · CEO Recognition</span>
-      <span class="cred-dot">◆</span>
-      <span>IBM Standout Award</span>
-      <span class="cred-dot">◆</span>
-      <span>IBM Culture Catalyst</span>
-      <span class="cred-dot">◆</span>
-      <span>UX Advisor · Harvard Business School</span>
-      <span class="cred-dot">◆</span>
-      <span>Mentor · McCombs School of Business</span>
-      <span class="cred-dot">◆</span>
-      <span>M.A. UX/UI · 4.0 GPA · Summa Cum Laude</span>
-      <span class="cred-dot">◆</span>
-      <span>Board Member · Latina Foundation</span>
-      <span class="cred-dot">◆</span>
-      <span>Regional Community Leader · Poderistas</span>
-      <span class="cred-dot">◆</span>
-    </div>
-    <div class="cred-ticker-inner" aria-hidden="true">
-      <span>IBM Equity Award · CEO Recognition</span>
-      <span class="cred-dot">◆</span>
-      <span>IBM Standout Award</span>
-      <span class="cred-dot">◆</span>
-      <span>IBM Culture Catalyst</span>
-      <span class="cred-dot">◆</span>
-      <span>UX Advisor · Harvard Business School</span>
-      <span class="cred-dot">◆</span>
-      <span>Mentor · McCombs School of Business</span>
-      <span class="cred-dot">◆</span>
-      <span>M.A. UX/UI · 4.0 GPA · Summa Cum Laude</span>
-      <span class="cred-dot">◆</span>
-      <span>Board Member · Latina Foundation</span>
-      <span class="cred-dot">◆</span>
-      <span>Regional Community Leader · Poderistas</span>
-      <span class="cred-dot">◆</span>
-    </div>
-  </div>
+<div class="creds-grid reveal">
+<div class="cred-card hi"><div class="cred-icon" style="background:#EEF0FF"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="2" y="4" width="14" height="10" rx="2.5" stroke="#3634A3" stroke-width="1.5"/><path d="M6 9l2 2 4-4" stroke="#3634A3" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><p class="cred-title">UX Advisor · Harvard Business School</p><p class="cred-sub">UX feedback, experience audits and improvement recommendations for HBS Foundry product.</p></div>
+<div class="cred-card hi"><div class="cred-icon" style="background:#EEF0FF"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 2l1.8 4.2L15 7l-3 3 .7 4.2L9 12l-3.7 2.2.7-4.2L3 7l4.2-.8L9 2z" stroke="#3634A3" stroke-width="1.5" stroke-linejoin="round"/></svg></div><p class="cred-title">Enterprise Design Thinking Coach · IBM</p><p class="cred-sub">Certified to facilitate IBM Design Thinking workshops across global, cross-functional teams.</p></div>
+<div class="cred-card hi"><div class="cred-icon" style="background:#EEF0FF"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="6.5" stroke="#3634A3" stroke-width="1.5"/><path d="M6 9l2 2 4-4" stroke="#3634A3" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><p class="cred-title">2025 IBMer watsonx Challenge</p><p class="cred-sub">Recognized for AI innovation and prompting excellence within IBM's watsonx program.</p></div>
+<div class="cred-card"><div class="cred-icon" style="background:#F5F5F7"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="3" y="3" width="12" height="12" rx="2" stroke="#444" stroke-width="1.5"/><path d="M6 9h6M9 6v6" stroke="#444" stroke-width="1.5" stroke-linecap="round"/></svg></div><p class="cred-title">AI/ML &amp; Generative AI Certifications</p><p class="cred-sub">Gen AI Fundamentals, AI Assistants L1, AI Maturity Framework, Trustworthy AI, AI Associate Leader.</p></div>
+<div class="cred-card"><div class="cred-icon" style="background:#F5F5F7"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 2L10.8 6.5H15.5L11.5 9.3L13 14L9 11.3L5 14L6.5 9.3L2.5 6.5H7.2L9 2Z" stroke="#444" stroke-width="1.5" stroke-linejoin="round"/></svg></div><p class="cred-title">M.A. UX/UI Design &amp; Development</p><p class="cred-sub">New York Institute of Technology. 4.0 GPA. Summa Cum Laude. Honor's Student 2019 to 2021.</p></div>
+<div class="cred-card"><div class="cred-icon" style="background:#F5F5F7"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9l4 4 8-8" stroke="#444" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><p class="cred-title">Product-Led Growth Certification · Pendo</p><p class="cred-sub">Certified in PLG strategy alongside IBM Product Academy and IBM Agile Explorer credentials.</p></div>
+<div class="cred-card"><div class="cred-icon" style="background:#FFF0EB"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 2l1.5 3.5L14 6l-2.5 2.5.6 3.5L9 10.5l-3.1 1.5.6-3.5L4 6l3.5-.5L9 2z" stroke="#9A3412" stroke-width="1.4" stroke-linejoin="round"/></svg></div><p class="cred-title">IBM Equity · Standout · Culture Catalyst</p><p class="cred-sub">Three IBM recognition awards for impact, culture-building, and equity in design.</p><div style="display:flex;gap:5px;margin-top:.6rem;align-items:center;"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M3.5 1.5h6v4a3 3 0 01-6 0v-4z" stroke="#9A3412" stroke-width="1.2" stroke-linejoin="round"/><path d="M1.5 3h2M9.5 3h2M6.5 8.5v2.5M4.5 11h4" stroke="#9A3412" stroke-width="1.2" stroke-linecap="round"/></svg><span style="font-size:.65rem;color:#9A3412;font-weight:500;">CEO Recognition · Arvind Krishna · 2022</span></div></div>
+<div class="cred-card"><div class="cred-icon" style="background:#E3F9F0"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="6" r="2.5" stroke="#1A7A52" stroke-width="1.5"/><path d="M4 15c0-2.5 2.2-4.5 5-4.5s5 2 5 4.5" stroke="#1A7A52" stroke-width="1.5" stroke-linecap="round"/></svg></div><p class="cred-title">Mentor · McCombs School of Business</p><p class="cred-sub">Guiding students through mentorship and career development at UT Austin RISE &amp; ALPFA programs.</p></div>
+<div class="cred-card"><div class="cred-icon" style="background:#E3F9F0"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="2" y="4" width="14" height="10" rx="2" stroke="#1A7A52" stroke-width="1.5"/><path d="M6 8h6M6 11h4" stroke="#1A7A52" stroke-width="1.3" stroke-linecap="round"/></svg></div><p class="cred-title">AI Advisory Committee · Austin Community College</p><p class="cred-sub">Contributed to AI course development, microcredentials, and certifications for students.</p></div>
 </div>
-<!-- ABOUT -->
-<div class="about-section" id="about">
-  <div class="about-inner">
-    <div class="about-top reveal">
-      <div class="about-photo">
-        <img src="susana-chinchilla.jpg" alt="Susana Chinchilla">
-        <div class="about-photo-caption"><p>Susana Chinchilla</p></div>
-      </div>
-      <div>
-        <h2 class="about-greeting">Hi,<br>I'm <span class="hi-name">Su!</span></h2>
-        <div class="about-body">
-          <p>I grew up in Guatemala City, moved to New York for my B.F.A. and M.A., and now I'm based in Austin, TX. I became passionate about UX through a charity project during my undergraduate studies, where I conducted user research to support weavers and their children in Guatemala. That work provided 13 kids with scholarships, school supplies, and uniforms that's when I knew I wanted to keep using my skills to create real impact.</p>
-          <p>After 5 years at IBM, I've delivered enterprise and AI/ML experiences across products, roles, and countries. I became an <strong>Enterprise Design Thinking Coach</strong> and have facilitated over 30 workshops worldwide, including the UK, with organizations like YWCA Greater Austin, Code2College, and UT McCombs School of Business.</p>
-          <p>I love building communities to share knowledge, make designs stronger, and avoid silos. Outside of work you'll find me lifting heavy weights, learning something new, spending time with my pets, video chatting with my family scattered across the East Coast and beyond, or traveling.</p>
-          <p><strong>Use your power. Inspire growth. Drive change.</strong></p>
-        </div>
-      </div>
-    </div>
-    <div class="who-cards reveal">
-      <div class="wcard"><div class="wicon" style="background:#EEF0FF"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M9.5 2L4 9h5.5L6.5 14 13 7H7.5L9.5 2z" fill="#4A3AFF"/></svg></div><div><h4>AI/ML product design</h4><p>Led UX for watsonx Orchestrate, IBM's flagship AI product, from discovery to production with 4 global design leads.</p></div></div>
-      <div class="wcard"><div class="wicon" style="background:#E3F9F0">◈</div><div><h4>Design systems at scale</h4><p>Carbon contributor with patterns adopted by 324 IBM teams, 640k+ GitHub repos, and 450k monthly visitors.</p></div></div>
-      <div class="wcard"><div class="wicon" style="background:#FFF0EB">◎</div><div><h4>Workshop facilitation</h4><p>IBM Design Thinking Coach who aligns cross-functional teams across geographies and gets everyone out with an action plan.</p></div></div>
-      <div class="wcard"><div class="wicon" style="background:#FFFBE0">✦</div><div><h4>Community leadership</h4><p>Harvard HBS Foundry advisor, McCombs mentor, Latina Foundation board member, and Poderistas regional leader across four states.</p></div></div>
-    </div>
-  </div>
+</div>
 </div>
 
 <!-- COMMUNITY -->
 <div class="community-section" id="community">
-  <div class="community-inner">
-    <div class="community-header reveal">
-      <span class="spill">Community &amp; leadership</span>
-      <h2 class="sh2">Building something<br>in every room.</h2>
-      <p class="ssub">Design thinking workshops, community organizing, mentorship, and advocacy leadership that extends far beyond the screen.</p>
-    </div>
-    <div class="photo-group reveal">
-      <p class="photo-group-label">Workshops &amp; Education</p>
-      <div class="photo-grid-3">
-        <div class="photo-card"><img src="community-ibm-design-thinking.jpg" alt="IBM Design Thinking workshop" style="object-position:center top"><div class="photo-label">IBM Design Thinking · UT &amp; McCombs School of Business</div></div>
-        <div class="photo-card"><img src="community-code2college.jpg" alt="Code2College workshop" style="object-position:center 30%"><div class="photo-label">Code2College Design Thinking Workshop &amp; Panel</div></div>
-        <div class="photo-card"><img src="community-alpfa.jpg" alt="ALPFA UT Chapter" style="object-position:right top"><div class="photo-label">UT &amp; McCombs Student Supporter · ALPFA UT Chapter</div></div>
-      </div>
-    </div>
-    <div class="photo-group reveal">
-      <p class="photo-group-label">Design community building</p>
-      <div class="photo-grid-3">
-        <div class="photo-card"><img src="community-design-critiques.jpg" alt="Design Critiques Host" style="object-position:left top"><div class="photo-label">Design Critiques Host</div></div>
-        <div class="photo-card"><img src="community-global-events.jpg" alt="Global Events Host"><div class="photo-label">Global Events Host</div></div>
-        <div class="photo-card"><img src="community-networking.jpg" alt="Networking Events Host" style="object-position:center 60%" style="object-position:right top"><div class="photo-label">Networking Events Host</div></div>
-      </div>
-    </div>
-    <div class="photo-group reveal">
-      <p class="photo-group-label">Strategy &amp; community organizations</p>
-      <div class="photo-grid-2">
-        <div class="photo-card"><img src="community-latina-foundation.jpg" alt="Latina Foundation Board" style="object-position:center 45%"><div class="photo-label">Board of Directors · The Latina Foundation</div></div>
-        <div class="photo-card"><img src="community-ywca.jpg" alt="YWCA Strategy Workshop" style="object-position:right center"><div class="photo-label">Strategy Workshop · YWCA Greater Austin</div></div>
-      </div>
-    </div>
-    <div class="photo-group reveal">
-      <p class="photo-group-label">Founder &amp; entrepreneurship support</p>
-      <div class="photo-grid-2">
-        <div class="photo-card"><img src="community-foundHERs.jpg" alt="FoundHERs FIESTA Austin" style="object-position:left bottom"><div class="photo-label">Facilitator &amp; Lead · FoundHERs and FIESTA Austin Community</div></div>
-        <div class="photo-card"><img src="community-harvard-hbs.jpg" alt="Harvard HBS Foundry" style="object-position:right center"><div class="photo-label">UX Advisor · Harvard Business School Foundry Product</div></div>
-      </div>
-    </div>
-  </div>
+<div class="community-inner">
+<div class="community-header reveal">
+<span class="spill">Community &amp; leadership</span>
+<h2 class="sh2">Building something<br>in every room.</h2>
+<p class="ssub">Design thinking workshops, community organizing, mentorship, and advocacy leadership that extends far beyond the screen.</p>
+</div>
+<div class="photo-group reveal">
+<p class="photo-group-label">Workshops &amp; Education</p>
+<div class="photo-grid-3">
+<div class="photo-card"><img src="community-ibm-design-thinking.jpg" alt="IBM Design Thinking workshop" style="object-position:center top"><div class="photo-label">IBM Design Thinking · UT &amp; McCombs School of Business</div></div>
+<div class="photo-card"><img src="community-code2college.jpg" alt="Code2College workshop" style="object-position:center 30%"><div class="photo-label">Code2College Design Thinking Workshop &amp; Panel</div></div>
+<div class="photo-card"><img src="community-alpfa.jpg" alt="ALPFA UT Chapter" style="object-position:right top"><div class="photo-label">UT &amp; McCombs Student Supporter · ALPFA UT Chapter</div></div>
+</div>
+</div>
+<div class="photo-group reveal">
+<p class="photo-group-label">Design community building</p>
+<div class="photo-grid-3">
+<div class="photo-card"><img src="community-design-critiques.jpg" alt="Design Critiques Host" style="object-position:left top"><div class="photo-label">Design Critiques Host</div></div>
+<div class="photo-card"><img src="community-global-events.jpg" alt="Global Events Host"><div class="photo-label">Global Events Host</div></div>
+<div class="photo-card"><img src="community-networking.jpg" alt="Networking Events Host" style="object-position:center 60%" style="object-position:right top"><div class="photo-label">Networking Events Host</div></div>
+</div>
+</div>
+<div class="photo-group reveal">
+<p class="photo-group-label">Strategy &amp; community organizations</p>
+<div class="photo-grid-2">
+<div class="photo-card"><img src="community-latina-foundation.jpg" alt="Latina Foundation Board" style="object-position:center 45%"><div class="photo-label">Board of Directors · The Latina Foundation</div></div>
+<div class="photo-card"><img src="community-ywca.jpg" alt="YWCA Strategy Workshop" style="object-position:right center"><div class="photo-label">Strategy Workshop · YWCA Greater Austin</div></div>
+</div>
+</div>
+<div class="photo-group reveal">
+<p class="photo-group-label">Founder &amp; entrepreneurship support</p>
+<div class="photo-grid-2">
+<div class="photo-card"><img src="community-foundHERs.jpg" alt="FoundHERs FIESTA Austin" style="object-position:left bottom"><div class="photo-label">Facilitator &amp; Lead · FoundHERs and FIESTA Austin Community</div></div>
+<div class="photo-card"><img src="community-harvard-hbs.jpg" alt="Harvard HBS Foundry" style="object-position:right center"><div class="photo-label">UX Advisor · Harvard Business School Foundry Product</div></div>
+</div>
+</div>
+</div>
 </div>
 
+<!-- CREDENTIAL TICKER 2 before About -->
+<div class="cred-ticker mid">
+<div class="cred-ticker-track">
+<div class="cred-ticker-inner">
+<span>IBM Equity Award · CEO Recognition</span>
+<span class="cred-dot">◆</span>
+<span>IBM Standout Award</span>
+<span class="cred-dot">◆</span>
+<span>IBM Culture Catalyst</span>
+<span class="cred-dot">◆</span>
+<span>UX Advisor · Harvard Business School</span>
+<span class="cred-dot">◆</span>
+<span>Mentor · McCombs School of Business</span>
+<span class="cred-dot">◆</span>
+<span>M.A. UX/UI · 4.0 GPA · Summa Cum Laude</span>
+<span class="cred-dot">◆</span>
+<span>Board Member · Latina Foundation</span>
+<span class="cred-dot">◆</span>
+<span>Regional Community Leader · Poderistas</span>
+<span class="cred-dot">◆</span>
+</div>
+<div class="cred-ticker-inner" aria-hidden="true">
+<span>IBM Equity Award · CEO Recognition</span>
+<span class="cred-dot">◆</span>
+<span>IBM Standout Award</span>
+<span class="cred-dot">◆</span>
+<span>IBM Culture Catalyst</span>
+<span class="cred-dot">◆</span>
+<span>UX Advisor · Harvard Business School</span>
+<span class="cred-dot">◆</span>
+<span>Mentor · McCombs School of Business</span>
+<span class="cred-dot">◆</span>
+<span>M.A. UX/UI · 4.0 GPA · Summa Cum Laude</span>
+<span class="cred-dot">◆</span>
+<span>Board Member · Latina Foundation</span>
+<span class="cred-dot">◆</span>
+<span>Regional Community Leader · Poderistas</span>
+<span class="cred-dot">◆</span>
+</div>
+</div>
+</div>
 
+<!-- ABOUT -->
+<div class="about-section" id="about">
+<div class="about-inner">
+<div class="about-top reveal">
+<div class="about-photo">
+<img src="susana-chinchilla.jpg" alt="Susana Chinchilla">
+<div class="about-photo-caption"><p>Susana Chinchilla</p></div>
+</div>
+<div>
+<h2 class="about-greeting">Hi,<br>I'm <span class="hi-name">Su!</span></h2>
+<div class="about-body">
+<p>I grew up in Guatemala City, moved to New York for my B.F.A. and M.A., and now I'm based in Austin, TX. I became passionate about UX through a charity project during my undergraduate studies, where I conducted user research to support weavers and their children in Guatemala. That work provided 13 kids with scholarships, school supplies, and uniforms that's when I knew I wanted to keep using my skills to create real impact.</p>
+<p>After 6+ years at IBM, I've delivered enterprise and AI/ML experiences across products, roles, and countries. I became an <strong>Enterprise Design Thinking Coach</strong> and have facilitated over 30 workshops worldwide, including the UK, with organizations like YWCA Greater Austin, Code2College, and UT McCombs School of Business.</p>
+<p>I love building communities to share knowledge, make designs stronger, and avoid silos. Outside of work you'll find me lifting heavy weights, learning something new, spending time with my pets, video calling my family in Guatemala, or traveling.</p>
+<p><strong>Use your power. Inspire growth. Drive change.</strong></p>
+</div>
+</div>
+</div>
+<div class="who-cards reveal">
+<div class="wcard"><div class="wicon" style="background:#EEF0FF"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M9.5 2L4 9h5.5L6.5 14 13 7H7.5L9.5 2z" fill="#4A3AFF"/></svg></div><div><h4>AI/ML product design</h4><p>Led UX for watsonx Orchestrate, IBM's flagship AI product, from discovery to production with 4 global design leads.</p></div></div>
+<div class="wcard"><div class="wicon" style="background:#E3F9F0">◈</div><div><h4>Design systems at scale</h4><p>Carbon contributor with patterns adopted by 324 IBM teams, 640k+ GitHub repos, and 450k monthly visitors.</p></div></div>
+<div class="wcard"><div class="wicon" style="background:#FFF0EB">◎</div><div><h4>Workshop facilitation</h4><p>IBM Design Thinking Coach who aligns cross-functional teams across geographies and gets everyone out with an action plan.</p></div></div>
+<div class="wcard"><div class="wicon" style="background:#FFFBE0">✦</div><div><h4>Community leadership</h4><p>Harvard HBS Foundry advisor, McCombs mentor, Latina Foundation board member, and Poderistas regional leader across four states.</p></div></div>
+</div>
+</div>
+</div>
+
+<!-- BUILDING -->
+<div class="building-wrap" id="building">
+<div class="building-inner">
+<div class="reveal">
+<div class="live-badge"><span class="ldot"></span>Currently building</div>
+<h2 class="bh2">AURO. English<br>for <em>your</em> world.</h2>
+<p class="bp">AURO Expand is an AI-powered app that teaches English based on your role, your goals, and your life. Not a generic curriculum. You learn exactly what matters to you and reach fluency in your specific context, faster.</p>
+<p class="bp" style="font-size:.81rem">The two-week trial puts you in a real conversation in your target role. Built on PLG expertise: personalized start, clear aha moment, and fast time to value.</p>
+<div class="bpills">
+<span class="bpill"><span class="bpill-dot"></span>AI-powered</span>
+<span class="bpill"><span class="bpill-dot"></span>Personalized onboarding</span>
+<span class="bpill"><span class="bpill-dot"></span>PLG trial</span>
+<span class="bpill"><span class="bpill-dot"></span>0 to 1</span>
+</div>
+<a href="mailto:suschinchilla@gmail.com?subject=AURO early access" class="btn-auro">Request early access</a>
+</div>
+<div class="reveal">
+<div class="auro-mockup">
+<div class="auro-phone">
+<div class="auro-phone-bar">
+<div style="display:flex;gap:4px;align-items:center;"><div style="width:8px;height:8px;border-radius:50%;background:rgba(0,201,141,.9);"></div><span style="font-size:.6rem;color:rgba(255,255,255,.5);letter-spacing:.06em;">AURO</span></div>
+<div style="width:32px;height:4px;background:rgba(255,255,255,.15);border-radius:2px;"></div>
+</div>
+<div class="auro-screen-inner">
+<div class="auro-greeting">
+<div class="auro-avatar">A</div>
+<div><p class="auro-hi">Hola, Ana!</p><p class="auro-sub">Especialmente para ti</p></div>
+</div>
+<div class="auro-section-label">Your goal this week</div>
+<div class="auro-goal-card">
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.5rem;"><span style="font-size:.72rem;font-weight:600;color:#fff;">Job interview vocabulary</span><span style="font-size:.62rem;color:rgba(0,201,141,.9);">Day 3</span></div>
+<div style="height:3px;background:rgba(255,255,255,.1);border-radius:2px;margin-bottom:.5rem;"><div style="width:40%;height:100%;background:linear-gradient(90deg,#00C98D,#4A3AFF);border-radius:2px;"></div></div>
+<p style="font-size:.65rem;color:rgba(255,255,255,.4);">4 of 10 lessons complete</p>
+</div>
+<div class="auro-section-label">Recommended for you</div>
+<div class="auro-rec-list">
+<div class="auro-rec-item auro-rec-active">
+<div class="auro-rec-icon" style="background:linear-gradient(135deg,#4A3AFF,#9B8AFF);"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M6 2l4 4-4 4" stroke="#fff" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+<div><p class="auro-rec-title">Asking clarifying questions</p><p class="auro-rec-sub">5 min · Career English</p></div>
+</div>
+<div class="auro-rec-item">
+<div class="auro-rec-icon" style="background:rgba(255,255,255,.08);"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="4.5" stroke="rgba(255,255,255,.4)" stroke-width="1.2"/></svg></div>
+<div><p class="auro-rec-title">Describing your experience</p><p class="auro-rec-sub">8 min · Career English</p></div>
+</div>
+<div class="auro-rec-item">
+<div class="auro-rec-icon" style="background:rgba(255,255,255,.08);"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><rect x="1.5" y="2.5" width="9" height="7" rx="1.5" stroke="rgba(255,255,255,.4)" stroke-width="1.2"/></svg></div>
+<div><p class="auro-rec-title">Salary negotiation phrases</p><p class="auro-rec-sub">6 min · Career English</p></div>
+</div>
+</div>
+<div class="auro-cta">Start today's lesson →</div>
+</div>
+<div class="auro-phone-nav">
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="2" y="4" width="12" height="2" rx="1" fill="rgba(255,255,255,.3)"/><rect x="2" y="7.5" width="8" height="2" rx="1" fill="rgba(255,255,255,.3)"/><rect x="2" y="11" width="10" height="2" rx="1" fill="rgba(255,255,255,.3)"/></svg>
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="5.5" stroke="rgba(255,255,255,.5)" stroke-width="1.5"/><path d="M6 8l1.5 1.5L10.5 6" stroke="rgba(255,255,255,.5)" stroke-width="1.3" stroke-linecap="round"/></svg>
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="5.5" r="2.5" stroke="rgba(255,255,255,.5)" stroke-width="1.3"/><path d="M3 13.5c0-2.5 2.2-4 5-4s5 1.5 5 4" stroke="rgba(255,255,255,.5)" stroke-width="1.3" stroke-linecap="round"/></svg>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 
 <!-- CONTACT -->
 <div class="contact-section">
-  <div class="cmq-wrap">
-    <div class="cmq-track">
-      <div class="cmi"><span class="cmi-v">$400M+</span><span class="cmi-l">ROI influenced</span></div>
-      <div class="cmi"><span class="cmi-v">Harvard</span><span class="cmi-l">UX Advisor · HBS</span></div>
-      <div class="cmi"><span class="cmi-v">80%</span><span class="cmi-l">Activation increase</span></div>
-      <div class="cmi"><span class="cmi-v">+60%</span><span class="cmi-l">Faster aha moment</span></div>
-      <div class="cmi"><span class="cmi-v">watsonx</span><span class="cmi-l">IBM flagship AI</span></div>
-      <div class="cmi"><span class="cmi-v">450k</span><span class="cmi-l">Carbon visitors/mo</span></div>
-      <div class="cmi"><span class="cmi-v">$400M+</span><span class="cmi-l">ROI influenced</span></div>
-      <div class="cmi"><span class="cmi-v">Harvard</span><span class="cmi-l">UX Advisor · HBS</span></div>
-      <div class="cmi"><span class="cmi-v">80%</span><span class="cmi-l">Activation increase</span></div>
-      <div class="cmi"><span class="cmi-v">+60%</span><span class="cmi-l">Faster aha moment</span></div>
-      <div class="cmi"><span class="cmi-v">watsonx</span><span class="cmi-l">IBM flagship AI</span></div>
-      <div class="cmi"><span class="cmi-v">450k</span><span class="cmi-l">Carbon visitors/mo</span></div>
-    </div>
-  </div>
-  <div class="contact-body">
-    <span class="cey">Open to new opportunities</span>
-    <h2 class="ch2">Let's create<br>something <em>together.</em></h2>
-    <p class="csub">Ready to bring enterprise UX, AI design leadership, and cross-functional impact to your team.</p>
-    <div class="cbtns">
-      <a href="mailto:suschinchilla@gmail.com" class="bws" style="display:inline-flex;align-items:center;gap:6px;"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" style="flex-shrink:0;"><rect x="1.5" y="3" width="10" height="7" rx="1.5" stroke="currentColor" stroke-width="1.3"/><path d="M1.5 4.5l5 3.5 5-3.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg> Email me</a>
-      <a href="https://www.linkedin.com/in/susanachinchilla/" target="_blank" class="bgw">LinkedIn ↗</a>
-      <a href="resume.html" class="bgw">Resume ↗</a>
-    </div>
-  </div>
-  <div class="contact-spacer"></div>
-  <div class="ai-footer">
-    <div class="ai-note">
-      <span class="ai-badge">✦ Claude x Susana</span>
-      Designed and built together with Claude Code 🤍
-    </div>
-    <div class="flinks">
-      <a href="mailto:suschinchilla@gmail.com">Email</a>
-      <a href="https://www.linkedin.com/in/susanachinchilla/" target="_blank">LinkedIn</a>
-      <a href="resume.html">Resume</a>
-    </div>
-  </div>
+<div class="cmq-wrap">
+<div class="cmq-track">
+<div class="cmi"><span class="cmi-v">$400M+</span><span class="cmi-l">ROI influenced</span></div>
+<div class="cmi"><span class="cmi-v">Harvard</span><span class="cmi-l">UX Advisor · HBS</span></div>
+<div class="cmi"><span class="cmi-v">80%</span><span class="cmi-l">Activation increase</span></div>
+<div class="cmi"><span class="cmi-v">+60%</span><span class="cmi-l">Faster aha moment</span></div>
+<div class="cmi"><span class="cmi-v">watsonx</span><span class="cmi-l">IBM flagship AI</span></div>
+<div class="cmi"><span class="cmi-v">450k</span><span class="cmi-l">Carbon visitors/mo</span></div>
+<div class="cmi"><span class="cmi-v">$400M+</span><span class="cmi-l">ROI influenced</span></div>
+<div class="cmi"><span class="cmi-v">Harvard</span><span class="cmi-l">UX Advisor · HBS</span></div>
+<div class="cmi"><span class="cmi-v">80%</span><span class="cmi-l">Activation increase</span></div>
+<div class="cmi"><span class="cmi-v">+60%</span><span class="cmi-l">Faster aha moment</span></div>
+<div class="cmi"><span class="cmi-v">watsonx</span><span class="cmi-l">IBM flagship AI</span></div>
+<div class="cmi"><span class="cmi-v">450k</span><span class="cmi-l">Carbon visitors/mo</span></div>
+</div>
+</div>
+<div class="contact-body">
+<span class="cey">Open to new opportunities</span>
+<h2 class="ch2">Let's create<br>something <em>together.</em></h2>
+<p class="csub">Ready to bring enterprise UX, AI design leadership, and cross-functional impact to your team.</p>
+<div class="cbtns">
+<a href="mailto:suschinchilla@gmail.com" class="bws">⚡ Email me</a>
+<a href="https://linkedin.com/in/susana-chinchilla" target="_blank" class="bgw">LinkedIn ↗</a>
+<a href="#" class="bgw">Resume ↗</a>
+</div>
+</div>
+<div class="contact-spacer"></div>
+<div class="ai-footer">
+<div class="ai-note">
+<span class="ai-badge">✦ Claude x Susana</span>
+Designed and built together with Claude Code 🤍
+</div>
+<div class="flinks">
+<a href="mailto:suschinchilla@gmail.com">Email</a>
+<a href="https://linkedin.com/in/susana-chinchilla" target="_blank">LinkedIn</a>
+<a href="#">Resume</a>
+</div>
+</div>
 </div>
 
 <script>
 const obs=new IntersectionObserver((entries)=>{
-  entries.forEach((e,i)=>{if(e.isIntersecting) setTimeout(()=>e.target.classList.add('visible'),i*80);});
+entries.forEach((e,i)=>{if(e.isIntersecting) setTimeout(()=>e.target.classList.add('visible'),i*80);});
 },{threshold:.06});
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+// Active nav pill on scroll
+window.addEventListener('scroll', () => {
+  const links = document.querySelectorAll('.nav-links a');
+  let current = '';
+  ['work','about','community','building'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el && window.scrollY >= el.offsetTop - 80) current = id;
+  });
+  links.forEach(link => {
+    link.classList.remove('active');
+    const href = link.getAttribute('href');
+    if (current === '' && href === 'index.html') link.classList.add('active');
+    else if (href === '#' + current) link.classList.add('active');
+  });
+});
 </script>
 </body>
 </html>

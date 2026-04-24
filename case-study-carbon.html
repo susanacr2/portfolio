@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Carbon Design System — Susana Chinchilla</title>
+<title>Carbon Design System · Susana Chinchilla</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -13,25 +13,16 @@
 :root{--purple:#4A3AFF;--black:#1D1D1F;--gray:#6E6E73;--border:#E5E5EA;--bg:#F8F8FC;}
 body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--black);min-height:100vh;display:flex;flex-direction:column;}
 body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse 70% 55% at 20% 30%,rgba(74,58,255,.07) 0%,transparent 70%),radial-gradient(ellipse 50% 40% at 80% 70%,rgba(155,138,255,.05) 0%,transparent 70%);pointer-events:none;z-index:0;}
-
-/* NAV */
 nav{position:relative;z-index:10;padding:0 2rem;height:56px;display:flex;align-items:center;justify-content:space-between;}
 .nav-logo{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:1rem;color:var(--black);text-decoration:none;}
 .nav-logo span{color:var(--purple);}
-
-/* BACK LINK top left */
 .back-link{display:inline-flex;align-items:center;gap:6px;padding:.4rem .9rem;font-size:.8rem;font-weight:500;color:var(--purple);text-decoration:none;background:transparent;border:0.5px solid rgba(74,58,255,.2);border-radius:980px;transition:border-color .2s,opacity .2s;}
 .back-link:hover{border-color:var(--purple);opacity:.7;}
-
-/* GATE */
 .gate-wrap{position:relative;z-index:1;flex:1;display:flex;align-items:flex-start;justify-content:center;padding:5rem 2rem 2rem;}
 .gate{width:100%;max-width:380px;display:flex;flex-direction:column;align-items:center;text-align:center;}
-
 .lock-icon{width:56px;height:56px;border-radius:16px;background:linear-gradient(135deg,#6B5BFF,#9B8AFF);display:flex;align-items:center;justify-content:center;margin-bottom:1.5rem;box-shadow:0 8px 24px rgba(74,58,255,.25);}
-
 .gate-h1{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(2.5rem,6vw,3.5rem);letter-spacing:-.035em;line-height:1.05;color:var(--purple);margin-bottom:.75rem;}
 .gate-desc{font-size:.95rem;color:var(--gray);line-height:1.6;margin-bottom:2rem;}
-
 .gate-form{width:100%;display:flex;flex-direction:column;gap:.6rem;}
 .input-wrap{position:relative;display:flex;align-items:center;}
 .input-wrap svg{position:absolute;left:.875rem;color:#C7C7CC;flex-shrink:0;}
@@ -39,11 +30,9 @@ nav{position:relative;z-index:10;padding:0 2rem;height:56px;display:flex;align-i
 .gate-input::placeholder{color:#C7C7CC;}
 .gate-input:focus{border-color:var(--purple);box-shadow:0 0 0 3px rgba(74,58,255,.1);}
 .gate-input.error{border-color:#D85A30;box-shadow:0 0 0 3px rgba(216,90,48,.1);}
-
 .gate-btn{width:100%;padding:.82rem;background:var(--black);color:#fff;font-size:.88rem;font-weight:600;font-family:'Inter',sans-serif;border:none;border-radius:10px;cursor:pointer;transition:background .2s,transform .15s;display:flex;align-items:center;justify-content:center;gap:6px;}
 .gate-btn:hover{background:#333;transform:translateY(-1px);}
 .gate-btn:active{transform:translateY(0);}
-
 .gate-hint{font-size:.75rem;color:#AEAEB2;margin-top:.35rem;}
 .gate-hint a{color:var(--purple);font-weight:600;text-decoration:none;}
 .gate-hint a:hover{text-decoration:underline;}
@@ -52,15 +41,13 @@ nav{position:relative;z-index:10;padding:0 2rem;height:56px;display:flex;align-i
 </style>
 </head>
 <body>
-
 <nav>
   <a href="index.html" class="back-link">
     <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M9 2L4 7l5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    Back to portfolio
+    Back
   </a>
   <a href="index.html" class="nav-logo">SC<span>.</span></a>
 </nav>
-
 <div class="gate-wrap">
   <div class="gate">
     <div class="lock-icon">
@@ -86,7 +73,6 @@ nav{position:relative;z-index:10;padding:0 2rem;height:56px;display:flex;align-i
     </div>
   </div>
 </div>
-
 <script>
 function checkPw() {
   const val = document.getElementById('pw').value;

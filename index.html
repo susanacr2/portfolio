@@ -43,6 +43,14 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:grid;grid-template-c
 .hero-title .grad{background:linear-gradient(270deg,#4A3AFF,#9B8AFF,#C084FC,#7B6AFF,#4A3AFF);background-size:300% 300%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:gradShift 7s ease infinite;}
 @keyframes gradShift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
 .hero-sub{font-size:clamp(.9rem,1.2vw,1rem);font-weight:300;color:var(--gray-text);max-width:480px;margin-bottom:1.25rem;line-height:1.75;}
+.nowrap{white-space:nowrap;}
+/* Animated dots — must be outside gradient span */
+.dots-anim{display:inline;font-weight:500;letter-spacing:.02em;-webkit-text-fill-color:var(--black);color:var(--black);}
+.dots-anim .dot{opacity:0;animation:dotpop 1.2s ease-in-out infinite;}
+.dots-anim .dot:nth-child(1){animation-delay:0s;}
+.dots-anim .dot:nth-child(2){animation-delay:.4s;}
+.dots-anim .dot:nth-child(3){animation-delay:.8s;}
+@keyframes dotpop{0%,50%,100%{opacity:0}25%{opacity:1}}
 /* IBM pill only */
 .hero-companies{display:flex;flex-direction:column;gap:.5rem;margin-bottom:2rem;}
 .hero-company-row{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;}
@@ -205,7 +213,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:grid;grid-template-c
 .ch2 em{font-style:normal;background:linear-gradient(135deg,#C084FC,#E0C8FF);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
 .csub{font-size:.9rem;color:rgba(255,255,255,.5);max-width:380px;margin:0 auto 2.5rem;line-height:1.65;}
 .cbtns{display:flex;justify-content:center;gap:.75rem;flex-wrap:wrap;}
-.bws{font-size:.86rem;font-weight:500;background:rgba(255,255,255,.92);color:#3634A3;text-decoration:none;padding:.75rem 1.6rem;border-radius:980px;transition:background .2s,transform .15s;border:0.5px solid rgba(255,255,255,.8);}
+.bws{font-size:.86rem;font-weight:500;background:rgba(255,255,255,.92);color:#3634A3;text-decoration:none;padding:.75rem 1.6rem;border-radius:980px;transition:background .2s,transform .15s;border:0.5px solid rgba(255,255,255,.8);display:inline-flex;align-items:center;gap:6px;}
 .bws:hover{background:#fff;transform:translateY(-2px);}
 .bgw{font-size:.86rem;font-weight:500;background:rgba(255,255,255,.08);color:rgba(255,255,255,.8);text-decoration:none;padding:.75rem 1.6rem;border-radius:980px;border:0.5px solid rgba(255,255,255,.2);transition:all .2s;}
 .bgw:hover{background:rgba(255,255,255,.15);border-color:rgba(255,255,255,.4);color:#fff;transform:translateY(-2px);}
@@ -287,7 +295,7 @@ white-space: nowrap;
     <h1 class="hero-title">
       <span class="grad">Product Designer<br>&amp; Builder.</span>
     </h1>
-    <p class="hero-sub">Lead Product Designer with a Master's in UX/UI Design &amp; Development and a certified IBM Enterprise Design Thinking Coach.</p>
+    <p class="hero-sub">Lead Product Designer with a Master's in UX/UI Design &amp; Development<br>and a certified IBM <span class="nowrap">Enterprise Design Thinking Coach.</span></p>
 
     <div class="hero-companies">
       <div class="hero-company-row">
@@ -307,7 +315,7 @@ white-space: nowrap;
         <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 2l5 5-5 5M2 7h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         View my work
       </a>
-      <a href="mailto:suschinchilla@gmail.com" class="btn-light">Let's connect</a>
+      <a href="https://www.linkedin.com/in/susanachinchilla/" target="_blank" class="btn-light">Let's connect</a>
     </div>
   </div>
 
@@ -497,12 +505,15 @@ white-space: nowrap;
 <div class="about-photo-caption"><p>Susana Chinchilla</p></div>
 </div>
 <div>
-<h2 class="about-greeting">A little more<br>about <span class="hi-name">me...</span></h2>
+<h2 class="about-greeting">A little more<br>about <span class="hi-name">me</span><span class="dots-anim"><span class="dot">.</span><span class="dot">.</span><span class="dot">.</span></span></h2>
 <div class="about-body">
-<p>I grew up in Guatemala City, moved to New York for my B.F.A. and M.A., and now I'm based in Austin, TX. I became passionate about UX through a charity project during my undergraduate studies, where I conducted user research to support weavers and their children in Guatemala. That work provided 13 kids with scholarships, school supplies, and uniforms that's when I knew I wanted to keep using my skills to create real impact.</p>
-<p>After 6+ years at IBM, I've delivered enterprise and AI/ML experiences across products, roles, and countries. I became an <strong>Enterprise Design Thinking Coach</strong> and have facilitated over 30 workshops worldwide, including the UK, with organizations like YWCA Greater Austin, Code2College, and UT McCombs School of Business.</p>
-<p>I love building communities to share knowledge, make designs stronger, and avoid silos. Outside of work you'll find me lifting heavy weights, learning something new, spending time with my pets, video calling my family in Guatemala, or traveling.</p>
-<p><strong>Use your power. Inspire growth. Drive change.</strong></p>
+<p>I grew up in Guatemala City, where my parents made education the family's top priority. I took that seriously — working full-time as a nanny to pay my own tuition through both my undergrad and my Master's.</p>
+<p>For my undergraduate final project, I wanted to do something real. I created a charity and used user research to support weavers and their children in Guatemala. That project provided 13 kids with scholarships, school supplies, and uniforms. It was the moment I knew I wanted to keep using my skills to create genuine impact.</p>
+<p>My brother, a senior software developer at Google, introduced me to UX shortly after. When he explained it, I realized I had already been doing it. I loved helping people through design, so I applied to my Master's at NYIT and graduated with a job at IBM.</p>
+<p>At IBM, I learned to build products, design systems, AI experiences, PLG, and Enterprise Design Thinking at global scale. But the most important thing I learned was that culture is the foundation of great solutions. I found my way of contributing through community building.</p>
+<p>Over 6+ years, I delivered enterprise and AI/ML experiences across products, roles, and countries. I became an <strong>Enterprise Design Thinking Coach</strong> and facilitated 30+ workshops worldwide, including in the UK, with organizations like YWCA Greater Austin, Code2College, and UT McCombs School of Business.</p>
+<p>Outside of work, I'm lifting heavy, learning something new, spending time with my pets, or traveling. Currently at <strong>28+ countries and counting.</strong></p>
+<p>Most recently, I've been building <strong>AURO</strong>, a product designed to make education more accessible through AI. Feel free to ask me about it.</p>
 </div>
 </div>
 </div>
@@ -551,69 +562,6 @@ white-space: nowrap;
 <div class="photo-grid-2">
 <div class="photo-card"><img src="community-foundHERs.jpg" alt="FoundHERs FIESTA Austin" style="object-position:left bottom"><div class="photo-label">Facilitator &amp; Lead · FoundHERs and FIESTA Austin Community</div></div>
 <div class="photo-card"><img src="community-harvard-hbs.jpg" alt="Harvard HBS Foundry" style="object-position:right center"><div class="photo-label">UX Advisor · Harvard Business School Foundry Product</div></div>
-</div>
-</div>
-</div>
-</div>
-
-<!-- BUILDING -->
-<div class="building-wrap" id="building">
-<div class="building-inner">
-<div class="reveal">
-<div class="live-badge"><span class="ldot"></span>Currently building</div>
-<h2 class="bh2">AURO. English<br>for <em>your</em> world.</h2>
-<p class="bp">AURO Expand is an AI-powered app that teaches English based on your role, your goals, and your life. Not a generic curriculum. You learn exactly what matters to you and reach fluency in your specific context, faster.</p>
-<p class="bp" style="font-size:.81rem">The two-week trial puts you in a real conversation in your target role. Built on PLG expertise: personalized start, clear aha moment, and fast time to value.</p>
-<div class="bpills">
-<span class="bpill"><span class="bpill-dot"></span>AI-powered</span>
-<span class="bpill"><span class="bpill-dot"></span>Personalized onboarding</span>
-<span class="bpill"><span class="bpill-dot"></span>PLG trial</span>
-<span class="bpill"><span class="bpill-dot"></span>0 to 1</span>
-</div>
-<a href="mailto:suschinchilla@gmail.com?subject=AURO early access" class="btn-auro">Request early access</a>
-</div>
-<div class="reveal">
-<div class="auro-mockup">
-<div class="auro-phone">
-<div class="auro-phone-bar">
-<div style="display:flex;gap:4px;align-items:center;"><div style="width:8px;height:8px;border-radius:50%;background:rgba(0,201,141,.9);"></div><span style="font-size:.6rem;color:rgba(255,255,255,.5);letter-spacing:.06em;">AURO</span></div>
-<div style="width:32px;height:4px;background:rgba(255,255,255,.15);border-radius:2px;"></div>
-</div>
-<div class="auro-screen-inner">
-<div class="auro-greeting">
-<div class="auro-avatar">A</div>
-<div><p class="auro-hi">Hola, Ana!</p><p class="auro-sub">Especialmente para ti</p></div>
-</div>
-<div class="auro-section-label">Your goal this week</div>
-<div class="auro-goal-card">
-<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.5rem;"><span style="font-size:.72rem;font-weight:600;color:#fff;">Job interview vocabulary</span><span style="font-size:.62rem;color:rgba(0,201,141,.9);">Day 3</span></div>
-<div style="height:3px;background:rgba(255,255,255,.1);border-radius:2px;margin-bottom:.5rem;"><div style="width:40%;height:100%;background:linear-gradient(90deg,#00C98D,#4A3AFF);border-radius:2px;"></div></div>
-<p style="font-size:.65rem;color:rgba(255,255,255,.4);">4 of 10 lessons complete</p>
-</div>
-<div class="auro-section-label">Recommended for you</div>
-<div class="auro-rec-list">
-<div class="auro-rec-item auro-rec-active">
-<div class="auro-rec-icon" style="background:linear-gradient(135deg,#4A3AFF,#9B8AFF);"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M6 2l4 4-4 4" stroke="#fff" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-<div><p class="auro-rec-title">Asking clarifying questions</p><p class="auro-rec-sub">5 min · Career English</p></div>
-</div>
-<div class="auro-rec-item">
-<div class="auro-rec-icon" style="background:rgba(255,255,255,.08);"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="4.5" stroke="rgba(255,255,255,.4)" stroke-width="1.2"/></svg></div>
-<div><p class="auro-rec-title">Describing your experience</p><p class="auro-rec-sub">8 min · Career English</p></div>
-</div>
-<div class="auro-rec-item">
-<div class="auro-rec-icon" style="background:rgba(255,255,255,.08);"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><rect x="1.5" y="2.5" width="9" height="7" rx="1.5" stroke="rgba(255,255,255,.4)" stroke-width="1.2"/></svg></div>
-<div><p class="auro-rec-title">Salary negotiation phrases</p><p class="auro-rec-sub">6 min · Career English</p></div>
-</div>
-</div>
-<div class="auro-cta">Start today's lesson →</div>
-</div>
-<div class="auro-phone-nav">
-<svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="2" y="4" width="12" height="2" rx="1" fill="rgba(255,255,255,.3)"/><rect x="2" y="7.5" width="8" height="2" rx="1" fill="rgba(255,255,255,.3)"/><rect x="2" y="11" width="10" height="2" rx="1" fill="rgba(255,255,255,.3)"/></svg>
-<svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="5.5" stroke="rgba(255,255,255,.5)" stroke-width="1.5"/><path d="M6 8l1.5 1.5L10.5 6" stroke="rgba(255,255,255,.5)" stroke-width="1.3" stroke-linecap="round"/></svg>
-<svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="5.5" r="2.5" stroke="rgba(255,255,255,.5)" stroke-width="1.3"/><path d="M3 13.5c0-2.5 2.2-4 5-4s5 1.5 5 4" stroke="rgba(255,255,255,.5)" stroke-width="1.3" stroke-linecap="round"/></svg>
-</div>
-</div>
-</div>
 </div>
 </div>
 </div>

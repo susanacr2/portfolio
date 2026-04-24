@@ -15,12 +15,12 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--black);min-
 body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse 70% 55% at 20% 30%,rgba(74,58,255,.07) 0%,transparent 70%),radial-gradient(ellipse 50% 40% at 80% 70%,rgba(155,138,255,.05) 0%,transparent 70%);pointer-events:none;z-index:0;}
 
 /* NAV */
-nav{position:relative;z-index:10;padding:0 2rem;height:56px;display:flex;align-items:center;}
+nav{position:relative;z-index:10;padding:0 2rem;height:56px;display:flex;align-items:center;justify-content:space-between;}
 .nav-logo{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:1rem;color:var(--black);text-decoration:none;}
 .nav-logo span{color:var(--purple);}
 
 /* BACK LINK top left */
-.back-link{position:fixed;top:1.25rem;left:1.5rem;z-index:20;display:inline-flex;align-items:center;gap:6px;padding:.4rem .9rem;font-size:.8rem;font-weight:500;color:var(--purple);text-decoration:none;background:transparent;border:0.5px solid rgba(74,58,255,.2);border-radius:980px;transition:border-color .2s,opacity .2s;}
+.back-link{display:inline-flex;align-items:center;gap:6px;padding:.4rem .9rem;font-size:.8rem;font-weight:500;color:var(--purple);text-decoration:none;background:transparent;border:0.5px solid rgba(74,58,255,.2);border-radius:980px;transition:border-color .2s,opacity .2s;}
 .back-link:hover{border-color:var(--purple);opacity:.7;}
 
 /* GATE */
@@ -53,12 +53,11 @@ nav{position:relative;z-index:10;padding:0 2rem;height:56px;display:flex;align-i
 </head>
 <body>
 
-<a href="index.html" class="back-link">
-  <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M9 2L4 7l5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-  Back to portfolio
-</a>
-
 <nav>
+  <a href="index.html" class="back-link">
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M9 2L4 7l5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    Back to portfolio
+  </a>
   <a href="index.html" class="nav-logo">SC<span>.</span></a>
 </nav>
 

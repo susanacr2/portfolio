@@ -49,6 +49,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:grid;grid-template-c
 .hero-company-label{font-size:.82rem;font-weight:300;color:var(--gray-text);}
 .company-pill{display:inline-flex;align-items:center;justify-content:center;background:#fff;border-radius:980px;padding:.3rem .8rem;box-shadow:0 2px 10px rgba(0,0,0,.08),0 0 0 0.5px rgba(0,0,0,.07);transition:box-shadow .2s;}
 .company-pill img{height:15px;width:auto;display:block;}
+.company-pill.auro img{height:19px;}
+.company-pill.ibm img{height:15px;}
 .hero-btns{display:flex;gap:.75rem;flex-wrap:wrap;}
 .btn-dark{font-size:.86rem;font-weight:500;background:#1D1D1F;color:#fff;text-decoration:none;padding:.75rem 1.6rem;border-radius:980px;transition:background .2s,transform .15s;display:inline-flex;align-items:center;gap:6px;}
 .btn-dark:hover{background:var(--purple);transform:translateY(-2px);}
@@ -285,12 +287,16 @@ white-space: nowrap;
     <h1 class="hero-title">
       <span class="grad">Product Designer<br>&amp; Builder.</span>
     </h1>
-    <p class="hero-sub">Lead Product Designer with a Master's in UX/UI Design and Development and a certified IBM Enterprise Design Thinking Coach.</p>
+    <p class="hero-sub">Lead Product Designer with a Master's in UX/UI Design &amp; Development and a certified IBM Enterprise Design Thinking Coach.</p>
 
     <div class="hero-companies">
       <div class="hero-company-row">
+        <span class="hero-company-label">Making education more accessible with AI at</span>
+        <span class="company-pill auro"><img src="AURO-light.png" alt="AURO"></span>
+      </div>
+      <div class="hero-company-row">
         <span class="hero-company-label">Previously building AI products and design systems at</span>
-        <a href="https://www.ibm.com/us-en" target="_blank" class="company-pill">
+        <a href="https://www.ibm.com/us-en" target="_blank" class="company-pill ibm">
           <img src="about-ibm-logo.png" alt="IBM">
         </a>
       </div>
@@ -440,47 +446,6 @@ white-space: nowrap;
 </div>
 </div>
 
-<!-- COMMUNITY -->
-<div class="community-section" id="community">
-<div class="community-inner">
-<div class="community-header reveal">
-<span class="spill">Community &amp; leadership</span>
-<h2 class="sh2">Building something<br>in every room.</h2>
-<p class="ssub">Design thinking workshops, community organizing, mentorship, and advocacy leadership that extends far beyond the screen.</p>
-</div>
-<div class="photo-group reveal">
-<p class="photo-group-label">Workshops &amp; Education</p>
-<div class="photo-grid-3">
-<div class="photo-card"><img src="community-ibm-design-thinking.jpg" alt="IBM Design Thinking workshop" style="object-position:center top"><div class="photo-label">IBM Design Thinking · UT &amp; McCombs School of Business</div></div>
-<div class="photo-card"><img src="community-code2college.jpg" alt="Code2College workshop" style="object-position:center 30%"><div class="photo-label">Code2College Design Thinking Workshop &amp; Panel</div></div>
-<div class="photo-card"><img src="community-alpfa.jpg" alt="ALPFA UT Chapter" style="object-position:right top"><div class="photo-label">UT &amp; McCombs Student Supporter · ALPFA UT Chapter</div></div>
-</div>
-</div>
-<div class="photo-group reveal">
-<p class="photo-group-label">Design community building</p>
-<div class="photo-grid-3">
-<div class="photo-card"><img src="community-design-critiques.jpg" alt="Design Critiques Host" style="object-position:left top"><div class="photo-label">Design Critiques Host</div></div>
-<div class="photo-card"><img src="community-global-events.jpg" alt="Global Events Host"><div class="photo-label">Global Events Host</div></div>
-<div class="photo-card"><img src="community-networking.jpg" alt="Networking Events Host" style="object-position:center 60%"><div class="photo-label">Networking Events Host</div></div>
-</div>
-</div>
-<div class="photo-group reveal">
-<p class="photo-group-label">Strategy &amp; community organizations</p>
-<div class="photo-grid-2">
-<div class="photo-card"><img src="community-latina-foundation.jpg" alt="Latina Foundation Board" style="object-position:center 45%"><div class="photo-label">Board of Directors · The Latina Foundation</div></div>
-<div class="photo-card"><img src="community-ywca.jpg" alt="YWCA Strategy Workshop" style="object-position:right center"><div class="photo-label">Strategy Workshop · YWCA Greater Austin</div></div>
-</div>
-</div>
-<div class="photo-group reveal">
-<p class="photo-group-label">Founder &amp; entrepreneurship support</p>
-<div class="photo-grid-2">
-<div class="photo-card"><img src="community-foundHERs.jpg" alt="FoundHERs FIESTA Austin" style="object-position:left bottom"><div class="photo-label">Facilitator &amp; Lead · FoundHERs and FIESTA Austin Community</div></div>
-<div class="photo-card"><img src="community-harvard-hbs.jpg" alt="Harvard HBS Foundry" style="object-position:right center"><div class="photo-label">UX Advisor · Harvard Business School Foundry Product</div></div>
-</div>
-</div>
-</div>
-</div>
-
 <!-- CREDENTIAL TICKER 2 before About -->
 <div class="cred-ticker mid">
 <div class="cred-ticker-track">
@@ -546,6 +511,47 @@ white-space: nowrap;
 <div class="wcard"><div class="wicon" style="background:#E3F9F0">◈</div><div><h4>Design systems at scale</h4><p>Carbon contributor with patterns adopted by 324 IBM teams, 640k+ GitHub repos, and 450k monthly visitors.</p></div></div>
 <div class="wcard"><div class="wicon" style="background:#FFF0EB">◎</div><div><h4>Workshop facilitation</h4><p>IBM Design Thinking Coach who aligns cross-functional teams across geographies and gets everyone out with an action plan.</p></div></div>
 <div class="wcard"><div class="wicon" style="background:#FFFBE0">✦</div><div><h4>Community leadership</h4><p>Harvard HBS Foundry advisor, McCombs mentor, Latina Foundation board member, and Poderistas regional leader across four states.</p></div></div>
+</div>
+</div>
+</div>
+
+<!-- COMMUNITY -->
+<div class="community-section" id="community">
+<div class="community-inner">
+<div class="community-header reveal">
+<span class="spill">Community &amp; leadership</span>
+<h2 class="sh2">Building something<br>in every room.</h2>
+<p class="ssub">Design thinking workshops, community organizing, mentorship, and advocacy leadership that extends far beyond the screen.</p>
+</div>
+<div class="photo-group reveal">
+<p class="photo-group-label">Workshops &amp; Education</p>
+<div class="photo-grid-3">
+<div class="photo-card"><img src="community-ibm-design-thinking.jpg" alt="IBM Design Thinking workshop" style="object-position:center top"><div class="photo-label">IBM Design Thinking · UT &amp; McCombs School of Business</div></div>
+<div class="photo-card"><img src="community-code2college.jpg" alt="Code2College workshop" style="object-position:center 30%"><div class="photo-label">Code2College Design Thinking Workshop &amp; Panel</div></div>
+<div class="photo-card"><img src="community-alpfa.jpg" alt="ALPFA UT Chapter" style="object-position:right top"><div class="photo-label">UT &amp; McCombs Student Supporter · ALPFA UT Chapter</div></div>
+</div>
+</div>
+<div class="photo-group reveal">
+<p class="photo-group-label">Design community building</p>
+<div class="photo-grid-3">
+<div class="photo-card"><img src="community-design-critiques.jpg" alt="Design Critiques Host" style="object-position:left top"><div class="photo-label">Design Critiques Host</div></div>
+<div class="photo-card"><img src="community-global-events.jpg" alt="Global Events Host"><div class="photo-label">Global Events Host</div></div>
+<div class="photo-card"><img src="community-networking.jpg" alt="Networking Events Host" style="object-position:center 60%"><div class="photo-label">Networking Events Host</div></div>
+</div>
+</div>
+<div class="photo-group reveal">
+<p class="photo-group-label">Strategy &amp; community organizations</p>
+<div class="photo-grid-2">
+<div class="photo-card"><img src="community-latina-foundation.jpg" alt="Latina Foundation Board" style="object-position:center 45%"><div class="photo-label">Board of Directors · The Latina Foundation</div></div>
+<div class="photo-card"><img src="community-ywca.jpg" alt="YWCA Strategy Workshop" style="object-position:right center"><div class="photo-label">Strategy Workshop · YWCA Greater Austin</div></div>
+</div>
+</div>
+<div class="photo-group reveal">
+<p class="photo-group-label">Founder &amp; entrepreneurship support</p>
+<div class="photo-grid-2">
+<div class="photo-card"><img src="community-foundHERs.jpg" alt="FoundHERs FIESTA Austin" style="object-position:left bottom"><div class="photo-label">Facilitator &amp; Lead · FoundHERs and FIESTA Austin Community</div></div>
+<div class="photo-card"><img src="community-harvard-hbs.jpg" alt="Harvard HBS Foundry" style="object-position:right center"><div class="photo-label">UX Advisor · Harvard Business School Foundry Product</div></div>
+</div>
 </div>
 </div>
 </div>
@@ -636,9 +642,12 @@ white-space: nowrap;
 <h2 class="ch2">Let's create<br>something <em>together.</em></h2>
 <p class="csub">Ready to bring enterprise UX, AI design leadership, and cross-functional impact to your team.</p>
 <div class="cbtns">
-<a href="mailto:suschinchilla@gmail.com" class="bws">⚡ Email me</a>
-<a href="https://linkedin.com/in/susana-chinchilla" target="_blank" class="bgw">LinkedIn ↗</a>
-<a href="#" class="bgw">Resume ↗</a>
+<a href="mailto:suschinchilla@gmail.com" class="bws">
+  <svg width="15" height="15" viewBox="0 0 15 15" fill="none" style="flex-shrink:0"><rect x="1" y="3" width="13" height="9" rx="1.5" stroke="currentColor" stroke-width="1.3"/><path d="M1.5 3.5l6 4.5 6-4.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+  Say Hello
+</a>
+<a href="https://www.linkedin.com/in/susanachinchilla/" target="_blank" class="bgw">LinkedIn ↗</a>
+<a href="https://read.cv/susanachinchilla" target="_blank" class="bgw">Resume ↗</a>
 </div>
 </div>
 <div class="contact-spacer"></div>
@@ -649,8 +658,8 @@ Designed and built together with Claude Code 🤍
 </div>
 <div class="flinks">
 <a href="mailto:suschinchilla@gmail.com">Email</a>
-<a href="https://linkedin.com/in/susana-chinchilla" target="_blank">LinkedIn</a>
-<a href="#">Resume</a>
+<a href="https://www.linkedin.com/in/susanachinchilla/" target="_blank">LinkedIn</a>
+<a href="https://read.cv/susanachinchilla" target="_blank">Resume</a>
 </div>
 </div>
 </div>

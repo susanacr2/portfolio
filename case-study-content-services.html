@@ -20,11 +20,11 @@ nav{position:relative;z-index:10;padding:0 2rem;height:56px;display:flex;align-i
 .nav-logo span{color:var(--purple);}
 
 /* BACK LINK top left */
-.back-link{position:fixed;top:0;left:0;z-index:20;display:flex;align-items:center;gap:6px;padding:.75rem 1.25rem;font-size:.82rem;font-weight:500;color:var(--purple);text-decoration:none;background:rgba(248,248,252,.9);backdrop-filter:blur(10px);border-radius:0 0 12px 0;border-right:0.5px solid rgba(74,58,255,.12);border-bottom:0.5px solid rgba(74,58,255,.12);transition:opacity .2s;}
-.back-link:hover{opacity:.7;}
+.back-link{position:fixed;top:1.25rem;left:1.5rem;z-index:20;display:inline-flex;align-items:center;gap:6px;padding:.4rem .9rem;font-size:.8rem;font-weight:500;color:var(--purple);text-decoration:none;background:transparent;border:0.5px solid rgba(74,58,255,.2);border-radius:980px;transition:border-color .2s,opacity .2s;}
+.back-link:hover{border-color:var(--purple);opacity:.7;}
 
 /* GATE */
-.gate-wrap{position:relative;z-index:1;flex:1;display:flex;align-items:center;justify-content:center;padding:2rem;}
+.gate-wrap{position:relative;z-index:1;flex:1;display:flex;align-items:flex-start;justify-content:center;padding:5rem 2rem 2rem;}
 .gate{width:100%;max-width:380px;display:flex;flex-direction:column;align-items:center;text-align:center;}
 
 .lock-icon{width:56px;height:56px;border-radius:16px;background:linear-gradient(135deg,#6B5BFF,#9B8AFF);display:flex;align-items:center;justify-content:center;margin-bottom:1.5rem;box-shadow:0 8px 24px rgba(74,58,255,.25);}

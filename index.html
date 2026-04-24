@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Susana Chinchilla Senior Lead Product Designer</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%231D1D1F'/><text x='50%25' y='50%25' dominant-baseline='central' text-anchor='middle' font-family='Georgia,serif' font-weight='700' font-size='13' fill='white'>SC.</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
@@ -37,26 +38,26 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:grid;grid-template-c
 /* HERO */
 .hero{padding:5rem 2.5rem 4rem;max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;}
 .hero-left{}
-.hero-greeting{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(2rem,4vw,3.5rem);letter-spacing:-.035em;line-height:1.05;color:var(--black);margin-bottom:.4rem;}
-.hero-title{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(1.6rem,3vw,2.75rem);letter-spacing:-.035em;line-height:1.05;margin-bottom:1.25rem;}
+.hero-greeting{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(2rem,4vw,3.25rem);letter-spacing:-.035em;line-height:1.05;color:var(--black);margin-bottom:.2rem;}
+.hero-title{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(2.2rem,4.5vw,4rem);letter-spacing:-.04em;line-height:1;margin-bottom:1.5rem;}
 .hero-title .grad{background:linear-gradient(270deg,#4A3AFF,#9B8AFF,#C084FC,#7B6AFF,#4A3AFF);background-size:300% 300%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:gradShift 7s ease infinite;}
 @keyframes gradShift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
 .hero-sub{font-size:clamp(.9rem,1.2vw,1rem);font-weight:300;color:var(--gray-text);max-width:480px;margin-bottom:1.25rem;line-height:1.75;}
+/* IBM pill only */
 .hero-companies{display:flex;flex-direction:column;gap:.5rem;margin-bottom:2rem;}
 .hero-company-row{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;}
 .hero-company-label{font-size:.82rem;font-weight:300;color:var(--gray-text);}
 .company-pill{display:inline-flex;align-items:center;justify-content:center;background:#fff;border-radius:980px;padding:.3rem .8rem;box-shadow:0 2px 10px rgba(0,0,0,.08),0 0 0 0.5px rgba(0,0,0,.07);transition:box-shadow .2s;}
-.company-pill img{height:18px;width:auto;display:block;}
-.company-pill.ibm img{height:15px;}
-.company-pill.auro img{height:19px;}
+.company-pill img{height:15px;width:auto;display:block;}
 .hero-btns{display:flex;gap:.75rem;flex-wrap:wrap;}
 .btn-dark{font-size:.86rem;font-weight:500;background:#1D1D1F;color:#fff;text-decoration:none;padding:.75rem 1.6rem;border-radius:980px;transition:background .2s,transform .15s;display:inline-flex;align-items:center;gap:6px;}
 .btn-dark:hover{background:var(--purple);transform:translateY(-2px);}
 .btn-light{font-size:.86rem;font-weight:500;background:var(--surface);color:var(--black);text-decoration:none;padding:.75rem 1.6rem;border-radius:980px;border:0.5px solid var(--border);transition:border-color .2s,transform .15s;}
 .btn-light:hover{border-color:var(--black);transform:translateY(-2px);}
+/* HERO PHOTO */
 .hero-right{}
-.hero-photo-wrap{border-radius:24px;overflow:hidden;width:100%;aspect-ratio:4/5;position:relative;}
-.hero-photo-wrap img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;}
+.hero-photo-wrap{border-radius:24px;overflow:hidden;width:75%;max-width:340px;margin:0 auto;aspect-ratio:3/4;position:relative;}
+.hero-photo-wrap img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;filter:grayscale(100%) contrast(1.05) brightness(.95);}
 /* METRICS MARQUEE */
 .mq-wrap{background:var(--surface);overflow:hidden;padding:.9rem 0;border-top:0.5px solid rgba(0,0,0,.06);border-bottom:0.5px solid rgba(0,0,0,.06);}
 .mq-track{display:flex;animation:marquee 34s linear infinite;white-space:nowrap;}
@@ -277,27 +278,33 @@ white-space: nowrap;
   <div style="justify-self:end;"></div>
 </nav>
 
-<!-- HERO — updated layout -->
+<!-- HERO -->
 <div class="hero">
   <div class="hero-left reveal">
-    <h1 class="hero-greeting">Hi! I'm Susana.</h1>
-    <h2 class="hero-title"><span class="grad">Product Designer &amp; Builder.</span></h2>
+    <p class="hero-greeting">Hi! I'm Susana.</p>
+    <h1 class="hero-title">
+      <span class="grad">Product Designer<br>&amp; Builder.</span>
+    </h1>
     <p class="hero-sub">Lead Product Designer with a Master's in UX/UI Design and Development and a certified IBM Enterprise Design Thinking Coach.</p>
+
     <div class="hero-companies">
       <div class="hero-company-row">
-        <span class="hero-company-label">Making education more accessible with AI at</span>
-        <span class="company-pill auro"><img src="AURO-light.png" alt="AURO"></span>
-      </div>
-      <div class="hero-company-row">
         <span class="hero-company-label">Previously building AI products and design systems at</span>
-        <a href="https://www.ibm.com/us-en" target="_blank" class="company-pill ibm"><img src="1776977043570_image.png" alt="IBM"></a>
+        <a href="https://www.ibm.com/us-en" target="_blank" class="company-pill">
+          <img src="about-ibm-logo.png" alt="IBM">
+        </a>
       </div>
     </div>
+
     <div class="hero-btns">
-      <a href="#work" class="btn-dark">⚡ View my work</a>
+      <a href="#work" class="btn-dark">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 2l5 5-5 5M2 7h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        View my work
+      </a>
       <a href="mailto:suschinchilla@gmail.com" class="btn-light">Let's connect</a>
     </div>
   </div>
+
   <div class="hero-right reveal">
     <div class="hero-photo-wrap">
       <img src="about-workshops.png" alt="Susana Chinchilla facilitating a workshop">
@@ -454,7 +461,7 @@ white-space: nowrap;
 <div class="photo-grid-3">
 <div class="photo-card"><img src="community-design-critiques.jpg" alt="Design Critiques Host" style="object-position:left top"><div class="photo-label">Design Critiques Host</div></div>
 <div class="photo-card"><img src="community-global-events.jpg" alt="Global Events Host"><div class="photo-label">Global Events Host</div></div>
-<div class="photo-card"><img src="community-networking.jpg" alt="Networking Events Host" style="object-position:center 60%" style="object-position:right top"><div class="photo-label">Networking Events Host</div></div>
+<div class="photo-card"><img src="community-networking.jpg" alt="Networking Events Host" style="object-position:center 60%"><div class="photo-label">Networking Events Host</div></div>
 </div>
 </div>
 <div class="photo-group reveal">
@@ -525,7 +532,7 @@ white-space: nowrap;
 <div class="about-photo-caption"><p>Susana Chinchilla</p></div>
 </div>
 <div>
-<h2 class="about-greeting">Hi,<br>I'm <span class="hi-name">Su!</span></h2>
+<h2 class="about-greeting">A little more<br>about <span class="hi-name">me...</span></h2>
 <div class="about-body">
 <p>I grew up in Guatemala City, moved to New York for my B.F.A. and M.A., and now I'm based in Austin, TX. I became passionate about UX through a charity project during my undergraduate studies, where I conducted user research to support weavers and their children in Guatemala. That work provided 13 kids with scholarships, school supplies, and uniforms that's when I knew I wanted to keep using my skills to create real impact.</p>
 <p>After 6+ years at IBM, I've delivered enterprise and AI/ML experiences across products, roles, and countries. I became an <strong>Enterprise Design Thinking Coach</strong> and have facilitated over 30 workshops worldwide, including the UK, with organizations like YWCA Greater Austin, Code2College, and UT McCombs School of Business.</p>
@@ -604,6 +611,7 @@ white-space: nowrap;
 </div>
 </div>
 </div>
+</div>
 
 <!-- CONTACT -->
 <div class="contact-section">
@@ -653,7 +661,6 @@ entries.forEach((e,i)=>{if(e.isIntersecting) setTimeout(()=>e.target.classList.a
 },{threshold:.06});
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 
-// Active nav pill on scroll
 window.addEventListener('scroll', () => {
   const links = document.querySelectorAll('.nav-links a');
   let current = '';

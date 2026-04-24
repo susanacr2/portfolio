@@ -3,522 +3,111 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PLG Onboarding Susana Chinchilla</title>
+<title>PLG Onboarding — Susana Chinchilla</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,700;12..96,800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-:root{--bg:#fff;--surface:#F5F5F7;--black:#1D1D1F;--gray:#6E6E73;--border:#D2D2D7;--purple:#4A3AFF;--purple2:#9B8AFF;--purple3:#C084FC;}
-html{scroll-behavior:smooth;}
-body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--black);font-size:16px;line-height:1.6;overflow-x:hidden;}
+:root{--purple:#4A3AFF;--purple2:#9B8AFF;--purple3:#C084FC;--black:#1D1D1F;--gray:#6E6E73;--border:#E5E5EA;--bg:#F8F8FC;}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--black);min-height:100vh;display:flex;flex-direction:column;}
 
-nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 2.5rem;height:56px;background:rgba(255,255,255,.85);backdrop-filter:blur(20px);border-bottom:0.5px solid var(--border);}
-.nav-logo{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:1rem;color:var(--black);text-decoration:none;}
-.nav-logo span{color:#3634A3;}
-.nav-back{display:flex;align-items:center;gap:6px;font-size:.8rem;color:var(--gray);text-decoration:none;transition:color .2s;}
-.nav-back:hover{color:var(--black);}
+/* soft radial glow background */
+body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse 70% 55% at 20% 30%,rgba(74,58,255,.07) 0%,transparent 70%),radial-gradient(ellipse 50% 40% at 80% 70%,rgba(155,138,255,.05) 0%,transparent 70%);pointer-events:none;z-index:0;}
 
-/* HERO */
-.cs-hero{padding:8rem 2.5rem 5rem;max-width:760px;margin:0 auto;text-align:center;}
-.cs-tags{display:flex;justify-content:center;gap:.45rem;flex-wrap:wrap;margin-bottom:1.5rem;}
-.cs-tag{font-size:.65rem;font-weight:500;padding:4px 10px 4px 8px;border-radius:980px;background:#EEF0FF;color:#3634A3;border:0.5px solid rgba(74,58,255,.15);display:inline-flex;align-items:center;gap:5px;}
-.cs-tag-dot{width:5px;height:5px;border-radius:50%;background:#4A3AFF;flex-shrink:0;}
-.cs-title{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(2rem,5vw,3.5rem);letter-spacing:-.035em;line-height:1.05;margin-bottom:1.25rem;}
-.cs-sub{font-size:1rem;font-weight:300;color:var(--gray);line-height:1.75;max-width:580px;margin:0 auto 3rem;}
-.cs-metrics{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem 3rem;padding:2rem 0;border-top:0.5px solid var(--border);border-bottom:0.5px solid var(--border);max-width:500px;margin:0 auto;}
-.cs-metric{display:flex;flex-direction:column;align-items:center;gap:3px;}
-.cs-metric-val{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:2rem;letter-spacing:-.03em;color:#3634A3;}
-.cs-metric-lbl{font-size:.72rem;color:var(--gray);}
+/* NAV */
+nav{position:relative;z-index:10;padding:0 2rem;height:56px;display:flex;align-items:center;}
+.nav-logo{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:1rem;color:var(--black);text-decoration:none;}
+.nav-logo span{color:var(--purple);}
 
-/* CONTENT */
-.cs-body{max-width:700px;margin:0 auto;padding:4rem 2.5rem;}
-.cs-section{margin-bottom:3.5rem;}
-.cs-section-label{font-size:.68rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--purple);margin-bottom:.75rem;}
-.cs-section-title{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(1.5rem,3vw,2rem);letter-spacing:-.03em;line-height:1.1;margin-bottom:1rem;}
-.cs-p{font-size:.95rem;color:var(--gray);line-height:1.8;margin-bottom:1rem;}
-.cs-p strong{color:var(--black);font-weight:500;}
+/* GATE */
+.gate-wrap{position:relative;z-index:1;flex:1;display:flex;align-items:center;justify-content:center;padding:2rem;}
+.gate{width:100%;max-width:340px;display:flex;flex-direction:column;align-items:center;text-align:center;}
 
-/* VISUAL BLOCKS */
-.cs-visual{border-radius:20px;overflow:hidden;margin:2rem 0;background:var(--surface);}
-.cs-visual-dark{background:linear-gradient(135deg,#0F0C29,#302B63);}
-.cs-visual-inner{padding:2.5rem;display:flex;align-items:center;justify-content:center;min-height:280px;}
-.cs-placeholder{width:100%;max-width:480px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:1.5rem;}
-.cs-placeholder-bar{height:8px;border-radius:4px;background:rgba(255,255,255,.1);margin-bottom:.625rem;}
-.cs-placeholder-bar.hi{background:linear-gradient(90deg,rgba(74,58,255,.7),rgba(192,132,252,.7));width:70%;}
-.cs-placeholder-bar.s{width:45%;}
-.cs-placeholder-bar.m{width:60%;}
-.cs-card-row{display:flex;gap:.75rem;margin-top:.75rem;}
-.cs-mini-card{flex:1;background:rgba(255,255,255,.05);border:0.5px solid rgba(255,255,255,.08);border-radius:10px;padding:.875rem;display:flex;flex-direction:column;gap:.5rem;}
-.cs-mini-val{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:1.1rem;color:#fff;}
-.cs-mini-lbl{font-size:.6rem;color:rgba(255,255,255,.4);}
+/* lock icon */
+.lock-icon{width:56px;height:56px;border-radius:16px;background:linear-gradient(135deg,#6B5BFF,#9B8AFF);display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem;box-shadow:0 8px 24px rgba(74,58,255,.25);}
 
-/* QUOTE */
-.cs-quote{background:#EEF0FF;border-left:3px solid #3634A3;border-radius:0 12px 12px 0;padding:1.25rem 1.5rem;margin:2rem 0;}
-.cs-quote p{font-size:.95rem;color:#3634A3;line-height:1.7;font-style:italic;}
-.cs-quote cite{display:block;font-size:.72rem;color:#3634A3;font-style:normal;margin-top:.5rem;font-weight:500;}
+.gate-eyebrow{font-size:.68rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--purple);margin-bottom:.75rem;}
+.gate-desc{font-size:.9rem;color:var(--gray);line-height:1.65;margin-bottom:1.75rem;max-width:280px;}
 
-/* INSIGHT LIST */
-.cs-insights{display:flex;flex-direction:column;gap:.75rem;margin:1.5rem 0;}
-.cs-insight{display:flex;align-items:flex-start;gap:.875rem;background:var(--surface);border-radius:12px;padding:1rem 1.1rem;}
-.cs-insight-icon{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
-.cs-insight p{font-size:.85rem;color:var(--gray);line-height:1.6;}
-.cs-insight strong{color:var(--black);font-weight:500;}
+/* input + button */
+.gate-form{width:100%;display:flex;flex-direction:column;gap:.6rem;}
+.input-wrap{position:relative;display:flex;align-items:center;}
+.input-wrap svg{position:absolute;left:.875rem;color:#C7C7CC;flex-shrink:0;}
+.gate-input{width:100%;padding:.75rem .875rem .75rem 2.5rem;font-size:.88rem;font-family:'Inter',sans-serif;border:1px solid var(--border);border-radius:10px;background:#fff;color:var(--black);outline:none;transition:border-color .2s,box-shadow .2s;}
+.gate-input::placeholder{color:#C7C7CC;}
+.gate-input:focus{border-color:var(--purple);box-shadow:0 0 0 3px rgba(74,58,255,.1);}
+.gate-input.error{border-color:#D85A30;box-shadow:0 0 0 3px rgba(216,90,48,.1);}
 
-/* PROCESS STEPS */
-.cs-steps{display:flex;flex-direction:column;gap:0;margin:1.5rem 0;}
-.cs-step{display:flex;gap:1.25rem;padding-bottom:1.5rem;position:relative;}
-.cs-step:not(:last-child)::after{content:'';position:absolute;left:15px;top:32px;bottom:0;width:0.5px;background:var(--border);}
-.cs-step-num{width:32px;height:32px;border-radius:50%;background:#EEF0FF;color:#3634A3;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:.78rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;z-index:1;}
-.cs-step-content{}
-.cs-step-title{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:.95rem;margin-bottom:.25rem;}
-.cs-step-desc{font-size:.83rem;color:var(--gray);line-height:1.65;}
+.gate-btn{width:100%;padding:.8rem;background:var(--black);color:#fff;font-size:.88rem;font-weight:600;font-family:'Inter',sans-serif;border:none;border-radius:10px;cursor:pointer;transition:background .2s,transform .15s;display:flex;align-items:center;justify-content:center;gap:6px;}
+.gate-btn:hover{background:#333;transform:translateY(-1px);}
+.gate-btn:active{transform:translateY(0);}
 
-/* OUTCOME GRID */
-.cs-outcome-grid{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin:1.5rem 0;}
-.cs-outcome-card{background:var(--surface);border-radius:14px;padding:1.25rem;}
-.cs-outcome-val{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:1.75rem;letter-spacing:-.03em;color:#3634A3;margin-bottom:.25rem;}
-.cs-outcome-title{font-size:.82rem;font-weight:500;color:var(--black);margin-bottom:.2rem;}
-.cs-outcome-desc{font-size:.73rem;color:var(--gray);line-height:1.5;}
+.gate-hint{font-size:.72rem;color:#AEAEB2;margin-top:.35rem;}
+.gate-error{font-size:.75rem;color:#D85A30;margin-top:.25rem;display:none;}
+.gate-error.show{display:block;}
 
-/* NEXT */
-.cs-next{background:linear-gradient(135deg,#EEF0FF,#F5F2FF);border-radius:20px;padding:2.5rem;text-align:center;margin-top:4rem;}
-.cs-next-label{font-size:.68rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--purple);margin-bottom:.75rem;}
-.cs-next-title{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:1.5rem;letter-spacing:-.025em;margin-bottom:.5rem;}
-.cs-next-sub{font-size:.85rem;color:var(--gray);margin-bottom:1.5rem;}
-.btn-dark{font-size:.86rem;font-weight:500;background:var(--black);color:#fff;text-decoration:none;padding:.75rem 1.6rem;border-radius:980px;transition:background .2s;display:inline-block;}
-.btn-dark:hover{background:var(--purple);}
-
-.reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease;}
-.reveal.visible{opacity:1;transform:translateY(0);}
-
-@media(max-width:700px){
-  nav{padding:0 1.25rem;}
-  .cs-hero,.cs-body{padding-left:1.5rem;padding-right:1.5rem;}
-  .cs-metrics{gap:1.5rem;}
-  .cs-outcome-grid{grid-template-columns:1fr;}
-}
-
-/* STEP OVERVIEW scroll animated */
-.cs-steps-overview{display:flex;flex-direction:column;margin:2rem 0 0;gap:0;}
-.cs-step-ov{display:flex;align-items:flex-start;gap:1rem;position:relative;padding-bottom:0;}
-.cs-step-ov-num{
-  width:32px;height:32px;border-radius:50%;
-  background:#EEF0FF;color:#3634A3;
-  font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:.78rem;
-  display:flex;align-items:center;justify-content:center;flex-shrink:0;z-index:2;
-  transition:background .4s,color .4s;
-}
-.cs-step-ov.active .cs-step-ov-num{background:var(--purple);color:#fff;}
-.cs-step-ov-line{
-  position:absolute;left:15px;top:32px;
-  width:1px;height:100%;
-  background:var(--border);
-  overflow:hidden;
-}
-.cs-step-ov-line::after{
-  content:'';display:block;
-  width:100%;height:0%;
-  background:var(--purple);
-  transition:height .6s cubic-bezier(.4,0,.2,1);
-}
-.cs-step-ov.active .cs-step-ov-line::after{height:100%;}
-.cs-step-ov-line-last{
-  position:absolute;left:15px;top:32px;
-  width:1px;height:100%;
-  background:transparent;
-}
-.cs-step-ov-title{
-  font-family:'Bricolage Grotesque',sans-serif;font-weight:700;
-  font-size:.92rem;color:var(--black);line-height:1.4;
-  padding:.45rem 0 2rem;
-  transition:color .3s;
-}
-.cs-step-ov.active .cs-step-ov-title{color:var(--purple);}
-.cs-metrics-bar{background:var(--surface);border-top:0.5px solid var(--border);border-bottom:0.5px solid var(--border);margin-top:3.5rem;padding:1.75rem 2.5rem;}
-.cs-metrics-inner{max-width:780px;margin:0 auto;display:flex;justify-content:center;gap:4rem;flex-wrap:wrap;}
-.cs-metric-bar-val{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:1.75rem;color:var(--purple);letter-spacing:-.03em;line-height:1;}
-.cs-metric-bar-lbl{font-size:.7rem;color:var(--gray);margin-top:2px;text-align:center;}
-
-/* CHALLENGE CARD */
-.cs-challenge{
-  background:linear-gradient(135deg,#FFF0EB,#FFF8F5);
-  border:0.5px solid rgba(216,90,48,.2);
-  border-left:3px solid var(--coral);
-  border-radius:16px;padding:1.75rem;
-  margin:2rem 0;
-}
-.cs-challenge-eyebrow{
-  font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
-  color:var(--coral);margin-bottom:.6rem;display:flex;align-items:center;gap:.4rem;
-}
-.cs-challenge-q{
-  font-family:'Bricolage Grotesque',sans-serif;font-weight:800;
-  font-size:1.2rem;letter-spacing:-.025em;line-height:1.3;
-  color:var(--black);margin:0;
-}
-
-
-/* LIGHTBOX */
-.cs-lightbox{display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.85);backdrop-filter:blur(8px);align-items:center;justify-content:center;cursor:zoom-out;}
-.cs-lightbox.open{display:flex;}
-.cs-lightbox img{max-width:90vw;max-height:88vh;border-radius:12px;box-shadow:0 24px 80px rgba(0,0,0,.4);}
-.cs-lightbox-close{position:absolute;top:1.25rem;right:1.5rem;color:#fff;font-size:1.5rem;cursor:pointer;background:none;border:none;opacity:.7;}
-.cs-lightbox-close:hover{opacity:1;}
-img.zoomable{cursor:zoom-in;}
-
+.gate-back{display:inline-flex;align-items:center;gap:5px;margin-top:1.5rem;font-size:.82rem;color:var(--purple);text-decoration:none;font-weight:500;transition:opacity .2s;}
+.gate-back:hover{opacity:.7;}
 </style>
-
-
-<script>
-(function(){
-  if(sessionStorage.getItem('sc_access')==='SMILE') return;
-  sessionStorage.setItem('sc_redirect', window.location.pathname.split('/').pop());
-  window.location.href = 'password.html';
-})();
-</script>
 </head>
 <body>
 
 <nav>
-  <a href="index.html" class="nav-back">
-    <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M9 2L4 7l5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    Back to portfolio
-  </a>
   <a href="index.html" class="nav-logo">SC<span>.</span></a>
-  <span style="font-size:.78rem;color:var(--gray);">IBM · 2024 2025</span>
 </nav>
 
-<!-- HERO -->
-<div class="cs-hero">
-  <div class="cs-tags">
-    <span class="cs-tag"><span class="cs-tag-dot"></span>PLG strategy</span>
-    <span class="cs-tag"><span class="cs-tag-dot"></span>Design systems</span>
-    <span class="cs-tag"><span class="cs-tag-dot"></span>Research</span>
-    <span class="cs-tag"><span class="cs-tag-dot"></span>Design Lead</span>
+<div class="gate-wrap">
+  <div class="gate">
+
+    <div class="lock-icon">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+        <rect x="5" y="11" width="14" height="10" rx="2.5" stroke="#fff" stroke-width="1.8"/>
+        <path d="M8 11V7a4 4 0 018 0v4" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/>
+        <circle cx="12" cy="16" r="1.5" fill="#fff"/>
+      </svg>
+    </div>
+
+    <p class="gate-eyebrow">Password Protected</p>
+    <p class="gate-desc">Enter the word, take the action, and have a wonderful day!<br>Not sure what it is? Reach out and I'll be happy to share.</p>
+
+    <div class="gate-form">
+      <div class="input-wrap">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+          <rect x="3" y="7" width="10" height="7" rx="1.5" stroke="currentColor" stroke-width="1.3"/>
+          <path d="M5.5 7V5a2.5 2.5 0 015 0v2" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+        </svg>
+        <input class="gate-input" id="pw" type="password" placeholder="Enter password" autocomplete="off">
+      </div>
+      <button class="gate-btn" onclick="checkPw()">Unlock case study &rarr;</button>
+      <p class="gate-hint">Password is case sensitive and all caps.</p>
+      <p class="gate-error" id="err">Incorrect password. Try again.</p>
+    </div>
+
+    <a href="index.html" class="gate-back">&larr; Back to portfolio</a>
+
   </div>
-  <h1 class="cs-title">Product-Led Growth onboarding across IBM Software</h1>
-  <p class="cs-sub">How I led trial onboarding strategy across IBM's software org, published 100+ best practices, created the Carbon Interstitial pattern, and scaled guidance to 39+ product teams.</p>
 </div>
 
-<div class="cs-metrics-bar">
-  <div class="cs-metrics-inner">
-    <div class="cs-metric"><span class="cs-metric-bar-val">+60%</span><span class="cs-metric-bar-lbl">Faster aha moment (Instana)</span></div>
-    <div class="cs-metric"><span class="cs-metric-bar-val">+37%</span><span class="cs-metric-bar-lbl">Trial engagement (Concert)</span></div>
-    <div class="cs-metric"><span class="cs-metric-bar-val">+10%</span><span class="cs-metric-bar-lbl">Revenue growth influenced</span></div>
-    <div class="cs-metric"><span class="cs-metric-bar-val">39+</span><span class="cs-metric-bar-lbl">Products influenced</span></div>
-  </div>
-</div>
-
-<!-- BODY -->
-<div class="cs-body">
-
-  <!-- CONTEXT -->
-  <div class="cs-section reveal">
-    <p class="cs-section-label">Context</p>
-    <h2 class="cs-section-title">IBM was betting on product-led growth. No one knew how to do trial onboarding consistently.</h2>
-    <p class="cs-p">In 2024, IBM Software shifted to a Product-Led Growth model where users would evaluate and purchase products without talking to sales. That made the trial experience the most important touchpoint in the entire funnel.</p>
-    <p class="cs-p">The problem: every product team was building their own onboarding from scratch. <strong>Metrics were inconsistent. Best practices lived in people's heads. Time to value varied wildly.</strong> There was no shared standard, no reusable patterns, and no way to learn from what was working across the org.</p>
-
-  <div class="cs-challenge reveal">
-    <p class="cs-challenge-eyebrow">
-      <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><circle cx="6.5" cy="6.5" r="5.5" stroke="#D85A30" stroke-width="1.2"/><path d="M6.5 4v3M6.5 8.5v.5" stroke="#D85A30" stroke-width="1.3" stroke-linecap="round"/></svg>
-      The challenge
-    </p>
-    <p class="cs-challenge-q">How do you build a consistent, scalable onboarding system across 40+ IBM Software products — without owning any of them?</p>
-  </div>
-
-
-    <p class="cs-p">I was selected to lead PLG Innovation Design a cross-functional effort to fix this at scale.</p>
-  </div>
-
-
-
-  <!-- RESEARCH -->
-  <div class="cs-section reveal">
-    <p class="cs-section-label">Research</p>
-    <h2 class="cs-section-title">Auditing 22 products to find what actually works.</h2>
-    <p class="cs-p">I started with a systematic audit 13 external PLG products and 9 IBM products. I analyzed onboarding steps, content tone, personalization, speed to value, and where users dropped off.</p>
-
-    <div class="reveal" style="margin:2rem 0;">
-      <img onclick="openLightbox(this.src)" class="zoomable" src="plg-audit.png" alt="PLG product audit overview" style="width:100%;display:block;border-radius:14px;border:0.5px solid var(--border);">
-    </div>
-
-    <p class="cs-label reveal" style="margin-bottom:.75rem;">Findings</p>
-    <div class="cs-insights">
-      <div class="cs-insight">
-        <div class="cs-insight-icon" style="background:#EEF0FF;">
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3 3 7-7" stroke="#3634A3" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
-        <p><strong>Fewer steps increased completion.</strong> Products with 3 or fewer onboarding steps saw significantly higher activation rates than those with 5+.</p>
-      </div>
-      <div class="cs-insight">
-        <div class="cs-insight-icon" style="background:#E3F9F0;">
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="5.5" stroke="#1A7A52" stroke-width="1.5"/><path d="M6 8l1.5 1.5L10.5 6" stroke="#1A7A52" stroke-width="1.3" stroke-linecap="round"/></svg>
-        </div>
-        <p><strong>Personalization increased trust.</strong> When users could tell the product something about themselves at the start, they engaged more and stayed longer.</p>
-      </div>
-      <div class="cs-insight">
-        <div class="cs-insight-icon" style="background:#FFF0EB;">
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 3v10M3 8h10" stroke="#9A3412" stroke-width="1.5" stroke-linecap="round"/></svg>
-        </div>
-        <p><strong>Heavy technical language caused drop-off.</strong> Users who encountered jargon before understanding the product's value left and didn't return.</p>
-      </div>
-    </div>
-  </div>
-
-
-  <!-- DESIGN PROCESS -->
-  <div class="cs-section reveal">
-    <p class="cs-section-label">Design process</p>
-    <h2 class="cs-section-title">From research to a system that scales.</h2>
-
-    <!-- OVERVIEW: scroll-animated numbered steps, titles only -->
-    <div class="cs-steps-overview">
-      <div class="cs-step-ov" data-step="1">
-        <div class="cs-step-ov-num">1</div>
-        <div class="cs-step-ov-line"></div>
-        <p class="cs-step-ov-title">Published 100+ best practices to Carbon for IBM Products</p>
-      </div>
-      <div class="cs-step-ov" data-step="2">
-        <div class="cs-step-ov-num">2</div>
-        <div class="cs-step-ov-line"></div>
-        <p class="cs-step-ov-title">Created the Carbon Interstitial pattern</p>
-      </div>
-      <div class="cs-step-ov" data-step="3">
-        <div class="cs-step-ov-num">3</div>
-        <div class="cs-step-ov-line"></div>
-        <p class="cs-step-ov-title">Scaled the pattern across products</p>
-      </div>
-      <div class="cs-step-ov" data-step="4">
-        <div class="cs-step-ov-num">4</div>
-        <div class="cs-step-ov-line"></div>
-        <p class="cs-step-ov-title">Ran a weekly PLG Design Guild</p>
-      </div>
-      <div class="cs-step-ov" data-step="5">
-        <div class="cs-step-ov-num">5</div>
-        <div class="cs-step-ov-line-last"></div>
-        <p class="cs-step-ov-title">Evolved Carbon guidance into tutorials</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- DETAILED STEPS WITH IMAGES -->
-
-  <!-- STEP 1 -->
-  <div class="cs-section reveal">
-    <div class="cs-steps">
-      <div class="cs-step">
-        <div class="cs-step-num">1</div>
-        <div class="cs-step-content">
-          <p class="cs-step-title">Published 100+ best practices to Carbon for IBM Products</p>
-          <p class="cs-step-desc">Translated the audit into actionable guidance. Designers, PMs, and developers across IBM Software now had a single source of truth for trial onboarding decisions.</p>
-        </div>
-      </div>
-    </div>
-    <div class="reveal" style="margin:1.5rem 0;">
-      <img onclick="openLightbox(this.src)" class="zoomable" src="plg-bestpractices.png" alt="100+ best practices published to Carbon" style="width:100%;border-radius:14px;border:0.5px solid var(--border);display:block;">
-    </div>
-  </div>
-
-  <!-- STEP 2 -->
-  <div class="cs-section reveal">
-    <div class="cs-steps">
-      <div class="cs-step">
-        <div class="cs-step-num">2</div>
-        <div class="cs-step-content">
-          <p class="cs-step-title">Created the Carbon Interstitial pattern</p>
-          <p class="cs-step-desc">Designed the Interstitial the in-between experience users see after registration. It helps users personalize their journey by role, industry, or job to be done. Maximum 3 steps. Optional steps only when critical to the product.</p>
-        </div>
-      </div>
-    </div>
-    <div class="reveal" style="margin:1.5rem 0;">
-      <img onclick="openLightbox(this.src)" class="zoomable" src="plg-interstitial.png" alt="Carbon Interstitial pattern" style="width:100%;border-radius:14px;border:0.5px solid var(--border);display:block;">
-    </div>
-  </div>
-
-  <!-- STEP 3 -->
-  <div class="cs-section reveal">
-    <div class="cs-steps">
-      <div class="cs-step">
-        <div class="cs-step-num">3</div>
-        <div class="cs-step-content">
-          <p class="cs-step-title">Scaled the pattern across products</p>
-          <p class="cs-step-desc">As teams adopted the Interstitial, I audited usage, interviewed teams, and evolved the pattern defining 3 primary use cases, adding Figma templates, and working with engineering to reduce friction across tech stacks.</p>
-        </div>
-      </div>
-    </div>
-    <div class="reveal" style="margin:1.5rem 0;">
-      <img onclick="openLightbox(this.src)" class="zoomable" src="plg-products-using.png" alt="Products using the Interstitial pattern" style="width:100%;border-radius:14px;border:0.5px solid var(--border);display:block;">
-    </div>
-  </div>
-
-  <!-- STEP 4 -->
-  <div class="cs-section reveal">
-    <div class="cs-steps">
-      <div class="cs-step">
-        <div class="cs-step-num">4</div>
-        <div class="cs-step-content">
-          <p class="cs-step-title">Ran a weekly PLG Design Guild</p>
-          <p class="cs-step-desc">Hosted a cross-org design guild where teams shared experiments, learnings, and challenges. This created a feedback loop that improved the pattern and built community across siloed teams. We partnered with teams like Instana to design their onboarding experience, leading to a <strong>60% increase in activation</strong> for users reaching the aha moment.</p>
-        </div>
-      </div>
-    </div>
-    <div class="reveal" style="margin:1.5rem 0;">
-      <img onclick="openLightbox(this.src)" class="zoomable" src="plg-products-using-instana.png" alt="Instana onboarding experience" style="width:100%;border-radius:14px;border:0.5px solid var(--border);display:block;">
-    </div>
-  </div>
-
-  <!-- STEP 5 -->
-  <div class="cs-section reveal">
-    <div class="cs-steps">
-      <div class="cs-step">
-        <div class="cs-step-num">5</div>
-        <div class="cs-step-content">
-          <p class="cs-step-title">Evolved Carbon guidance into tutorials</p>
-          <p class="cs-step-desc">Long documentation wasn't working. I partnered with Carbon to redesign guidance as short tutorials steps, videos, Figma links, and code. This work directly shaped the 2026 Carbon site relaunch.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="reveal" style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin:2rem 0;">
-      <div>
-      <div class="cs-compare-label before" style="border-radius:6px 6px 0 0;">Before static docs</div>
-      <div style="border:0.5px solid var(--border);border-top:none;border-radius:0 0 14px 14px;overflow:hidden;">
-        <div style="background:#E8E8E8;padding:.55rem .875rem;display:flex;align-items:center;gap:.65rem;border-bottom:0.5px solid rgba(0,0,0,.1);">
-          <div style="display:flex;gap:5px;flex-shrink:0;">
-            <div style="width:10px;height:10px;border-radius:50%;background:#FF5F57;"></div>
-            <div style="width:10px;height:10px;border-radius:50%;background:#FEBC2E;"></div>
-            <div style="width:10px;height:10px;border-radius:50%;background:#28C840;"></div>
-          </div>
-          <div style="flex:1;background:#fff;border-radius:5px;border:0.5px solid rgba(0,0,0,.12);padding:.22rem .6rem;font-size:.6rem;color:#666;font-family:'Inter',sans-serif;">carbondesignsystem.com/...</div>
-        </div>
-        <div style="height:380px;overflow-y:scroll;overflow-x:hidden;background:#fff;-webkit-overflow-scrolling:touch;">
-          <img onclick="openLightbox(this.src)" class="zoomable" src="plg-interstitial-before.png" alt="Before static docs" style="width:100%;display:block;vertical-align:top;">
-        </div>
-        <p style="font-size:.62rem;color:var(--gray);text-align:center;padding:.4rem 0;opacity:.6;">Scroll to explore</p>
-      </div>
-    </div>
-      <div>
-      <div class="cs-compare-label after" style="border-radius:6px 6px 0 0;">After tutorial format</div>
-      <div style="border:0.5px solid var(--border);border-top:none;border-radius:0 0 14px 14px;overflow:hidden;">
-        <div style="background:#E8E8E8;padding:.55rem .875rem;display:flex;align-items:center;gap:.65rem;border-bottom:0.5px solid rgba(0,0,0,.1);">
-          <div style="display:flex;gap:5px;flex-shrink:0;">
-            <div style="width:10px;height:10px;border-radius:50%;background:#FF5F57;"></div>
-            <div style="width:10px;height:10px;border-radius:50%;background:#FEBC2E;"></div>
-            <div style="width:10px;height:10px;border-radius:50%;background:#28C840;"></div>
-          </div>
-          <div style="flex:1;background:#fff;border-radius:5px;border:0.5px solid rgba(0,0,0,.12);padding:.22rem .6rem;font-size:.6rem;color:#666;font-family:'Inter',sans-serif;">carbondesignsystem.com/...</div>
-        </div>
-        <div style="height:380px;overflow-y:scroll;overflow-x:hidden;background:#fff;-webkit-overflow-scrolling:touch;">
-          <img onclick="openLightbox(this.src)" class="zoomable" src="plg-interstitial-after.png" alt="After tutorial format" style="width:100%;display:block;vertical-align:top;">
-        </div>
-        <p style="font-size:.62rem;color:var(--gray);text-align:center;padding:.4rem 0;opacity:.6;">Scroll to explore</p>
-      </div>
-    </div>
-    </div>
-
-  </div>
-
-  <div class="cs-quote reveal">
-    <p>"The best onboarding doesn't feel like onboarding. It feels like the product already knows you."</p>
-    <cite>Principle I established for IBM PLG onboarding standards</cite>
-  </div>
-
-  <!-- OUTCOMES -->
-  <div class="cs-section reveal">
-    <p class="cs-section-label">Outcomes</p>
-    <h2 class="cs-section-title">Measurable impact across IBM Software.</h2>
-    <div class="cs-outcome-grid">
-      <div class="cs-outcome-card">
-        <div class="cs-outcome-val">+60%</div>
-        <p class="cs-outcome-title">Faster aha moment</p>
-        <p class="cs-outcome-desc">IBM Instana users reached their key value moment 60% faster after implementing the Interstitial pattern.</p>
-      </div>
-      <div class="cs-outcome-card">
-        <div class="cs-outcome-val">+37%</div>
-        <p class="cs-outcome-title">Trial engagement increase</p>
-        <p class="cs-outcome-desc">IBM Concert saw a 37% lift in trial engagement after adopting the onboarding best practices.</p>
-      </div>
-      <div class="cs-outcome-card">
-        <div class="cs-outcome-val">+10%</div>
-        <p class="cs-outcome-title">Revenue growth influenced</p>
-        <p class="cs-outcome-desc">PLG Software org attributed approximately 10% revenue growth to improved trial and onboarding experiences in 2024.</p>
-      </div>
-      <div class="cs-outcome-card">
-        <div class="cs-outcome-val">39+</div>
-        <p class="cs-outcome-title">Products influenced</p>
-        <p class="cs-outcome-desc">The Carbon Interstitial pattern and onboarding standards were adopted by 39+ product teams across IBM Software.</p>
-      </div>
-    </div>
-    <p class="cs-p" style="margin-top:1.5rem;">At the platform level, this work scaled through Carbon reaching <strong>450k+ monthly visitors</strong>, <strong>640k+ GitHub repositories</strong>, and <strong>324 IBM teams</strong> using Carbon globally.</p>
-  </div>
-
-  <!-- MY ROLE -->
-  <div class="cs-section reveal">
-    <p class="cs-section-label">My role</p>
-    <h2 class="cs-section-title">Design lead, researcher, facilitator, and systems thinker.</h2>
-    <p class="cs-p">I owned this work end-to-end. I led the audit and research, defined the best practices, designed the Carbon pattern, ran the weekly Design Guild, interviewed adopting teams, and evolved the guidance into tutorials. I also partnered with engineering to reduce technical barriers to adoption.</p>
-    <p class="cs-p">The work required operating at multiple levels simultaneously designing individual screens, influencing org-wide standards, and building the culture of knowledge-sharing that made adoption possible.</p>
-  </div>
-
-  <!-- NEXT -->
-  <div class="cs-next reveal">
-    <p class="cs-next-label">Next case study</p>
-    <h3 class="cs-next-title">Carbon Design System site redesign</h3>
-    <p class="cs-next-sub">How I evolved IBM's design system guidance from static docs into tutorial-style learning shaping the 2026 Carbon site relaunch.</p>
-    <a href="case-study-carbon.html" class="btn-dark">View case study →</a>
-  </div>
-
+<div id="content" style="display:none">
+  <!-- Case study content loads here after unlock -->
 </div>
 
 <script>
-const obs=new IntersectionObserver((entries)=>{
-  entries.forEach((e,i)=>{if(e.isIntersecting) setTimeout(()=>e.target.classList.add('visible'),i*60);});
-},{threshold:.06});
-document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+function checkPw() {
+  const val = document.getElementById('pw').value;
+  const input = document.getElementById('pw');
+  const err = document.getElementById('err');
+  if (val === 'SMILE') {
+    sessionStorage.setItem('sc_unlocked_plg','1');
+    window.location.href = 'case-study-plg-content.html';
+  } else {
+    input.classList.add('error');
+    err.classList.add('show');
+    input.addEventListener('input', () => { input.classList.remove('error'); err.classList.remove('show'); }, {once:true});
+  }
+}
+document.getElementById('pw').addEventListener('keydown', e => { if(e.key==='Enter') checkPw(); });
 </script>
-
-<!-- CASE STUDY NAV -->
-<div style="background:var(--surface);border-top:0.5px solid var(--border);padding:1.25rem 2.5rem;display:flex;justify-content:space-between;align-items:center;max-width:100%;">
-  <a href="case-study-content-services.html" style="display:flex;align-items:center;gap:6px;font-size:.8rem;font-weight:500;color:var(--gray);text-decoration:none;transition:color .2s;" onmouseover="this.style.color='var(--black)'" onmouseout="this.style.color='var(--gray)'">
-    <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M9 2L4 7l5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    Content Services
-  </a>
-  <a href="index.html" style="font-size:.78rem;font-weight:500;color:var(--gray);text-decoration:none;transition:color .2s;" onmouseover="this.style.color='var(--black)'" onmouseout="this.style.color='var(--gray)'">All work</a>
-  <a href="case-study-carbon.html" style="display:flex;align-items:center;gap:6px;font-size:.8rem;font-weight:500;color:var(--gray);text-decoration:none;transition:color .2s;" onmouseover="this.style.color='var(--black)'" onmouseout="this.style.color='var(--gray)'">
-    Carbon Design System
-    <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M5 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-  </a>
-</div>
-
-
-<script>
-(function(){
-  // Animate step overview on scroll
-  var steps = document.querySelectorAll('.cs-step-ov');
-  if(!steps.length) return;
-  var io = new IntersectionObserver(function(entries){
-    entries.forEach(function(e){
-      if(e.isIntersecting){
-        e.target.classList.add('active');
-      }
-    });
-  },{threshold:0.3});
-  steps.forEach(function(s){ io.observe(s); });
-})();
-</script>
-
-
-<div class="cs-lightbox" id="lightbox" onclick="closeLightbox()">
-  <button class="cs-lightbox-close" onclick="closeLightbox()">&#x2715;</button>
-  <img id="lightboxImg" src="" alt="">
-</div>
-<script>
-function openLightbox(src){document.getElementById('lightboxImg').src=src;document.getElementById('lightbox').classList.add('open');document.body.style.overflow='hidden';}
-function closeLightbox(){document.getElementById('lightbox').classList.remove('open');document.body.style.overflow='';}
-document.addEventListener('keydown',function(e){if(e.key==='Escape')closeLightbox();});
-</script>
-
 </body>
 </html>

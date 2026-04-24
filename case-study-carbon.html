@@ -3,499 +3,111 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Carbon Design System Susana Chinchilla</title>
+<title>Carbon Design System — Susana Chinchilla</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,700;12..96,800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-:root{--bg:#fff;--surface:#F5F5F7;--black:#1D1D1F;--gray:#6E6E73;--border:#D2D2D7;--teal:#00C98D;--purple:#4A3AFF;--purple2:#9B8AFF;--purple3:#C084FC;}
-html{scroll-behavior:smooth;}
-body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--black);font-size:16px;line-height:1.6;overflow-x:hidden;}
+:root{--purple:#4A3AFF;--purple2:#9B8AFF;--purple3:#C084FC;--black:#1D1D1F;--gray:#6E6E73;--border:#E5E5EA;--bg:#F8F8FC;}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--black);min-height:100vh;display:flex;flex-direction:column;}
 
-nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 2.5rem;height:56px;background:rgba(255,255,255,.88);backdrop-filter:blur(20px);border-bottom:0.5px solid var(--border);}
-.nav-logo{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:1rem;color:var(--black);text-decoration:none;}
-.nav-logo span{color:var(--teal);}
-.nav-back{display:flex;align-items:center;gap:6px;font-size:.8rem;color:var(--gray);text-decoration:none;transition:color .2s;}
-.nav-back:hover{color:var(--black);}
-.nav-tag{font-size:.72rem;color:var(--gray);}
+/* soft radial glow background */
+body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse 70% 55% at 20% 30%,rgba(74,58,255,.07) 0%,transparent 70%),radial-gradient(ellipse 50% 40% at 80% 70%,rgba(155,138,255,.05) 0%,transparent 70%);pointer-events:none;z-index:0;}
 
-/* HERO */
-.cs-hero{padding:8rem 2.5rem 0;max-width:780px;margin:0 auto;text-align:center;}
-.cs-tags{display:flex;justify-content:center;gap:.45rem;flex-wrap:wrap;margin-bottom:1.5rem;}
-.cs-tag{font-size:.63rem;font-weight:500;padding:4px 10px 4px 8px;border-radius:980px;background:#E3F9F0;color:#1A7A52;border:0.5px solid rgba(26,122,82,.15);display:inline-flex;align-items:center;gap:5px;}
-.cs-tag-dot{width:5px;height:5px;border-radius:50%;background:#00C98D;flex-shrink:0;}
-.cs-title{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(2rem,5vw,3.5rem);letter-spacing:-.035em;line-height:1.05;margin-bottom:1.25rem;}
-.cs-title .grad{background:linear-gradient(270deg,#00C98D,#5DCAA5,#00C98D);background-size:300% 300%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:gradShift 6s ease infinite;}
-@keyframes gradShift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
-.cs-sub{font-size:1rem;font-weight:300;color:var(--gray);line-height:1.75;max-width:580px;margin:0 auto;}
+/* NAV */
+nav{position:relative;z-index:10;padding:0 2rem;height:56px;display:flex;align-items:center;}
+.nav-logo{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:1rem;color:var(--black);text-decoration:none;}
+.nav-logo span{color:var(--purple);}
 
-/* METRICS BAR */
-.cs-metrics-bar{background:var(--surface);border-top:0.5px solid var(--border);border-bottom:0.5px solid var(--border);margin-top:3.5rem;padding:1.75rem 2.5rem;}
-.cs-metrics-inner{max-width:780px;margin:0 auto;display:flex;justify-content:center;gap:4rem;flex-wrap:wrap;}
-.cs-metric{display:flex;flex-direction:column;align-items:center;gap:3px;}
-.cs-metric-val{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:1.9rem;letter-spacing:-.03em;color:var(--teal);}
-.cs-metric-lbl{font-size:.7rem;color:var(--gray);text-align:center;}
+/* GATE */
+.gate-wrap{position:relative;z-index:1;flex:1;display:flex;align-items:center;justify-content:center;padding:2rem;}
+.gate{width:100%;max-width:340px;display:flex;flex-direction:column;align-items:center;text-align:center;}
 
-/* BODY */
-.cs-body{max-width:720px;margin:0 auto;padding:4rem 2.5rem;}
-.cs-section{margin-bottom:3.5rem;}
-.cs-label{font-size:.67rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);margin-bottom:.75rem;}
-.cs-h2{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(1.5rem,3vw,2rem);letter-spacing:-.03em;line-height:1.1;margin-bottom:1rem;}
-.cs-p{font-size:.93rem;color:var(--gray);line-height:1.8;margin-bottom:1rem;}
-.cs-p strong{color:var(--black);font-weight:500;}
+/* lock icon */
+.lock-icon{width:56px;height:56px;border-radius:16px;background:linear-gradient(135deg,#6B5BFF,#9B8AFF);display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem;box-shadow:0 8px 24px rgba(74,58,255,.25);}
 
-/* VISUAL BLOCKS */
-.cs-visual{border-radius:20px;overflow:hidden;margin:2rem 0;}
-.cs-visual-teal{background:linear-gradient(135deg,#0a2a24,#0f3d34,#1a5c4a);}
-.cs-visual-inner{padding:2.5rem;display:flex;align-items:center;justify-content:center;min-height:260px;}
+.gate-eyebrow{font-size:.68rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--purple);margin-bottom:.75rem;}
+.gate-desc{font-size:.9rem;color:var(--gray);line-height:1.65;margin-bottom:1.75rem;max-width:280px;}
 
-/* BEFORE/AFTER */
-.cs-compare{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:2rem 0;}
-.cs-compare-card{border-radius:14px;overflow:hidden;border:0.5px solid var(--border);}
-.cs-compare-label{font-size:.65rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:.6rem 1rem;border-bottom:0.5px solid var(--border);}
-.cs-compare-label.before{background:#FFF0EB;color:#9A3412;}
-.cs-compare-label.after{background:#E3F9F0;color:#1A7A52;}
-.cs-compare-body{padding:1rem;background:var(--surface);}
-.cs-compare-row{height:7px;border-radius:3px;background:rgba(0,0,0,.08);margin-bottom:.5rem;}
-.cs-compare-row.w60{width:60%;}
-.cs-compare-row.w80{width:80%;}
-.cs-compare-row.w45{width:45%;}
-.cs-compare-row.hi{background:linear-gradient(90deg,#00C98D,#5DCAA5);height:9px;}
-.cs-compare-block{background:rgba(0,0,0,.05);border-radius:6px;padding:.75rem;margin-top:.5rem;}
-.cs-compare-block-row{height:5px;border-radius:2px;background:rgba(0,0,0,.08);margin-bottom:.35rem;}
+/* input + button */
+.gate-form{width:100%;display:flex;flex-direction:column;gap:.6rem;}
+.input-wrap{position:relative;display:flex;align-items:center;}
+.input-wrap svg{position:absolute;left:.875rem;color:#C7C7CC;flex-shrink:0;}
+.gate-input{width:100%;padding:.75rem .875rem .75rem 2.5rem;font-size:.88rem;font-family:'Inter',sans-serif;border:1px solid var(--border);border-radius:10px;background:#fff;color:var(--black);outline:none;transition:border-color .2s,box-shadow .2s;}
+.gate-input::placeholder{color:#C7C7CC;}
+.gate-input:focus{border-color:var(--purple);box-shadow:0 0 0 3px rgba(74,58,255,.1);}
+.gate-input.error{border-color:#D85A30;box-shadow:0 0 0 3px rgba(216,90,48,.1);}
 
-/* INSIGHT LIST */
-.cs-insights{display:flex;flex-direction:column;gap:.75rem;margin:1.5rem 0;}
-.cs-insight{display:flex;align-items:flex-start;gap:.875rem;background:var(--surface);border-radius:12px;padding:1rem 1.1rem;}
-.cs-insight-icon{width:30px;height:30px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
-.cs-insight p{font-size:.85rem;color:var(--gray);line-height:1.6;}
-.cs-insight strong{color:var(--black);font-weight:500;}
+.gate-btn{width:100%;padding:.8rem;background:var(--black);color:#fff;font-size:.88rem;font-weight:600;font-family:'Inter',sans-serif;border:none;border-radius:10px;cursor:pointer;transition:background .2s,transform .15s;display:flex;align-items:center;justify-content:center;gap:6px;}
+.gate-btn:hover{background:#333;transform:translateY(-1px);}
+.gate-btn:active{transform:translateY(0);}
 
-/* PROCESS STEPS */
-.cs-steps{display:flex;flex-direction:column;gap:0;margin:1.5rem 0;}
-.cs-step{display:flex;gap:1.25rem;padding-bottom:1.5rem;position:relative;}
-.cs-step:not(:last-child)::after{content:'';position:absolute;left:15px;top:32px;bottom:0;width:0.5px;background:var(--border);}
-.cs-step-num{width:32px;height:32px;border-radius:50%;background:#E3F9F0;color:#1A7A52;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:.78rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;z-index:1;}
-.cs-step-title{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:.95rem;margin-bottom:.25rem;}
-.cs-step-desc{font-size:.83rem;color:var(--gray);line-height:1.65;}
+.gate-hint{font-size:.72rem;color:#AEAEB2;margin-top:.35rem;}
+.gate-error{font-size:.75rem;color:#D85A30;margin-top:.25rem;display:none;}
+.gate-error.show{display:block;}
 
-/* TUTORIAL ANATOMY */
-.cs-tutorial{background:var(--surface);border-radius:16px;padding:1.5rem;margin:1.5rem 0;}
-.cs-tutorial-title{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:.9rem;margin-bottom:1rem;color:var(--black);}
-.cs-tutorial-items{display:flex;flex-direction:column;gap:.6rem;}
-.cs-tutorial-item{display:flex;align-items:center;gap:.75rem;font-size:.82rem;color:var(--gray);}
-.cs-tutorial-item-icon{width:28px;height:28px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
-
-/* OUTCOMES */
-.cs-outcome-grid{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin:1.5rem 0;}
-.cs-outcome-card{background:var(--surface);border-radius:14px;padding:1.25rem;}
-.cs-outcome-val{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:1.75rem;letter-spacing:-.03em;color:var(--teal);margin-bottom:.25rem;}
-.cs-outcome-title{font-size:.82rem;font-weight:500;color:var(--black);margin-bottom:.2rem;}
-.cs-outcome-desc{font-size:.73rem;color:var(--gray);line-height:1.5;}
-
-/* QUOTE */
-.cs-quote{background:#E3F9F0;border-left:3px solid var(--teal);border-radius:0 12px 12px 0;padding:1.25rem 1.5rem;margin:2rem 0;}
-.cs-quote p{font-size:.95rem;color:#1A7A52;line-height:1.7;font-style:italic;}
-.cs-quote cite{display:block;font-size:.72rem;color:var(--teal);font-style:normal;margin-top:.5rem;font-weight:500;}
-
-/* NEXT */
-.cs-next{background:linear-gradient(135deg,#E3F9F0,#D9F7EC);border-radius:20px;padding:2.5rem;text-align:center;margin-top:4rem;}
-.cs-next-label{font-size:.68rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--teal);margin-bottom:.75rem;}
-.cs-next-title{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:1.5rem;letter-spacing:-.025em;margin-bottom:.5rem;}
-.cs-next-sub{font-size:.85rem;color:var(--gray);margin-bottom:1.5rem;}
-.btn-teal{font-size:.86rem;font-weight:500;background:linear-gradient(135deg,#00C98D,#5DCAA5);color:#fff;text-decoration:none;padding:.75rem 1.6rem;border-radius:980px;transition:transform .15s;display:inline-block;}
-.btn-teal:hover{transform:translateY(-2px);}
-
-.reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease;}
-.reveal.visible{opacity:1;transform:translateY(0);}
-
-@media(max-width:700px){
-  nav{padding:0 1.25rem;}
-  .cs-hero,.cs-body{padding-left:1.5rem;padding-right:1.5rem;}
-  .cs-metrics-inner{gap:1.75rem;}
-  .cs-compare{grid-template-columns:1fr;}
-  .cs-outcome-grid{grid-template-columns:1fr;}
-}
-
-/* IMAGE SLOTS */
-.cs-img-compare{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:.5rem;}
-.cs-img-slot{}
-.cs-img-label{font-size:.63rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:5px 10px;border-radius:6px 6px 0 0;display:inline-block;margin-bottom:0;}
-.cs-img-label.before{background:#FFF0EB;color:#9A3412;}
-.cs-img-label.after{background:#E3F9F0;color:#1A7A52;}
-.cs-img-frame{border-radius:12px;overflow:hidden;border:0.5px solid var(--border);background:var(--surface);min-height:220px;position:relative;display:flex;align-items:center;justify-content:center;}
-.cs-img-frame img{width:100%;height:100%;object-fit:cover;display:block;position:absolute;inset:0;}
-.cs-img-frame.empty img{display:none;}
-.cs-img-placeholder{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.5rem;padding:2rem;text-align:center;color:var(--border);z-index:1;}
-.cs-img-frame:not(.empty) .cs-img-placeholder{display:none;}
-.cs-img-placeholder p{font-size:.72rem;color:#B0ADB8;}
-.cs-img-placeholder code{background:rgba(0,0,0,.05);padding:2px 6px;border-radius:4px;font-size:.68rem;}
-.cs-img-full{min-height:300px;border-radius:14px !important;}
-.cs-img-grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem;}
-.cs-img-grid-3 .cs-img-frame{min-height:160px;border-radius:10px !important;}
-@media(max-width:700px){
-  .cs-img-compare{grid-template-columns:1fr;}
-  .cs-img-grid-3{grid-template-columns:1fr 1fr;}
-}
-
-/* SCROLLABLE SCREEN MOCKUP */
-.scroll-screen-wrap{
-  border-radius:16px;overflow:hidden;
-  border:0.5px solid var(--border);
-  box-shadow:0 8px 32px rgba(0,0,0,.08);
-  margin:2rem 0;
-  background:#fff;
-}
-.scroll-screen-bar{
-  background:#F5F5F7;border-bottom:0.5px solid var(--border);
-  padding:.6rem 1rem;display:flex;align-items:center;gap:.5rem;
-}
-.scroll-screen-dots{display:flex;gap:5px;}
-.scroll-screen-dot{width:10px;height:10px;border-radius:50%;}
-.scroll-screen-url{
-  flex:1;background:#fff;border:0.5px solid var(--border);
-  border-radius:5px;padding:.2rem .65rem;
-  font-size:.67rem;color:var(--gray-text);font-family:'Inter',sans-serif;
-  margin:0 .5rem;
-}
-.scroll-screen-body{
-  height:400px;overflow-y:auto;
-  overscroll-behavior:contain;
-}
-.scroll-screen-body img{width:100%;display:block;}
-.scroll-screen-body::-webkit-scrollbar{width:6px;}
-.scroll-screen-body::-webkit-scrollbar-track{background:transparent;}
-.scroll-screen-body::-webkit-scrollbar-thumb{background:rgba(0,0,0,.15);border-radius:3px;}
-
-/* CHALLENGE CARD */
-.cs-challenge{
-  background:linear-gradient(135deg,#FFF0EB,#FFF8F5);
-  border:0.5px solid rgba(216,90,48,.2);
-  border-left:3px solid var(--coral);
-  border-radius:16px;padding:1.75rem;
-  margin:2rem 0;
-}
-.cs-challenge-eyebrow{
-  font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
-  color:var(--coral);margin-bottom:.6rem;display:flex;align-items:center;gap:.4rem;
-}
-.cs-challenge-q{
-  font-family:'Bricolage Grotesque',sans-serif;font-weight:800;
-  font-size:1.2rem;letter-spacing:-.025em;line-height:1.3;
-  color:var(--black);margin:0;
-}
-
-
-/* LIGHTBOX */
-.cs-lightbox{display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.85);backdrop-filter:blur(8px);align-items:center;justify-content:center;cursor:zoom-out;}
-.cs-lightbox.open{display:flex;}
-.cs-lightbox img{max-width:90vw;max-height:88vh;border-radius:12px;box-shadow:0 24px 80px rgba(0,0,0,.4);}
-.cs-lightbox-close{position:absolute;top:1.25rem;right:1.5rem;color:#fff;font-size:1.5rem;cursor:pointer;background:none;border:none;opacity:.7;}
-.cs-lightbox-close:hover{opacity:1;}
-img.zoomable{cursor:zoom-in;}
-
+.gate-back{display:inline-flex;align-items:center;gap:5px;margin-top:1.5rem;font-size:.82rem;color:var(--purple);text-decoration:none;font-weight:500;transition:opacity .2s;}
+.gate-back:hover{opacity:.7;}
 </style>
-
-
-<script>
-(function(){
-  if(sessionStorage.getItem('sc_access')==='SMILE') return;
-  sessionStorage.setItem('sc_redirect', window.location.pathname.split('/').pop());
-  window.location.href = 'password.html';
-})();
-</script>
 </head>
 <body>
 
 <nav>
-  <a href="index.html" class="nav-back">
-    <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M9 2L4 7l5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    Back to portfolio
-  </a>
   <a href="index.html" class="nav-logo">SC<span>.</span></a>
-  <span class="nav-tag">IBM · 2024 2025</span>
 </nav>
 
-<!-- HERO -->
-<div class="cs-hero">
-  <div class="cs-tags">
-    <span class="cs-tag"><span class="cs-tag-dot"></span>Content strategy</span>
-    <span class="cs-tag"><span class="cs-tag-dot"></span>Design systems</span>
-    <span class="cs-tag"><span class="cs-tag-dot"></span>Design Lead</span>
+<div class="gate-wrap">
+  <div class="gate">
+
+    <div class="lock-icon">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+        <rect x="5" y="11" width="14" height="10" rx="2.5" stroke="#fff" stroke-width="1.8"/>
+        <path d="M8 11V7a4 4 0 018 0v4" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/>
+        <circle cx="12" cy="16" r="1.5" fill="#fff"/>
+      </svg>
+    </div>
+
+    <p class="gate-eyebrow">Password Protected</p>
+    <p class="gate-desc">Enter the word, take the action, and have a wonderful day!<br>Not sure what it is? Reach out and I'll be happy to share.</p>
+
+    <div class="gate-form">
+      <div class="input-wrap">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+          <rect x="3" y="7" width="10" height="7" rx="1.5" stroke="currentColor" stroke-width="1.3"/>
+          <path d="M5.5 7V5a2.5 2.5 0 015 0v2" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+        </svg>
+        <input class="gate-input" id="pw" type="password" placeholder="Enter password" autocomplete="off">
+      </div>
+      <button class="gate-btn" onclick="checkPw()">Unlock case study &rarr;</button>
+      <p class="gate-hint">Password is case sensitive and all caps.</p>
+      <p class="gate-error" id="err">Incorrect password. Try again.</p>
+    </div>
+
+    <a href="index.html" class="gate-back">&larr; Back to portfolio</a>
+
   </div>
-  <h1 class="cs-title">Carbon Design System<br><span class="grad">site redesign</span></h1>
-  <p class="cs-sub">How I transformed IBM's design system documentation from static pages into tutorial-style learning and shaped the 2026 Carbon site relaunch.</p>
 </div>
 
-<!-- METRICS -->
-<div class="cs-metrics-bar">
-  <div class="cs-metrics-inner">
-    <div class="cs-metric"><span class="cs-metric-val">450k+</span><span class="cs-metric-lbl">Monthly Carbon visitors</span></div>
-    <div class="cs-metric"><span class="cs-metric-val">13.9k</span><span class="cs-metric-lbl">Component inserts/week</span></div>
-    <div class="cs-metric"><span class="cs-metric-val">640k+</span><span class="cs-metric-lbl">GitHub repos using Carbon</span></div>
-    <div class="cs-metric"><span class="cs-metric-val">324</span><span class="cs-metric-lbl">IBM teams on Carbon</span></div>
-  </div>
+<div id="content" style="display:none">
+  <!-- Case study content loads here after unlock -->
 </div>
-
-<!-- BODY -->
-<div class="cs-body">
-
-  <!-- CONTEXT -->
-  <div class="cs-section reveal">
-    <p class="cs-label">Context</p>
-    <h2 class="cs-h2">Great patterns. Painful documentation. Teams were skipping the guidance entirely.</h2>
-    <p class="cs-p">Carbon Design System is IBM's unified design language used by 324 teams, powering 640k+ GitHub repositories, and reaching 450k+ monthly visitors. The patterns were solid. But the way guidance was delivered wasn't working.</p>
-    <p class="cs-p">Teams were building onboarding experiences inconsistently not because they didn't care but because the documentation was too long, too text-heavy, and too disconnected from how designers and developers actually work. <strong>Long pages discouraged engagement. Teams wanted visuals. Developers wanted code alongside the guidance.</strong></p>
-
-  <div class="cs-challenge reveal">
-    <p class="cs-challenge-eyebrow">
-      <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><circle cx="6.5" cy="6.5" r="5.5" stroke="#D85A30" stroke-width="1.2"/><path d="M6.5 4v3M6.5 8.5v.5" stroke="#D85A30" stroke-width="1.3" stroke-linecap="round"/></svg>
-      The challenge
-    </p>
-    <p class="cs-challenge-q">How do you get 324 product teams to adopt the same pattern when the documentation is too long for anyone to read?</p>
-  </div>
-
-
-    <p class="cs-p">I was brought in to change how Carbon taught its own system and in doing so, directly shaped the 2026 Carbon site relaunch.</p>
-  </div>
-
-  <!-- VISUAL: BEFORE/AFTER -->
-  <div class="cs-compare reveal">
-    <div class="cs-compare-card">
-      <div class="cs-compare-label before">Before static docs</div>
-      <div style="overflow:hidden;height:280px;">
-        <img onclick="openLightbox(this.src)" class="zoomable" src="carbon-before.png" alt="Carbon before" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;">
-      </div>
-    </div>
-    <div class="cs-compare-card">
-      <div class="cs-compare-label after">After tutorial learning</div>
-      <div style="overflow:hidden;height:280px;">
-        <img onclick="openLightbox(this.src)" class="zoomable" src="carbon-after.png" alt="Carbon after" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;">
-      </div>
-    </div>
-  </div>
-
-    <!-- RESEARCH -->
-  <div class="cs-section reveal">
-    <p class="cs-label">Research</p>
-    <h2 class="cs-h2">Talking to the people the docs weren't working for.</h2>
-    <p class="cs-p">I partnered with a researcher from the Carbon Design System team to interview five designers and five developers who actively used the Carbon site. The findings were consistent across both groups.</p>
-    <div class="cs-insights">
-      <div class="cs-insight">
-        <div class="cs-insight-icon" style="background:#E3F9F0">
-          <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M2.5 7.5l3 3 7-7" stroke="#1A7A52" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
-        <p><strong>Teams preferred visuals over long-form text.</strong> Designers wanted to see the pattern in use, not read about it.</p>
-      </div>
-      <div class="cs-insight">
-        <div class="cs-insight-icon" style="background:#E3F9F0">
-          <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M2.5 7.5l3 3 7-7" stroke="#1A7A52" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
-        <p><strong>Developers wanted code directly alongside guidance.</strong> Opening a separate doc to find the component code caused drop-off.</p>
-      </div>
-      <div class="cs-insight">
-        <div class="cs-insight-icon" style="background:#E3F9F0">
-          <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M2.5 7.5l3 3 7-7" stroke="#1A7A52" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
-        <p><strong>Long pages reduced engagement.</strong> When teams couldn't quickly find what they needed, they skipped the docs and built from scratch.</p>
-      </div>
-      <div class="cs-insight">
-        <div class="cs-insight-icon" style="background:#FFF0EB">
-          <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M7.5 4v4M7.5 10.5v.5" stroke="#9A3412" stroke-width="1.4" stroke-linecap="round"/></svg>
-        </div>
-        <p><strong>The format was slowing adoption.</strong> The patterns were good the problem was entirely how they were being taught.</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="cs-quote reveal">
-    <p>"The guidance was valuable. The format was the problem."</p>
-    <cite>Key finding from user research interviews with IBM designers and developers</cite>
-  </div>
-
-  <!-- DESIGN -->
-  <div class="cs-section reveal">
-    <p class="cs-label">Design process</p>
-    <h2 class="cs-h2">From long docs to short steps evolving how Carbon teaches.</h2>
-    <div class="cs-steps">
-      <div class="cs-step">
-        <div class="cs-step-num">1</div>
-        <div>
-          <p class="cs-step-title">Defined the new tutorial format</p>
-          <p class="cs-step-desc">Working from the research insights, I defined a repeatable tutorial structure that every guidance page would follow short, scannable, and actionable from the first scroll.</p>
-        </div>
-      </div>
-      <div class="cs-step">
-        <div class="cs-step-num">2</div>
-        <div>
-          <p class="cs-step-title">Designed the tutorial anatomy</p>
-          <p class="cs-step-desc">Each tutorial page was built around five components: a short video showing the experience in action, three to five clear steps breaking down the flow, a Figma pattern link for designers, component code for developers, and related patterns for next steps.</p>
-        </div>
-      </div>
-      <div class="cs-step">
-        <div class="cs-step-num">3</div>
-        <div>
-          <p class="cs-step-title">Applied the format to the Interstitial pattern</p>
-          <p class="cs-step-desc">I used the PLG Interstitial onboarding pattern as the first case converting its existing static documentation into the new tutorial format, validating the structure with real teams.</p>
-        </div>
-      </div>
-      <div class="cs-step">
-        <div class="cs-step-num">4</div>
-        <div>
-          <p class="cs-step-title">Shaped the 2026 Carbon site relaunch</p>
-          <p class="cs-step-desc">This work directly informed the redesigned Carbon Design System site planned for launch in 2026. I owned the guidance and tutorial experience area defining how all future patterns would be documented and taught.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- THE RESULT SECTION -->
-  <div class="cs-section reveal">
-    <p class="cs-label">The result</p>
-    <h2 class="cs-h2">The redesigned guidance experience</h2>
-    <p class="cs-p">The new tutorial format transformed how IBM teams learned to use Carbon patterns. Short steps, video walkthroughs, Figma links, and component code all in one place. Scroll to explore the live page.</p>
-
-    <!-- BROWSER MOCKUP scrollable tutorial -->
-    <div style="border-radius:14px;overflow:hidden;box-shadow:0 2px 0 rgba(0,0,0,.08),0 12px 40px rgba(0,0,0,.12);border:0.5px solid rgba(0,0,0,.12);margin-bottom:1rem;">
-      <div style="background:#E8E8E8;padding:.6rem 1rem;display:flex;align-items:center;gap:.75rem;border-bottom:0.5px solid rgba(0,0,0,.1);">
-        <div style="display:flex;gap:6px;flex-shrink:0;">
-          <div style="width:12px;height:12px;border-radius:50%;background:#FF5F57;"></div>
-          <div style="width:12px;height:12px;border-radius:50%;background:#FEBC2E;"></div>
-          <div style="width:12px;height:12px;border-radius:50%;background:#28C840;"></div>
-        </div>
-        <div style="display:flex;gap:10px;opacity:.35;flex-shrink:0;">
-          <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M8.5 2L4 6.5l4.5 4.5" stroke="#000" stroke-width="1.5" stroke-linecap="round"/></svg>
-          <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M4.5 2L9 6.5 4.5 11" stroke="#000" stroke-width="1.5" stroke-linecap="round"/></svg>
-        </div>
-        <div style="flex:1;background:#fff;border-radius:6px;border:0.5px solid rgba(0,0,0,.15);padding:.28rem .75rem;display:flex;align-items:center;gap:.4rem;">
-          <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M5 .5a4.5 4.5 0 100 9 4.5 4.5 0 000-9zM5 .5c-1.2 0-2 2-2 4.5s.8 4.5 2 4.5 2-2 2-4.5S6.2.5 5 .5zM.5 5h9" stroke="#888" stroke-width=".8"/></svg>
-          <span style="font-size:.66rem;color:#555;font-family:'Inter',sans-serif;">carbondesignsystem.com/...</span>
-        </div>
-      </div>
-      <div style="height:500px;overflow-y:scroll;overflow-x:hidden;background:#fff;-webkit-overflow-scrolling:touch;">
-        <img onclick="openLightbox(this.src)" class="zoomable" src="carbon-tutorial.png" alt="Carbon tutorial page" style="width:100%;display:block;vertical-align:top;">
-      </div>
-    </div>
-    <p style="font-size:.67rem;color:var(--gray);text-align:center;margin-top:-.25rem;margin-bottom:1.5rem;opacity:.7;">↕ Scroll inside to explore</p>
-
-    <!-- TUTORIAL ANATOMY -->
-  <div class="cs-tutorial reveal">
-    <p class="cs-tutorial-title">The new tutorial anatomy</p>
-    <div class="cs-tutorial-items">
-      <div class="cs-tutorial-item">
-        <div class="cs-tutorial-item-icon" style="background:#E3F9F0">
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="5.5" stroke="#1A7A52" stroke-width="1.3"/><path d="M5.5 7l1.5 1.5L9.5 5" stroke="#1A7A52" stroke-width="1.2" stroke-linecap="round"/></svg>
-        </div>
-        A short video showing the experience in action
-      </div>
-      <div class="cs-tutorial-item">
-        <div class="cs-tutorial-item-icon" style="background:#E3F9F0">
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="5.5" stroke="#1A7A52" stroke-width="1.3"/><path d="M5.5 7l1.5 1.5L9.5 5" stroke="#1A7A52" stroke-width="1.2" stroke-linecap="round"/></svg>
-        </div>
-        3 5 clear steps breaking down the flow
-      </div>
-      <div class="cs-tutorial-item">
-        <div class="cs-tutorial-item-icon" style="background:#EEF0FF">
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="5.5" stroke="#3634A3" stroke-width="1.3"/><path d="M5.5 7l1.5 1.5L9.5 5" stroke="#3634A3" stroke-width="1.2" stroke-linecap="round"/></svg>
-        </div>
-        Figma pattern link for designers
-      </div>
-      <div class="cs-tutorial-item">
-        <div class="cs-tutorial-item-icon" style="background:#EEF0FF">
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="5.5" stroke="#3634A3" stroke-width="1.3"/><path d="M5.5 7l1.5 1.5L9.5 5" stroke="#3634A3" stroke-width="1.2" stroke-linecap="round"/></svg>
-        </div>
-        Component code for developers
-      </div>
-      <div class="cs-tutorial-item">
-        <div class="cs-tutorial-item-icon" style="background:#F5F5F7">
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="5.5" stroke="#6E6E73" stroke-width="1.3"/><path d="M5.5 7l1.5 1.5L9.5 5" stroke="#6E6E73" stroke-width="1.2" stroke-linecap="round"/></svg>
-        </div>
-        Related patterns and next steps
-      </div>
-    </div>
-  </div>
-
-  <!-- OUTCOMES -->
-  <div class="cs-section reveal">
-    <p class="cs-label">Outcomes</p>
-    <h2 class="cs-h2">Guidance that scales to hundreds of thousands of people.</h2>
-    <div class="cs-outcome-grid">
-      <div class="cs-outcome-card">
-        <div class="cs-outcome-val">450k+</div>
-        <p class="cs-outcome-title">Monthly visitors</p>
-        <p class="cs-outcome-desc">The Carbon site reaches 450k+ monthly visitors all of whom now benefit from the tutorial-first guidance format.</p>
-      </div>
-      <div class="cs-outcome-card">
-        <div class="cs-outcome-val">13.9k</div>
-        <p class="cs-outcome-title">Component inserts per week</p>
-        <p class="cs-outcome-desc">Weekly Figma component usage across IBM teams, supported by clearer guidance that teams can act on immediately.</p>
-      </div>
-      <div class="cs-outcome-card">
-        <div class="cs-outcome-val">640k+</div>
-        <p class="cs-outcome-title">GitHub repositories</p>
-        <p class="cs-outcome-desc">Carbon is used across 640k+ GitHub repositories globally the tutorial format makes it easier to implement correctly.</p>
-      </div>
-      <div class="cs-outcome-card">
-        <div class="cs-outcome-val">2026</div>
-        <p class="cs-outcome-title">Carbon site relaunch</p>
-        <p class="cs-outcome-desc">This work directly shaped the redesigned Carbon Design System site the new standard for how IBM teaches design at scale.</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- MY ROLE -->
-  <div class="cs-section reveal">
-    <p class="cs-label">My role</p>
-    <h2 class="cs-h2">Researcher, content strategist, and experience architect.</h2>
-    <p class="cs-p">I co-led the research with a Carbon researcher, defined the tutorial format, designed the new guidance anatomy, and applied it to the Interstitial pattern as the first live example. I also owned the guidance and tutorial experience area for the 2026 Carbon site relaunch defining how every future pattern would be taught.</p>
-    <p class="cs-p">This work required understanding both sides of the audience simultaneously designers who think visually and developers who think in components and code. The tutorial format I defined serves both without compromise.</p>
-  </div>
-
-  <!-- NEXT -->
-  <div class="cs-next reveal">
-    <p class="cs-next-label">Next case study</p>
-    <h3 class="cs-next-title">IBM Content Services legacy to SaaS</h3>
-    <p class="cs-next-sub">How I led design modernization of a complex legacy enterprise platform and delivered within one year.</p>
-    <a href="case-study-content-services.html" class="btn-teal">View case study →</a>
-  </div>
-
-
-    </div>
-      </div>
-      
-
 
 <script>
-const obs=new IntersectionObserver((entries)=>{
-  entries.forEach((e,i)=>{if(e.isIntersecting) setTimeout(()=>e.target.classList.add('visible'),i*60);});
-},{threshold:.06});
-document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+function checkPw() {
+  const val = document.getElementById('pw').value;
+  const input = document.getElementById('pw');
+  const err = document.getElementById('err');
+  if (val === 'SMILE') {
+    sessionStorage.setItem('sc_unlocked_carbon','1');
+    window.location.href = 'case-study-carbon-content.html';
+  } else {
+    input.classList.add('error');
+    err.classList.add('show');
+    input.addEventListener('input', () => { input.classList.remove('error'); err.classList.remove('show'); }, {once:true});
+  }
+}
+document.getElementById('pw').addEventListener('keydown', e => { if(e.key==='Enter') checkPw(); });
 </script>
-
-<!-- CASE STUDY NAV -->
-<div style="background:var(--surface);border-top:0.5px solid var(--border);padding:1.25rem 2.5rem;display:flex;justify-content:space-between;align-items:center;max-width:100%;">
-  <a href="case-study-plg.html" style="display:flex;align-items:center;gap:6px;font-size:.8rem;font-weight:500;color:var(--gray);text-decoration:none;transition:color .2s;" onmouseover="this.style.color='var(--black)'" onmouseout="this.style.color='var(--gray)'">
-    <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M9 2L4 7l5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    PLG Onboarding
-  </a>
-  <a href="index.html" style="font-size:.78rem;font-weight:500;color:var(--gray);text-decoration:none;transition:color .2s;" onmouseover="this.style.color='var(--black)'" onmouseout="this.style.color='var(--gray)'">All work</a>
-  <a href="case-study-content-services.html" style="display:flex;align-items:center;gap:6px;font-size:.8rem;font-weight:500;color:var(--gray);text-decoration:none;transition:color .2s;" onmouseover="this.style.color='var(--black)'" onmouseout="this.style.color='var(--gray)'">
-    Content Services
-    <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M5 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-  </a>
-</div>
-
-
-<div class="cs-lightbox" id="lightbox" onclick="closeLightbox()">
-  <button class="cs-lightbox-close" onclick="closeLightbox()">&#x2715;</button>
-  <img id="lightboxImg" src="" alt="">
-</div>
-<script>
-function openLightbox(src){document.getElementById('lightboxImg').src=src;document.getElementById('lightbox').classList.add('open');document.body.style.overflow='hidden';}
-function closeLightbox(){document.getElementById('lightbox').classList.remove('open');document.body.style.overflow='';}
-document.addEventListener('keydown',function(e){if(e.key==='Escape')closeLightbox();});
-</script>
-
 </body>
 </html>
